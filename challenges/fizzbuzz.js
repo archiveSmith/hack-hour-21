@@ -16,8 +16,36 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
+ /* 
+input: {number} 
+output: {array} contains the numbers 1 to NUM
+approach:
+ - iterate from 1 to NUM
+ -  for numbers divisible by:
+    - 3, place 'fizz'
+    - 5, place 'buzz'
+    - 3 and 5 'fizzbuzz'
+*/
 
+function fizzbuzz(num) {
+    numArr = [];
+    for (var start = 1; start <= num; start++) {
+        numArr.push(start);
+    }
+
+    for (var i = 0; i < numArr.length; i++) {
+        if (numArr[i] % 3 === 0 && numArr[i] % 5 === 0) {
+            numArr.splice(i, 1, 'fizzbuzz');
+        } else if (numArr[i] % 3 === 0) {
+            numArr.splice(i, 1, 'fizz');
+        } else if (numArr[i] % 5 === 0) {
+            numArr.splice(i, 1, 'buzz');
+        } 
+    };
+
+    return numArr;
 }
+
+console.log(fizzbuzz(21));
 
 module.exports = fizzbuzz;
