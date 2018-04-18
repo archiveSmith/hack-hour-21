@@ -16,8 +16,26 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
+// input: number
+// output: array of nums with multiples of 3 replaced by fizz and multiples of 5 replaced by buzz
+// process: create a new array, use a while loop with the condition as greater than or equal to 0, if mod3 unshift fizz and continue, if mod 5 ushift buzz, else unshift, decrement num every time
 
+function fizzbuzz(num) {  
+    const output = [];
+    while (num > 0) {
+        if (!(num % 15)) 
+            output.unshift('fizzbuzz');
+        else if (!(num % 3)) 
+            output.unshift('fizz');
+        else if (!(num % 5))
+            output.unshift('buzz');
+        else 
+            output.unshift(num)
+        num--;
+    }
+    return output;
 }
+
+console.log(fizzbuzz(25))
 
 module.exports = fizzbuzz;
