@@ -16,13 +16,21 @@
 //                     'fizzbuzz',
 //                     16 ]
 
-function fizzbuzz(num) {
-    let arr = [];
- 
-    for (let i = 1; i <= num; i++) {
-      arr.push( i % 3 === 0 && i % 5 === 0 ? 'fizzbuzz' : i % 3 === 0 ? 'fizz' : i % 5 === 0 ? 'buzz' : i);
-    }
-    return arr;
-}
+//long ternary
+ function fizzbuzz(num) {  
+   let arr = [];
 
-module.exports = fizzbuzz;
+   for (let i = 1; i <= num; i++) {
+     arr.push( i % 3 === 0 && i % 5 === 0 ? 'fizzbuzz' : i % 3 === 0 ? 'fizz' : i % 5 === 0 ? 'buzz' : i);
+   }
+   return arr;
+ }
+ fizzbuzz(15);
+
+//use reduce
+// function fizzbuzz(num) {  
+
+//   [num].reduce()
+
+// }
+//use recursion
