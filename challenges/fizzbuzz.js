@@ -17,7 +17,22 @@
 //                     16 ]
 
 function fizzbuzz(num) {
-
+    var result = Array(num).fill(0);
+    return result.map(function(ele, i) {
+        ele = i + 1;
+        if (ele % 3 === 0 && ele % 5 === 0) {
+            return 'fizzbuzz';
+        }
+        if (ele % 3 === 0) {
+            return 'fizz';
+        }
+        if (ele % 5 === 0) {
+            return 'buzz';
+        }
+        return ele;
+    });
 }
+
+console.log(fizzbuzz(16));
 
 module.exports = fizzbuzz;
