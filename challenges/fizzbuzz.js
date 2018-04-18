@@ -48,7 +48,7 @@
 function fizzbuzz(num) {
   return Array.from({ length: num }, (v, k) => {
     let j = k + 1;
-    if (j % 3 === 0 && j % 5 === 0) return "fizzbuzz";
+    if (j % 15 === 0) return "fizzbuzz";
     if (j % 3 === 0) return "fizz";
     if (j % 5 === 0) return "buzz";
     return j;
