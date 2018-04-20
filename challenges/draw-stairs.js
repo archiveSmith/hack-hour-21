@@ -23,7 +23,4 @@ function drawStairs(n) {
     }
 }
 
-
-drawStairs(115)
-
 module.exports = drawStairs;
