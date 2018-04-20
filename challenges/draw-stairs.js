@@ -23,7 +23,7 @@ function drawStairs(n) {
   }
   let str = "";
   for (let k = 0; k < stairs.length; k += 1) {
-    for (let l = n; l > k; l -= 1) {
+    for (let l = n; l > k + 1; l -= 1) {
       str += " ";
     }
     if (k + 1 === stairs.length) {
