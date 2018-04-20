@@ -4,8 +4,8 @@
  
  For example:     
  drawStairs(6) ->          
-     *
-    **
+     *  
+    **   
    ***
   ****
  *****
@@ -14,8 +14,16 @@
 */
 
 function drawStairs(n) {
-
+    var spaces = n - 1;
+    var stars = 1;
+    while(stars <= n) {
+        console.log(' '.repeat(spaces) + '*'.repeat(stars));
+        spaces--;
+        stars++;
+    }
 }
 
+
+drawStairs(115)
 
 module.exports = drawStairs;
