@@ -15,7 +15,7 @@
 //                     14,
 //                     'fizzbuzz',
 //                     16 ]
-
+//long ternary
 function fizzbuzz(num) {
     let arr = [];
  
@@ -24,5 +24,13 @@ function fizzbuzz(num) {
     }
     return arr;
 }
+
+ //use reduce
+ // function fizzbuzz(num) {  
+ 
+ //   [num].reduce()
+ 
+ // }
+ //use recursion
 
 module.exports = fizzbuzz;
