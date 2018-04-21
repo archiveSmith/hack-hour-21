@@ -24,8 +24,11 @@ function modemean(array) {
     }, [0, 0])[1];
   }
   const mode = getMode(array);
-  const mean = Math.floor(array.reduce((acc, e) => acc + e, 0) / 2);
+  const mean = Math.floor(array.reduce((acc, e) => acc + e, 0) / array.length);
   return mode === mean;
 }
 
+let arr = [1,1,1,1,1,1];
+
+console.log(modemean(arr));
 module.exports = modemean;
