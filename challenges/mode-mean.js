@@ -14,8 +14,7 @@ function modemean(array) {
   function getMode (arr) {
     const cache = {};
     return arr.reduce((acc, e) => {
-      if (cache[e]) cache[e]++;
-      else cache[e] = 1;
+      cache[e] = cache[e] ? cache[e] + 1 : 1;
       if (cache[e] >= acc[0]) {
         if (cache[e] === acc[0]) acc[1] = Math.max(e, acc[0]);
         else acc[1] = e;
@@ -25,9 +24,7 @@ function modemean(array) {
     }, [0, 0])[1];
   }
   const mode = getMode(array);
-  const mean = Math.floor(array.reduce((acc, e) => {
-    return acc + e;
-  }, 0) / 2);
+  const mean = Math.floor(array.reduce((acc, e) => acc + e, 0) / 2);
   return mode === mean;
 }
 
