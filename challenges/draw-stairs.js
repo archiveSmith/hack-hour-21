@@ -12,23 +12,27 @@
 ******
 
 */
+//write a recursive function that returns (100-N)spaces and N asterisks
+	//base case: when n = 1
 
 function drawStairs(n) {
-	const start = n;
-	let eachLine = '';
-	let count = 0;
-	eachLine = ("*".repeat(n) + '\b');
 	if (n === 1){
-		console.log(eachLine)
-		return;
+		let stars = "*".repeat(n) + '\b';
+		console.log(stars);
+		return stars;
 	};
-	let newString = ("*".repeat(n) + '\b');
+	// function innerFunc(){
+	// 	let spaces = '';
+	// 	spaces += " ";
+	// 	console.log(spaces);
+	// 	return spaces;
+	// };
 	drawStairs(n-1);
-	eachLine = ("*".repeat(n)) + '\b';
-	console.log(eachLine);
+	spaces = " ".repeat(n-1);
+	let stars = spaces + "*".repeat(n) + '\b';
+	console.log(stars);
 	return;
-	//write a recursive function that returns (100-N)spaces and N asterisks
-	//base case: when n = 1
+	
 
 }
 
