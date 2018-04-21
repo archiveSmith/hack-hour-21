@@ -29,7 +29,7 @@ function modemean(array) {
             mode = key;
         }
     }
-    return Number(mode) === getAverage(array);
+    return Number(mode) === Math.floor(getAverage(array));
 }
 
 module.exports = modemean;
