@@ -18,13 +18,12 @@ function modemean(array) {
     if (numberCounts.hasOwnProperty(array[i])) numberCounts[array[i]]++;
     else numberCounts[array[i]] = 1;
   }
-  const avg = total / array.length;
+  const avg = Math.floor(total / array.length);
   let mode = 0;
   for (let j = 0; j < Object.keys(numberCounts).length; j += 1) {
-    if (numberCounts[Object.keys(numberCounts)[j]] > mode) mode = Object.keys(numberCounts)[j];
+    if (numberCounts[Object.keys(numberCounts)[j]] > mode) mode = Number(Object.keys(numberCounts)[j]);
   }
-  if (avg == mode) return true;
-  return false;
+  return avg === mode;
 }
 
 module.exports = modemean;
