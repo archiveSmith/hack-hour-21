@@ -20,7 +20,12 @@ function drawStairs(n) {
 		let stars = "*".repeat(n) + '\b';
 		console.log(stars);
 		return stars;
-	};
+	}
+	let spaces = "";
+	for(let s = 0; s<n.length-1; s++){
+		spaces = " ".repeat(n)
+
+	}
 	// function innerFunc(){
 	// 	let spaces = '';
 	// 	spaces += " ";
@@ -28,7 +33,6 @@ function drawStairs(n) {
 	// 	return spaces;
 	// };
 	drawStairs(n-1);
-	spaces = " ".repeat(n-1);
 	let stars = spaces + "*".repeat(n) + '\b';
 	console.log(stars);
 	return;

@@ -8,34 +8,45 @@
  * Return true or false
  *
  */
-
-
 function modemean(array) {
 	let mode = {};
-	let modes = [];
 	let mean = 0;
-	let max = 0;
-	array = array.sort();
-	console.log(`this is the sorted array ${array}`)
+	let maxmode = 0;
+	array.sort();
+	console.log(array);
+	// console.log(`this is the sorted array ${array}`)
 	for(let i = 0; i<array.length; i++){
-		if(mode[array[i]] !== null){
-			mode[array[i]] ++ 1;
-			console.log(mode[array[i]])
+		var kk = array[i];
+		if(mode[kk] !== NaN){
+			console.log(mode[array[i]]);
+			mode[kk] ++ ;
 		}
 		else{
-			mode[array[i]] = 1;
+			mode[kk] = 1;
 		}
-		mean += array[i]
+		mean += array[i];
 	}
 	mean = Math.floor(mean/array.length);
-	console.log(mean);
-	for(let n = 1; n <array.length;n++){
-		if(mode[n-1]>mode[n]){
-			max = array[n-1]
-		}
+	console.log(`this is our mean: ${mean}`)
+	console.log(`now give us the modeeee ${mode}`)
+	// console.log(mean);
+	let keys = Object.keys(mode);
+	console.log(`this is our key ${keys}`)
+	let values = Object.values(mode);
+	console.log(`this is our value ${values}`)
+	let collection = [];
+	let max = Math.max(...values);
+	console.log(`here is max: ${max}`)
+	let idx = values.indexOf(max);
+	while (idx !== -1) {
+		collection.push(idx);
+		idx = values.indexOf(max, idx + 1)
+		console.log(`this is our idx : ${idx}`)
 	}
-	console.log(`this is mode: ${mode}`)
-	if(max === mean){
+	let winner = collection[collection.length - 1];
+	console.log(`this is our winner: ${winner}`)
+	// console.log(`this is mode: ${mode}`)
+	if(winner === mean){
 		return true
 	}
 	return false;
