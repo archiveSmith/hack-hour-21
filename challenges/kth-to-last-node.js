@@ -22,7 +22,41 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  let count = 1;
+  const getLast = (node) => {
+    count++;
+    if (node.next) {
+      let nextNode = node.next;
+      return getLast(nextNode);
+    } else {
+      return count;
+    }
+  }
+  
+  let last = getLast(head);
+  
+  let nextCount = 0;
+  let desired = last - k;
+  
+  const get = (node) => {
+    if (desired <= 0) {
+      return undefined;
+    }
+    nextCount++;
+    if (nextCount === desired) {
+      return node.value;
+    } else {
+      if (node.next) {
+        let nextNode = node.next;
+        return get(nextNode);
+      }
+      else { return undefined; }
+    }
+   }
+   return get(head);
+  }
+  
 
-}
+
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
