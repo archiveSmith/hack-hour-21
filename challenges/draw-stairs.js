@@ -14,8 +14,15 @@
 */
 
 function drawStairs(n) {
-
+    let index = 1;
+    while(index <= n ){
+     console.log(" ".repeat(n-index) + "*".repeat(index))
+     index += 1;
+    }
 }
+
+drawStairs(100)
+
 
 
 module.exports = drawStairs;
