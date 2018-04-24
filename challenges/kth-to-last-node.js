@@ -29,8 +29,7 @@ function kthToLastNode(k, head) {
     place = place.next;
   }
   record.push(place.value);
-  console.log(record);
-  if (k > record.length) return -1;
+  if (k > record.length) return undefined;
   return record[record.length - k];
 }
 
