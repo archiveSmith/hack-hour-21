@@ -24,13 +24,19 @@ function Node(val) {
 function kthToLastNode(k, head) {
   let savedNodes = []; // save k nodes...
   let currentNode = head;
+  let numNodes = 0;
   while ( currentNode !== null ) {
+    numNodes++;
     savedNodes.push(currentNode); //save it
     console.log(savedNodes.length);
     if ( savedNodes.length > k){
       savedNodes.shift(); //we only want to keep k nodes...so remove the one from the front 
     }
     currentNode = currentNode.next;
+  }
+
+  if ( numNodes < k ) {
+    return undefined; //because kth to the last doesn't exist.
   }
 
   return savedNodes[0].value; //the first item in our list is the kth to last node
@@ -48,6 +54,6 @@ function kthToLastNode(k, head) {
 // c.next = d;
 // d.next = e;
 
-// console.log(kthToLastNode(5, a));
+// console.log(kthToLastNode(, a));
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
