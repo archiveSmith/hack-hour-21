@@ -19,8 +19,12 @@ function modemean(array) {
         else cache[ele] = 1;
         mean += ele;
     });
-    let largest = cache[array[0]];
+    let largest = null;
+    for (let key in cache) {
+      if (!largest) largest = key;
+    }
     mean = Math.floor(mean / array.length);
+    
     for (let key in cache) {
         if (cache[key] > largest) {
         largest = cache[key];
