@@ -19,10 +19,21 @@
 function Node(val) {
   this.value = val;
   this.next = null;
+  this.previous = null;
 }
 
 function kthToLastNode(k, head) {
-
+  let lastNode = head;
+  let tempNode = head;
+  while (lastNode.next) {
+    tempNode = lastNode;
+    lastNode = lastNode.next;
+    lastNode.previous = tempNode;
+  }
+  for (let i = 0; i < k - 1; i += 1) {
+    lastNode = lastNode.previous
+  }
+  return lastNode.value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
