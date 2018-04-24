@@ -40,7 +40,7 @@ function kthToLastNode(k, head) {
 
     function get(node) {
       if (desiredCount <= 0) {
-        return 'k is longer than linked list';
+        return undefined;
       }
       secondCount++;
       if (secondCount === desiredCount) {
