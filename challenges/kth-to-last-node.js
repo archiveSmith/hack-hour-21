@@ -33,7 +33,8 @@ function kthToLastNode(k, head) {
   for (let i = 0; i < k - 1; i += 1) {
     lastNode = lastNode.previous
   }
-  return lastNode.value;
+  if (lastNode) return lastNode.value
+  return undefined;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
