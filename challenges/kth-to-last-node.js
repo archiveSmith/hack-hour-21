@@ -22,6 +22,13 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
+  let count = 0;
+  let current = head;
+  while (current !== null) {
+    current = current.next
+    count++
+  }
+  let checkLocation = (count - k) + 1;
 
 }
 
