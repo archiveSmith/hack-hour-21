@@ -8,6 +8,7 @@
  * const d = new Node('D');
  * const e = new Node('E');
  *
+ * // this is dumb
  * a.next = b;
  * b.next = c;
  * c.next = d;
@@ -20,6 +21,7 @@ function List() {
     this.head = null;
 }
 
+// list is not needed if all 'next' are set manualy
 List.prototype.add = function(val) {
     if (this.head === null) {
         this.head = new Node(val);
@@ -33,8 +35,6 @@ List.prototype.add = function(val) {
         currNode.next = new Node(val);
     }
 }
-
-    
 
 function Node(val) {
   this.value = val;
@@ -55,6 +55,8 @@ function kthToLastNode(k, head) {
         valArr.push(head.value);
     }
 
+    console.log(valArr);
+
     let i = 1;
     for (let j = valArr.length -1; j >= 0; j -= 1) {
         if (i === k) {
@@ -66,6 +68,16 @@ function kthToLastNode(k, head) {
     return undefined;
 }
 
+// const a = new Node('A');
+// const b = new Node('B');
+// const c = new Node('C');
+// const d = new Node('D');
+// const e = new Node('E');
+
+// a.next = b;
+// b.next = c;
+// c.next = d;
+// d.next = e;
 
 // let l = new List();
 // l.add('A');
@@ -75,7 +87,7 @@ function kthToLastNode(k, head) {
 // l.add('E');
 // 
 // let a = l.head;
-// 
-// console.log(kthToLastNode(5, a));
+
+// console.log(kthToLastNode(2, a));
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
