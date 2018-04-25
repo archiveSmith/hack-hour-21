@@ -11,7 +11,25 @@
 
 
 function modemean(array) {
+  let divideBy = array.length;
+  let sum = array.reduce((acc, ele) => acc + ele);
+  let mean = sum / divideBy;
+  
+  let greatesFreq = 0;
+  let modeMap = {};
+  let maxEl = array[0], maxCount = 1;
 
+  array.forEach((ele) => {
+      if (modeMap[ele] == null) modeMap[ele] = 1;
+      else modeMap[ele]++;
+
+      if (modeMap[ele] > maxCount) {
+          maxEl = ele;
+      }
+  });
+  
+  if ( maxEl === mean) return true;
+  else return false;
 }
 
 module.exports = modemean;
