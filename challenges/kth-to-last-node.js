@@ -22,38 +22,24 @@ function Node(val) {
 }
 
 function kthToLastNode(k, head) {
-  let count = 1;
-  const getLast = (node) => {
-    count++;
-    if (node.next) {
-      let nextNode = node.next;
-      return getLast(nextNode);
-    } else {
-      return count;
-    }
+  if ( k <= 0 ) return undefined;
+  let lead = head;
+  let i = 0;
+
+  while ( i < lead ) {
+    lead = lead.next;
+    i++
   }
+
+  if ( i < k ) return undefined;
+  let follow = head;
+
+  while (lead) {
+    lead = lead.next;
+    follow = follow.next;
+  }
+  return follow.value;
   
-  let last = getLast(head);
-  
-  let nextCount = 0;
-  let desired = last - k;
-  
-  const get = (node) => {
-    if (desired <= 0) {
-      return undefined;
-    }
-    nextCount++;
-    if (nextCount === desired) {
-      return node.value;
-    } else {
-      if (node.next) {
-        let nextNode = node.next;
-        return get(nextNode);
-      }
-      else { return undefined; }
-    }
-   }
-   return get(head);
   }
   
 
