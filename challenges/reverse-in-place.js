@@ -15,6 +15,16 @@
 
 function reverseInPlace(array) {
 
+    if (array.length === 1) return array  // return if only one item
+
+    for (let i = 0; i < Math.floor(array.length / 2); i++) {
+        const item = array[array.length - 1 - i];
+        const swapIndex = array.length - 1 - i;
+        array[swapIndex] = array[i];
+        array[i] = item
+    }
+
+    return array
 }
 
 module.exports = reverseInPlace;
