@@ -13,14 +13,14 @@ function pow(base, power) {
   return returnVal;
 }
 
-console.log(pow(0, 0)); // --> undefined
+// console.log(pow(0, 0)); // --> undefined
 
-console.log(pow(4, 0)); // --> 1
+// console.log(pow(4, 0)); // --> 1
 
-console.log(pow(4, 4)); // --> 256
+// console.log(pow(4, 4)); // --> 256
 
-console.log(pow(2, -4)); // --> 1/16th
+// console.log(pow(2, -4)); // --> 1/16th
 
-console.log(1 / 16);
+// console.log(1 / 16);
 
 module.exports = pow;
