@@ -43,7 +43,7 @@ function modemean(array) {
 
     }(numbersOnly);
     // compare if mode and mean are ===, if so return true, else return false
-    return (mode === mean ? true : false);
+    return mode === mean;
 }
 
 module.exports = modemean;
