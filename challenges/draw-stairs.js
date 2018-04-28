@@ -16,14 +16,14 @@
 function drawStairs(n) {
     let str;
 
-    for(var level = n; level>=1; level--){ // top level only has one star.
+    for (var level = n; level>=1; level--) { // top level only has one star.
         str = "";
         for (var stars=1; stars<=n; stars++){
-            if ( stars >= level ) {
+            if (stars >= level) {
                 str += '*';
             } else {
                 str += ' ';
-            }              
+            }
         }
         console.log(str);
     }
