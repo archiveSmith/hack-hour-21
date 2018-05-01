@@ -35,16 +35,12 @@ function balancedParens(input) {
   // counters
   let numOpen = 0;
   let numClosed = 0;
-  // regex of all pertinent brackets
-  const brackets = /\}|\)|\]|\{|\[|\(/;
   // array to track the last unclosed bracket
   const savedLastEs = [];
   // split array and reduce to return a boolean
   return input.split('').reduce((acc, char) => {
     // do work only if boolean is still true
     if (acc) {
-      // skip current char if not a bracket
-      if (!brackets.test(char)) return acc;
       // if opening bracket...
       if (/\{|\(|\[/.test(char)) {
         numOpen += 1;
