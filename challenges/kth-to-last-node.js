@@ -20,9 +20,18 @@ function Node(val) {
   this.value = val;
   this.next = null;
 }
-
+//counter to keep track of which # node we are looking at in the LL
+// for/while loop to access the this.next value until our counter equals k.
+//once counter reaches k, we've found the node object we want and want to return this.value, which is actually its key?; Object.values('node')?
 function kthToLastNode(k, head) {
-
+  if (typeof k !== 'number' || typeof head !== 'object') return 'nice try';
+  const counter = 0;
+  currentNode = head;
+  while (counter < k) {
+    counter++;
+    currentNode = currentNode.next;
+  }
+  return currentNode.value;
 }
 
 module.exports = {Node: Node, kthToLastNode: kthToLastNode};
