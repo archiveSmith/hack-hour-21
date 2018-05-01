@@ -24,8 +24,26 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+  let booly = true;
+  let length = input.length;
 
+  newInput = input.split("");
+  for (let i = 0; i < length; i += 1) {
+    if (newInput[0] === "(" && newInput.indexOf(")") === -1) {
+      booly = false;
+    }
+    if (newInput[0] === "[" && newInput.indexOf("]") === -1) {
+      booly = false;
+    }
+    if (newInput[0] === "{" && newInput.indexOf("}") === -1) {
+      booly = false;
+    }
+    // if (newInput[0] === '(' && newInput.indexOf(']') !== -1 && newInput.indexOf(']') < newInput.indexOf(')')) booly = false;
+    newInput.shift();
+  }
+
+  return booly;
 }
 
 module.exports = balancedParens;
