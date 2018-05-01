@@ -23,6 +23,6 @@ function reverseInPlace(array) {
     }
     return array;
 }
-
+ 
 
 module.exports = reverseInPlace;
