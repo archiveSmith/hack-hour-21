@@ -24,8 +24,40 @@
  *
  */
 
-function balancedParens(input){
+function balancedParens(input) {
+  const arr = input.split('');
+  const output = [];
+  const useless = [];
 
+  for (let i = 0; i < arr.length; i += 1) {
+    const str = '{}[]()';
+    if (str.indexOf(arr[i]) > -1) {
+      output.push(arr[i]);
+    } else {
+      return false;
+    }
+  }
+  for (let j = 0; j < output.length; j++) {
+    if (output[j] === '}') {
+      if (output.indexOf('{') > -1) {
+        output.splice(0, output.indexOf(output[j]));
+      }
+    }
+    if (output[j] === ')') {
+      if (output.indexOf('(') > -1) {
+        output.splice(0, output.indexOf(output[j]));
+      }
+    }
+    if (output[j] === ']') {
+      if (output.indexOf('[') > -1) {
+        output.splice(0, output.indexOf(output[j]));
+      }
+    }
+  }
+  if (output.length === 3) {
+    return true;
+  }
+  return false;
 }
 
 module.exports = balancedParens;
