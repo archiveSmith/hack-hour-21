@@ -24,8 +24,34 @@
  *
  */
 
-function balancedParens(input){
+const closeParensMapping = {')' : '(',
+                            '}' : '{',
+                            ']' : '['}
 
+function balancedParens(input){
+    const parens = [];
+    for (let i = 0; i < input.length; i++) {
+        const char = input.charAt(i);
+        if (char ===  '(' || char ===  '{' || char ===  '[') {
+            // push to parens arrays
+            parens.push(char);
+        }
+        else if (char ===  ')' || char ===  '}' || char ===  ']') {
+            const lastChar = parens[parens.length - 1];
+            if (closeParensMapping[char] === lastChar) {
+                // parens are balanced… remove last element from parens array
+                parens.pop();
+            }
+            else {
+                return false;
+            }
+        }
+    }
+    return true;
 }
+
+console.log(balancedParens('[](){}'));
+console.log(balancedParens('[({})]'));
+console.log(balancedParens('[(]{)}'));
 
 module.exports = balancedParens;
