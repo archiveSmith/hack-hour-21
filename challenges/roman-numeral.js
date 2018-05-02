@@ -18,6 +18,7 @@
  */
 
 function romanNumeral(n) {
+  // check for bad input
   if (typeof n !== 'number') throw new Error('romanNumeral: Numbers only please!');
   // base case, we've subtracted down to 0 (or messed up somehow)
   if (n <= 0) return '';
