@@ -33,7 +33,7 @@ function romanNumeral(n) {
         6: 'VI',
         7: 'VII',
         8: 'VIII',
-        9: 'XI',
+        9: 'IX',
     }
     
     // 1864
@@ -68,14 +68,15 @@ function romanNumeral(n) {
             roman.push('L');
             n -= 50;
             // while greater than equal to 10 add X's and subtract 10
-        } else if (n >= 40) {
-            roman.push('XL');
-            n -= 40;
-        } else {
-            while (n >= 10) {
-                roman.push('X')
-                n -= 10;
+        } else { 
+            if (n >= 40) {
+                roman.push('XL');
+                n -= 40;
             }
+        }
+        while (n >= 10) {
+            roman.push('X')
+            n -= 10;
         }
     }
     // if less than 500
@@ -100,14 +101,15 @@ function romanNumeral(n) {
             roman.push('L');
             n -= 50;
             // while greater than equal to 10 add X's and subtract 10
-        } else if (n >= 40) {
-            roman.push('XL');
-            n -= 40;
-        } else {
-            while (n >= 10) {
-                roman.push('X')
-                n -= 10;
+        } else { 
+            if (n >= 40) {
+                roman.push('XL');
+                n -= 40;
             }
+        }
+        while (n >= 10) {
+            roman.push('X')
+            n -= 10;
         }
     }
     // do digits logic
@@ -120,4 +122,3 @@ function romanNumeral(n) {
 }
 
 module.exports = romanNumeral;
-
