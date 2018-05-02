@@ -16,7 +16,40 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
-
+  if (s1 === s2){
+    return true;
+  }
+  else {
+    let myFirstString = s1.split('');
+    let mySecondString = s2.split('');
+   }
+    for (var i = 0; i < myFirstString.length; i++){
+      if (mySecondString.includes(myFirstString[i])){
+        
+        for (var j = 0; j < mySecondString.length; j++){
+          if (mySecondString[j] === myFirstString[i]){
+            let firstSlice = myFirstString.slice(myFirstString[i]);
+            let secondSlice = mySecondString.slice(mySecondString[i]);
+            for (var x = 0; x < firstSlice.length; x++){
+              for (var y = 0; y < secondSlice.length; y++){
+                while (firstSlice[x] === secondSlice[y]){
+                  if (secondSlice[y] === secondSlice.length || firstSlice[x] === firstSlice.length){
+                    let sliceFromBeginning1 = myFirstString.slice(0, myFirstString[i]- 1);
+                    let sliceFromBeginning2 = mySecondString.slice(0, mySecondString[i] - 1);
+                    }
+                    let stringBeginningSlice1 = JSON.stringify(sliceFromBeginning1);
+                    let stringBeginningSlice2 = JSON.Stringify(sliceFromBeginning2);
+                    
+                    if (stringBeginningSlice1 === stringBeginningSlice2){
+                      return true;
+                    }
+                      }
+                    }
+                return false;
+              }
+            }
+          }
+        }
+      }
 }
-
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};

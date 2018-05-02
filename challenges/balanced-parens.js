@@ -25,7 +25,19 @@
  */
 
 function balancedParens(input){
-
-}
+    const tempArray = [];
+    if (input[0] === '(' || input[0] === '[' || input[0] === '{'){
+      for (let i = 1; i < input.length; i++){
+        tempArray.push(input[i]);
+      }
+      if (!tempArray.includes('(', '{', '[')){
+          if (tempArray.includes)
+      
+    }
+    
+    else {
+      return false;
+    }
+}  
 
 module.exports = balancedParens;
