@@ -18,7 +18,32 @@
  */
 
 function romanNumeral(n) {
+  if (typeof n !== "number") return "error";
+  let roman = "";
+  const letters = {
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1
+  };
 
+  for (let key in letters) {
+    while (n >= letters[key]) {
+      roman += key;
+      n -= letters[key];
+    }
+  }
+
+  return roman;
 }
 
 module.exports = romanNumeral;
