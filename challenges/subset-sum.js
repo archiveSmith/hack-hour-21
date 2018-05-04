@@ -9,7 +9,23 @@
  */
 
 function subsetSum(array, target) {
-
+  let booly = false;
+  let subs = array.reduce(
+    (acc, val) => {
+      return acc.concat(acc.map(ele => [val, ...ele]));
+    },
+    [[]]
+  );
+  subs.shift();
+  subs = subs.map(ele => {
+    return ele.reduce((acc, nextEle) => {
+      return (acc += nextEle);
+    });
+  });
+  subs.forEach(ele => {
+    if (ele === target) booly = true;
+  });
+  return booly;
 }
 
 module.exports = subsetSum;
