@@ -17,10 +17,9 @@ function arraySum(array) {
 }
 
 function subsetSum(array, target) {
-  console.log(array);
   if (array.length === 0) return false;
   else if (arraySum(array) === target) return true;
-  else if (arraySum(array) < 0) return false;
+  else if (arraySum(array) < target) return false;
   else {
     let bool = false;
     for (let i = 0; i < array.length; i += 1) {
