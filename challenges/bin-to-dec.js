@@ -18,12 +18,11 @@ function binToDec(binary) {
   return binary
     .split("")
     .reverse()
-    .map((ele, index) => {
-      ele *= num;
+    .reduce((acc, next) => {
+      next *= num;
       num *= 2;
-      return ele;
-    })
-    .reduce((acc, next) => acc + next);
+      return acc + next;
+    }, 0);
 }
 
 module.exports = binToDec;
