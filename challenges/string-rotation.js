@@ -7,7 +7,7 @@
  *
  * For example: stringRotation("hello", "hello") -> true
  *              stringRotation("hello", "llohe") -> true
- *              stringRotation("hello", "he") -> false
+ *              stringRotation("") -> false
  *              stringRotation("hello", "ollhe") -> false (not a rotation, just an anagram)
  */
 
@@ -22,4 +22,7 @@ function stringRotation(s1, s2) {
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
 
+console.log(stringRotation("hello", "hello"))
+console.log(stringRotation("hello", "llohe"))
 console.log(stringRotation("hello", "he"))
+console.log(stringRotation("hello", "ollhe"))
