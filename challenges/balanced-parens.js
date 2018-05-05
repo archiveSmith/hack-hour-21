@@ -24,8 +24,65 @@
  *
  */
 
-function balancedParens(input){
+const brackets = ['[', ']', '{', '}', '(', ')'];
 
+function balancedParens(input){
+    let dict = {'()': 'closed', '[]': 'closed', '{}': 'closed'};
+    input.split('').forEach(function(ele) {
+        if(['(', '[', '{'].includes(ele)) {
+            switch (ele) {
+                case '(':
+                    dict['()'] = 'open';
+                    break
+                case '[':
+                    dict['[]'] = 'open';
+                    break
+                case '{':
+                    dict['{}'] = 'open';
+                    break
+            }
+
+        }
+        if([')', ']', '}'].includes(ele)) {
+            switch (ele) {
+                case ')':
+                    if(dict['()'] === 'open') {
+                        dict['()'] = 'closed';
+                        break
+                    }
+                case ']':
+                    if(dict['[]'] === 'open') {
+                        dict['[]'] = 'closed';
+                        break
+                    }
+                case '}':
+                    if(dict['{}'] === 'open') {
+                        dict['{}'] = 'closed';
+                        break
+                    }
+            }
+
+        }
+    });
+    console.log(Object.values(dict).every((x) => x === 'closed'));
 }
+
+
+balancedParens('(');
+balancedParens('()');
+balancedParens(')(');
+balancedParens('(())');
+ 
+balancedParens('[](){}');
+balancedParens('[({})]');
+balancedParens('[(]{)}');
+ 
+balancedParens(' var wow  = { yo: thisIsAwesome() }');
+balancedParens(' var hubble = function() { telescopes.awesome();');
+
+
+
+
+
 
 module.exports = balancedParens;

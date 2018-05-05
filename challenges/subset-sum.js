@@ -10,6 +10,26 @@
 
 function subsetSum(array, target) {
 
+    // begin generating all possible combinations of the array and see if they sum to target
+    
+    // check if there are any t - n and n elements. if there is a t - n but no n, remove t - n.
+   
+    // generate a combination of array and check if it sums to target
+    var fn = function(active, rest, a) {
+        if (!active && !rest)
+            return;
+        if (!rest) {
+            a.push(active);
+        } else {
+            fn(active + rest[0], rest.slice(1), a);
+            fn(active, rest.slice(1), a);
+        }
+        if (a.reduce((a, c) => a + c) === target) {
+            return true
+        }
+    }
+    return fn([], array, []);
+    
 }
 
 module.exports = subsetSum;
