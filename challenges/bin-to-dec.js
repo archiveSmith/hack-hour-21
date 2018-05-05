@@ -14,7 +14,8 @@
  */
 
 function binToDec(binary) {
-
+  const num = Number('0b'.concat(binary));
+  return num;
 }
 
 module.exports = binToDec;
