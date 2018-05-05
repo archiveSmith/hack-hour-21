@@ -14,7 +14,33 @@
  */
 
 function binToDec(binary) {
+    let dec;
+    let bArr = binary.split('').map(x => Number(x));
 
+    while (bArr[0] === 0) {
+        bArr.shift();
+    };
+
+    for (let i = 0; i < bArr.length - 1; i += 1) {
+        if (i === 0) {
+            dec = (bArr[i] * 2) + bArr[i + 1];
+        } else {
+            dec = (dec * 2) + bArr[i + 1];
+        }
+    }
+    return dec;
+}
+
+function decToBin(dec) {
+    if (dec === 0) {
+        return '0';
+    }
+    let bin = []
+    while (dec > 0) {
+        bin.unshift(dec % 2);
+        dec = Math.floor(dec / 2);
+    }
+    return bin.join('');
 }
 
 module.exports = binToDec;
