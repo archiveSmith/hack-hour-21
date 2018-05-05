@@ -13,8 +13,17 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-function binToDec(binary) {
+ //split and then hardcode correlation of array indecices with binary values
 
+ function binToDec(binary) {
+    const bin = binary.split('').map(x => parseInt(x));
+    let counter = 0;
+
+    for (let i = 0, d = 1; i < bin.length; i++) {
+      if (bin[bin.length - 1 - i]) counter += d
+      d *= d * 2;
+    }
+    return counter;
 }
 
 module.exports = binToDec;
