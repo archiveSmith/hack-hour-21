@@ -14,8 +14,16 @@
 */
 
 function drawStairs(n) {
+    let string = '';
 
+    for (let i = 0; i <= n; i++) {
+        string += '*';
+    }
+
+    return string;
 }
+
+// drawStairs(5);
 
 
 module.exports = drawStairs;

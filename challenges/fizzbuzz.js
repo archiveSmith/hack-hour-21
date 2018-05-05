@@ -15,9 +15,22 @@
 //                     14,
 //                     'fizzbuzz',
 //                     16 ]
-
+//long ternary
 function fizzbuzz(num) {
-
+    let arr = [];
+ 
+    for (let i = 1; i <= num; i++) {
+      arr.push( i % 3 === 0 && i % 5 === 0 ? 'fizzbuzz' : i % 3 === 0 ? 'fizz' : i % 5 === 0 ? 'buzz' : i);
+    }
+    return arr;
 }
+
+ //use reduce
+ // function fizzbuzz(num) {  
+ 
+ //   [num].reduce()
+ 
+ // }
+ //use recursion
 
 module.exports = fizzbuzz;
