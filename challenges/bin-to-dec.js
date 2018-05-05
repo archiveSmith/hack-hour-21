@@ -21,10 +21,46 @@ function binToDec(binary) {
   }, 0);
 }
 
-// console.log(binToDec('0')) //   -> 0
-// console.log(binToDec('11'))  // -> 3
-// console.log(binToDec('100')) // -> 4
-// console.log(binToDec('101')) // -> 5
-// console.log(binToDec('1010101101')) // -> 5)
+function decToBin(decimal) {
+  // catch non integer or fractional
+  if ((decimal % 1) !== 0 || typeof decimal !== 'number') throw new Error('decToBin: input must be a whole number');
+  const binary = [];
+  while (decimal >= 1) {
+    binary.unshift(String(decimal % 2));
+    decimal = Math.floor(decimal / 2);
+  }
+  return binary.join('');
+}
+
+function decToHex(decimal) {
+  // catch non integer or fractional
+  if ((decimal % 1) !== 0 || typeof decimal !== 'number') throw new Error('decToHex: input must be a whole number');
+  // catch negative
+  let negated = false;
+  if (decimal < 0) {
+    decimal = Math.abs(decimal)
+    negated = true;
+  }
+  // function to return hex letters
+  function remToLetter(rem) {
+    if (rem === 15) return 'F';
+    if (rem === 14) return 'E';
+    if (rem === 13) return 'D';
+    if (rem === 12) return 'C';
+    if (rem === 11) return 'B';
+    if (rem === 10) return 'A';
+    throw new Error('remToLetter: Argument not an integer 9 - 15');
+  }
+  const hex = [];
+  while (decimal >= 1) {
+    const remainder = decimal % 16;
+    decimal = Math.floor(decimal / 16);
+    // if > 9 we need a letter
+    if (remainder > 9) hex.unshift(remToLetter(remainder));
+    else hex.unshift(String(remainder));
+  }
+  if (negated) return hex.unshift('-').join('');
+  return hex.join('');
+}
 
 module.exports = binToDec;
