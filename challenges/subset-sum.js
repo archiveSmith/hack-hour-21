@@ -8,8 +8,16 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
+// STOLEN AND BROKEN
 function subsetSum(array, target) {
-
+  let i = array.length
+  function recurSum(array, i, target) {
+    if (target === 0) return true;
+    if (i === 0 && target !== 0) return false;
+    if (array[i - 1] > target) return recurSum(array, i - 1, target);
+    return recurSum(array, i - 1, target) || recurSum(array, i - 1, target - array[i - 1]);
+  }
+  recurSum(array, i, target);
 }
 
 module.exports = subsetSum;
