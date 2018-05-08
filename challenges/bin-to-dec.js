@@ -13,22 +13,34 @@
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
 
-function binToDec(binary) {
-   let dec = binary.split("")
-   let decColl = [];
-   let sum = 0;
-   for(let i = 0; i < dec.length; i++){
-       decColl.push(Math.pow(2,i));
-   }
-   let reversed = decColl.reverse();
-   for(let d = dec.length -1; d >= 0; d--){
-    //    console.log("this is the collection", decColl);
-    //    console.log(typeof dec[d])
-        if(dec[d] == '1'){
-        sum += reversed[d]
-   }
+// function binToDec(binary) {
+// let decColl = [];
+// let sum = 0;
+// let dec = binary.split("");
+// dec.forEach((task) => {decColl.push(indexOf(task))})
+
+// let reversed = decColl.reverse();
+// };
+
+function decToBin(number){
+    
 }
-return sum;
-};
 
 module.exports = binToDec;
+
+
+// let dec = binary.split("")
+//    let decColl = [];
+//    let sum = 0;
+//    for(let i = 0; i < dec.length; i++){
+//        decColl.push(Math.pow(2,i));
+//    }
+//    let reversed = decColl.reverse();
+//    for(let d = dec.length -1; d >= 0; d--){
+//     //    console.log("this is the collection", decColl);
+//     //    console.log(typeof dec[d])
+//         if(dec[d] == '1'){
+//         sum += reversed[d]
+//    }
+// }
+// return sum;
