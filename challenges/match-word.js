@@ -17,7 +17,7 @@ function matchWord(str) {
     // convert everything to lowercase
     s = s.toLowerCase();
 
-    // split the string by non-characters
+    // split the string by characters that are not a-z (+ is greedy match)
     let wordArray = s.split(/[^a-z]+/);
     // console.log(wordArray);
 
@@ -26,9 +26,9 @@ function matchWord(str) {
     // now do our stack method for matching pairs
     for(let i=0; i<wordArray.length; i++){
         currWord = wordArray[i];
-        if (currWord === '') continue;
+        if (currWord === '') continue; //when splitting we might get an element that is '' at the beg and end of array
         
-        // check against the reverse of the work on the top of the stack
+        // check against the reverse of the word on the top of the stack
         if ((stack.length === 0) || (stack[stack.length - 1] !== reverseString(currWord)) ) {
             stack.push(currWord);
         } else if ((stack[stack.length - 1] === reverseString(currWord)) ) {
@@ -39,6 +39,7 @@ function matchWord(str) {
 
     }
 
+    // if our stack is empty, that means we've matched all words
     if (stack.length !== 0) return false;
     return true;
 
