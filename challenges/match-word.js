@@ -24,7 +24,6 @@ function matchWord(str) {
     let stack = [];
 
     wordArray.forEach( currWord => {
-            // currWord = wordArray[i];
             if (currWord === '') return; //when splitting we might get an element that is '' at the beg and end of array
 
             // check against the reverse of the word on the top of the stack
@@ -49,14 +48,10 @@ function matchWord(str) {
 // console.log(matchWord("for__if__rof__fi"));
 // console.log(matchWord("IF()()fi[]"));
 
-
-
-
 // helper function to reverse string
 function reverseString(str) {
   return str.split("").reverse().join("");
 }
 
-// console.log(reverseString('hello'));
 
 module.exports = matchWord;
