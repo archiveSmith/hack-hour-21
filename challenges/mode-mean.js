@@ -16,14 +16,15 @@ function modemean(array) {
         return a;
     })
     console.log(mean);
-    newAr = [];
+    newAr = []; 
     check = [];
     array.forEach(x => {
 
         if(check.includes(x)){
             newAr.forEach(y => {
                 if(y[0] === x){
-                    y[1] += 1;
+                    y[1] += 1;  
+
                 }
             })
         }
@@ -60,6 +61,8 @@ function modemean(array) {
 
 }
 
+
+console.log(modemean([1,2,3]))
 
 
 module.exports = modemean;
