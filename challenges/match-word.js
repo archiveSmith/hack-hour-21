@@ -11,7 +11,14 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
-}
+    const tracker = [];
+    let splitStr = str.split("_");
+    for (let i = 0; i < str.length; i++) {
+      if (splitStr[i] === /([a-z])/g) {
+        tracker.push(splitStr[i]);
+      }
+    }
+    // console.log(tracker);
+  }
 
 module.exports = matchWord;
