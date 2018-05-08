@@ -62,15 +62,14 @@ function decToHexa(decimal, output = []){
         console.log(output)
         output.unshift(decimal);
         console.log(output);
-        return output
+        return output.join('');
     }
     else {
-        output.push(0);
-        output.push(Math.floor(decimal/16));
+        output[0] =+ 1
+        //output.push(Math.floor(decimal/16));
         console.log(output);
         decimal = decimal % 16;
         console.log(decimal);
-        console.log(output)
         decToHexa(decimal, output);
     }
 }
