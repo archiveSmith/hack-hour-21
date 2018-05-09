@@ -3,6 +3,7 @@
  */
 
 function highestProduct(array) {
+  if (array.length < 3) return array.reduce((acc, next) => acc * next);
   let biggest = [];
   for (let i = 0; i < 3; i += 1) {
     array.forEach((ele, index) => {
@@ -12,7 +13,7 @@ function highestProduct(array) {
     array.splice(array.indexOf(biggest[i]), 1);
     console.log(array);
   }
-  return biggest[0] * biggest[1] * biggest[2];
+  return biggest.reduce((acc, next) => acc * next);
 }
 
 module.exports = highestProduct;
