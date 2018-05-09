@@ -3,11 +3,32 @@
  */
 
 function highestProduct(array) {
-  if (!Array.isArray(array)) return undefined;
+  if (!Array.isArray(array) || array.length < 3) return 0;
   let numbers = array.filter((element) => typeof element === 'number');
-  numbers.sort((a, b) => a < b);
-  let top = numbers.slice(0, 3);
-  return top.reduce((a, b) => a * b);
+  let topNums = top(numbers);
+  return topNums.reduce((a, b) => a * b);
 }
+
+function top(array) {
+  array.sort((a, b) => Math.abs(a) < Math.abs(b));
+  let numNegs = 0; 
+  let top = [];
+  for (let i = 0; i < array.length; i++) {
+    if (top.length >= 3) return top;
+    if (array[i] < 0) {
+      if (numNegs < 2) {
+        numNegs++
+        top.push(array[i]);
+      }
+    }
+    else {
+      top.push(array[i]);
+    }
+  }
+  return top;
+}
+
+numbers = [-40, 3, 20, -24, -19, -30, 15];
+console.log(highestProduct(numbers));
 
 module.exports = highestProduct;
