@@ -3,11 +3,9 @@
  */
 
 function highestProduct(array) {
-  if (array.length < 3) return 0;
   if (!Array.isArray(array)) return 0;
-  array.sort((a, b) => {
-    return b - a;
-  });
+  if (array.length < 3) return 0;
+  array.sort((a, b) => b - a);
   return array[0] * array[1] * array[2];
 }
 
