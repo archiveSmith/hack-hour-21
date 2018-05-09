@@ -27,6 +27,7 @@ function matchWord(str) {
     if (nextGap < 0) break;
     let keyword = newStr.slice(0, nextGap);
     let reversedKeyword = reverseString(keyword);
+    if (keyword === reversedKeyword) return false;
     if (newStr.indexOf(reversedKeyword, nextGap) < 0) return false;
     newStr = newStr.slice(0, nextGap);
   }
