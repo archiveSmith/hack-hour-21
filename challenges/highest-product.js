@@ -3,6 +3,7 @@
  */
 
 function highestProduct(array) {
+  if (array.length < 3 || !Array.isArray(array)) return 0;
   const arr = array.sort((a, b) => a - b);
   const sum = arr[arr.length - 3] * arr[arr.length - 2] * arr[arr.length - 1];
   return sum;
