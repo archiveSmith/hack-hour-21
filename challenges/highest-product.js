@@ -3,8 +3,10 @@
  */
 
 function highestProduct(array) {
-  array.sort((a, b) => a < b);
-  let top = array.slice(0, 3);
+  if (!Array.isArray(array)) return undefined;
+  let numbers = array.filter((element) => typeof element === 'number');
+  numbers.sort((a, b) => a < b);
+  let top = numbers.slice(0, 3);
   return top.reduce((a, b) => a * b);
 }
 
