@@ -3,8 +3,7 @@
  */
 
 function highestProduct(array) {
-
+  if (array.length < 3) throw new Error('Array too short!');
+  const newArray = array.sort((a, b) => b - a);
+  return newArray[0] * newArray[1] * newArray[2];
 }
-
-
-module.exports = highestProduct;
