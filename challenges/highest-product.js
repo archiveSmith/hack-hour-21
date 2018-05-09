@@ -5,7 +5,7 @@
 
 
 function highestProduct(array) {
-    if(array.length < 3) return 'array not long enough';
+    if(array.length < 3 || !Array.isArray(array)) return 0;
     const arr = array.sort((a,b) => b > a)
     return arr[0] * arr[1] * arr[2]
 }
