@@ -3,23 +3,15 @@
  */
 
 function highestProduct(array) {
+    if (!Array.isArray(array) || array.length < 3) return 0;
 
     const highestNums = [];
-    const mutableArr = array.slice();
+    const mutableArr = array.slice().sort();
 
-    for (let i = 0; i < 3; i++) {
-        const max = Math.max(...mutableArr);
-        const index = array.indexOf(max);
-        if (index > -1) {
-            mutableArr.splice(index, 1);
-        }
-    }
-
-    const product = mutableArr.reduce((acc, cur) => {
-        acc * cur;
-    }, 1);
+    const candidateA = mutableArr[0] * mutableArr[1] * mutableArr[mutableArr.length - 1];
+    const candidateB = mutableArr[mutableArr.length - 1] * mutableArr[mutableArr.length - 2] * mutableArr[mutableArr.length - 3];
     
-    return product;
+    return Math.max(candidateA, candidateB);
 }
 
 module.exports = highestProduct;
