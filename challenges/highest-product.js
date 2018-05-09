@@ -24,12 +24,8 @@ function highestProduct(a) {
     copy.splice(copy.indexOf(min2), 1);
 
     return (min1 * min2) > (max2 * max3) ? max1 * min1 * min2 : max1 * max2 * max3;
-
-    l
-
 }
 
 
 module.exports = highestProduct;
 
-console.log(highestProduct(8))
