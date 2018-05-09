@@ -11,7 +11,24 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
-
-}
+    console.log(str);
+    let newString = '';
+    for (let i = 0; i < str.length; i++) {
+        console.log(str[i]);
+        if (str[i] === /^[A-Za-z\s]+$/ ) {console.log('in if')};
+    }
+    
+    //console.log(newString);
+    let testArr = [];
+    for (let i =0; i < newString.length; i++) {
+      console.log(testArr);
+        for (let j = newString.length; j > 0; i--) {
+            if (newString[i] === newString[j]) testArr.push(true);
+            else testArr.push(false);
+        }
+      }
+    //return testArr.every( (ele) => { ele === true });
+  }
+matchWord('__END_DNE-----')
 
 module.exports = matchWord;
