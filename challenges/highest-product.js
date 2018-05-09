@@ -8,6 +8,7 @@ function highestProduct(array) {
   for (let i = 0; i < array.length; i++){
     for (let z = 0; z < array.length; z++){
       for (let x = 0; x < array.length; x++){
+        if (array[i] !== array[x] && array[i] !== array[z] && array[z] !== array[x])
         tempNum = array[i] * array[x] * array[z];
         if (tempNum > sum) sum = tempNum;
       }
@@ -16,6 +17,7 @@ function highestProduct(array) {
   return sum;
 
 }
+
 
 
 module.exports = highestProduct;
