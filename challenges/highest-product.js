@@ -3,8 +3,8 @@
  */
 
 function highestProduct(a) {
-    if (a.length < 3) return 0;
     if (!Array.isArray(a)) return 0;
+    if (a.length < 3) return 0;
     
     let max1 = Math.max(...a);
     a.splice(a.indexOf(max1), 1);
