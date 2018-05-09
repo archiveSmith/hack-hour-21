@@ -3,15 +3,32 @@
  */
 
 function highestProduct(a) {
-    let m1 = Math.max(...a);
-    a.splice(a.indexOf(m1), 1);
-    let m2 = Math.max(...a);
-    a.splice(a.indexOf(m2), 1);
-    let m3 = Math.max(...a);
-    a.splice(a.indexOf(m3), 1);
-    return m1 * m2 * m3;
+    if (a.length < 3 || !Array.isArray(a)) return 0;
+    
+    let max1 = Math.max(...a);
+    a.splice(a.indexOf(max1), 1);
+    
+    let copy = [...a];
+
+    let max2 = Math.max(...a);
+    a.splice(a.indexOf(max2), 1);
+    
+    let max3 = Math.max(...a);
+    a.splice(a.indexOf(max3), 1);
+    
+    let min1 = Math.min(...copy);
+    copy.splice(copy.indexOf(min1), 1);
+    
+    let min2 = Math.min(...copy);
+    copy.splice(copy.indexOf(min2), 1);
+
+    return (min1 * min2) > (max2 * max3) ? max1 * min1 * min2 : max1 * max2 * max3;
+
+    l
+
 }
 
 
 module.exports = highestProduct;
 
+console.log(highestProduct([-4, -5, 4, 2, 2]))
