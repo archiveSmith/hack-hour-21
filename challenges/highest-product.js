@@ -22,7 +22,7 @@
 
 function highestProduct (array) {
   if (!Array.isArray(array)) return 0;
-  if (array.length === 0) return 0;
+  if (array.length < 3) return 0;
 
   let sorted = array.sort((a, b) => b > a);
   // if there are negative numbers we have to take into account that - * - is a +
@@ -38,7 +38,7 @@ function highestProduct (array) {
 
 }
 
-
+// console.log(highestProduct([-1, -3]));
 // console.log(highestProduct2([-1, -3, -1, 1, 2])); // should be 6
 // console.log(highestProduct2([-100, -3, -1, -2])); // should be -6
 // console.log(highestProduct2([5, 3, 2, 4, 1]));
