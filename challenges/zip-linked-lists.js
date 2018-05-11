@@ -11,10 +11,13 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
+  if (!l1) return l2;
+  if (!l2) return l1;
   let alternator = false;
+  const start = l1;
   let index = l1;
   let skip;
-  while(index.next !== null) {
+  while (index.next !== null) {
     if (alternator) {
       skip = index.next;
       index.next = l1;
@@ -36,7 +39,8 @@ function zip(l1, l2) {
     index.next = l2;
     index = index.next;
   }
-};
+  return start;
+}
 
 // let node1 = new Node(0);
 // node1.next = new Node(1);
