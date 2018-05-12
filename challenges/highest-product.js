@@ -28,7 +28,5 @@ function top(array) {
   return top;
 }
 
-numbers = [-40, 3, 20, -24, -19, -30, 15];
-console.log(highestProduct(numbers));
 
 module.exports = highestProduct;
