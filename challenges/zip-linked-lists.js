@@ -11,6 +11,31 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-};
+  // catch nonexistent heads
+  let currentNode1 = l1.head.next;
+  let currentNode2 = l2.head;
+  // stack for values replaced in l1
+  let stolenVals = [];
+  let l2Expired = false;
+  // loop through l1
+  while (currentNode1) {
+    // store the current value
+    stolenVals.push(currentNode1.value);
+    // set the current value by using length of stolenVals to control what is changed
+    if (stolenVals.length % 2 === 0 || l2Expired) {
+      // if even (or l2 is finished), set to last stored l1 value
+      currentNode1.value = stolenVals.pop();
+    } else {
+      // if odd, set to current l2 val
+      currentNode1.value = currentNode2.value;
+    }
+    // move down the l1 list
+    currentNode1 = currentNode1.next;
+    // move down the l2 list
+    currentNode2 = currentNode2.next;
+  }
+}
+
+zip(l1, l2);
 
 module.exports = {Node: Node, zip: zip};
