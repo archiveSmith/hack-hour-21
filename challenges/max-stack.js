@@ -7,7 +7,31 @@
  */
 
 function Stack() {
-  // body...
+  this.size = 0;
+  this.storage = {};
+  this.largest = -Infinity;
+
+  Stack.prototype.push = item => {
+    this.storage[this.size] = item;
+    if (item > this.largest) this.largest = item;
+    return (this.size += 1);
+  };
+
+  Stack.prototype.pop = () => {
+    if (this.size === 0) return null;
+    const toBeDeleted = this.storage[this.size - 1];
+    if (this.largest === toBeDeleted) {
+      delete this.storage[this.size - 1];
+      this.largest = -Infinity;
+      if (this.size > 0) for (let key in this.storage) {
+        if (this.storage[key] > this.largest) this.largest = this.storage[key];
+      }
+    } else delete this.storage[this.size - 1];
+    this.size -= 1;
+    return toBeDeleted;
+  };
+  
+  Stack.prototype.getMax = () => this.largest;
 }
 
 module.exports = Stack;
