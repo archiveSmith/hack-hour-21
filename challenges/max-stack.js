@@ -18,20 +18,23 @@ function Stack() {
   };
 
   Stack.prototype.pop = () => {
-    if (this.size === 0) return null;
+    if (this.size === 0) return undefined;
     const toBeDeleted = this.storage[this.size - 1];
-    if (this.largest === toBeDeleted) {
-      delete this.storage[this.size - 1];
-      this.largest = -Infinity;
-      if (this.size > 0) for (let key in this.storage) {
-        if (this.storage[key] > this.largest) this.largest = this.storage[key];
-      }
-    } else delete this.storage[this.size - 1];
+    delete this.storage[this.size - 1];
+    if (this.largest === toBeDeleted) this.newMax();
     this.size -= 1;
     return toBeDeleted;
   };
-  
-  Stack.prototype.getMax = () => this.largest;
+
+  Stack.prototype.newMax = () => {
+    this.largest = -Infinity;
+    if (this.size > 0)
+      for (let key in this.storage) {
+        if (this.storage[key] > this.largest) this.largest = this.storage[key];
+      }
+  };
+
+  Stack.prototype.getMax = () => (this.size === 0 ? undefined : this.largest);
 }
 
 module.exports = Stack;
