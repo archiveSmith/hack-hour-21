@@ -7,7 +7,21 @@
  */
 
 function Stack() {
-  // body...
+
+  const storage = [];
+  let max = undefined;
+
+  return {
+    push: (val) => {
+
+    },
+    pop: () => {
+
+    },
+    getMax: () => {
+
+    },
+  }
 }
 
 module.exports = Stack;
