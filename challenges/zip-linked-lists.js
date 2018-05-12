@@ -49,13 +49,13 @@ function zip(l1, l2) {
 module.exports = {Node: Node, zip: zip};
 
 
-// let l1 = new Node(5);
-// l1.next = new Node(4);
+let l1 = new Node(5);
+l1.next = new Node(4);
 // l1.next.next = new Node(3);
 
 // let l2 = new Node(2);
 // l2.next = new Node(1);
 // l2.next.next = new Node(0);
 
-// console.log(l1, l2)
+console.log(l1)
 // console.log(zip(l1, l2))
