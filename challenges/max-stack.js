@@ -30,10 +30,11 @@ Stack.prototype.pop = () => {
   if (this.max === popped) isMax = true;
   this.stack = this.stack.slice(0, this.length)
   if (isMax) this.max = Math.max(...this.stack); 
-  return this.stack;
+  return popped;
 }
 
 Stack.prototype.getMax = () => {
+  if (this.length === 0) return undefined;
   return this.max;
 }
 
@@ -44,5 +45,6 @@ module.exports = Stack;
 // console.log(stacky.push(3));
 // console.log(stacky.push(4));
 // console.log(stacky.getMax())
+// console.log(stacky.pop());
 // console.log(stacky.pop());
 // console.log(stacky.getMax())
