@@ -31,6 +31,7 @@ class Stack {
 
 let s = new Stack;
 
+
 console.log(s.push(33));
 console.log(s)
 console.log(s.push(2));
@@ -39,7 +40,6 @@ console.log(s.pop());
 console.log(s.push(9));
 console.log(s)
 console.log(s.getMax());
-
 
 
 module.exports = Stack;
