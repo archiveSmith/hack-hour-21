@@ -18,6 +18,7 @@ function Stack() {
     return this.storage.shift();
   };
   stack.getMax = function() {
+    if (this.storage.length === 0) return undefined;
     return this.storage.reduce((acc, curr) => {
       if (curr > acc) acc = curr;
       return acc;
@@ -32,6 +33,7 @@ function Stack() {
 // console.log(stackTest.push(2));
 // console.log(stackTest.push(20));
 // console.log(stackTest.push(3));
+// console.log(stackTest.push(20));
 // console.log(stackTest.pop());
 // console.log(stackTest.getMax());
 
