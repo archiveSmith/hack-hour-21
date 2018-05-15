@@ -14,8 +14,8 @@ function Node(value) {
 }
 
 function reverseLinkedList(head, arr = []) {
+  if (!head) return null;
   arr.push(head);
-
   if (head.next === null) {
     head.next = arr[arr.length - 2];
     console.log(arr);
