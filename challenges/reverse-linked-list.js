@@ -11,20 +11,23 @@
 function Node(value) {
   this.value = value;
   this.next = null;
+  this.previous = null;
 }
 
-function reverseLinkedList(head, arr = []) {
-  arr.push(head);
-
+function reverseLinkedList(head, oldHead) {
+  if (!head) return null;
+  head.previous = oldHead;
   if (head.next === null) {
-    head.next = arr[arr.length - 2];
-    console.log(arr);
+    head.next = head.previous;
+    head.previous = null;
     return head;
   }
   let tempNext = head.next;
-  head.next = arr[arr.length - 2];
+  head.next = head.previous;
+  head.previous = tempNext;
+  oldHead = head;
   head = tempNext;
-  return reverseLinkedList(head, arr);
+  return reverseLinkedList(head, oldHead);
 }
 
 module.exports = { Node: Node, reverseLinkedList: reverseLinkedList };
