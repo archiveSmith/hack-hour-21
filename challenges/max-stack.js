@@ -8,6 +8,21 @@
 
 function Stack() {
   // body...
+  this.stack = [];
+  this.length = 0;
+  this.maxValue = [-Infinity, -Infinity]
 }
+
+const push = (value) => {
+  stack.stack[stack.length] = value;
+  stack.length ++;
+  return stack.length;
+}
+
+const pop = () => {
+  
+}
+
+const getMax = () => (Stack.stack.sort((a, b) => b > a)[0])
 
 module.exports = Stack;
