@@ -12,9 +12,31 @@
  *
  * DO NOT USE THE BUILT IN REVERSE METHOD
  */
+//[A, B, C] length 3
+//[A, B, C, B] length 4
+//[A, B, C, B, A] length 5
+//[B, C, B, A] length 4
+//[C, B, A] length 3
+
 
 function reverseInPlace(array) {
-
+    if (array.length === 1) return array;
+    if (array.length === 2) {
+        array[2] = array[0];
+        array.shift();
+        return array;
+    
+    }
+    const originalLength = array.length
+    for (var i = 0; i < array.length; i++) {
+        if (array.length === (originalLength * 2 - 1)) break
+        array[array.length] = array[array.length - 2  - (2 * i)];
+    }
+    for (var i = 0; i < (array.length - originalLength); i++) {
+        array.shift()
+        array.shift()
+    }
+    return array;
 }
 
 module.exports = reverseInPlace;

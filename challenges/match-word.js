@@ -10,8 +10,16 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
-function matchWord(str) {
+const backwards = (str1) => {
+    return str1.split('').reverse().join().toString();
+}
 
+function matchWord(str) {
+    if (!str) return true;
+    let newStr = str.replace(/[^a-z]+/gi, '');
+    const words = newStr.split('');
+    // return newStr;
+    return words;
 }
 
 module.exports = matchWord;

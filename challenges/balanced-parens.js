@@ -24,8 +24,22 @@
  *
  */
 
-function balancedParens(input){
+// I: input is string
+// O: bool
 
-}
+//filter keep parens, curly brace, brackets, now parens-chars should be mirrored throughout array
+
+function balancedParens(input){
+    const arr = input.split('').filter(function(x) {
+        x === '(' || x === ')' || x === '[' || x === ']' || x === '{' || x === '}'
+    }
+    console.log('filtered input ' + arr)
+    for (let i = 0; i < arr.length; i++) {
+        if(arr[i] !== arr[arr.length - 1 - i]) return false;
+    }
+    return true;
+}  
+
+balancedParens('(');
 
 module.exports = balancedParens;
