@@ -14,7 +14,12 @@
  */
 
 function mergeArrays(arr1, arr2) {
-
+    if (!arr1[0]) return arr2;
+    if (!arr2[0]) return arr1;
+    
+    return arr1.concat(arr2).sort();
 }
 
 module.exports = mergeArrays;
+
+// console.log(mergeArrays([1, 2, 4, 5], [1, 2, 4, 5, 6, 7, 8, 4, 9]))
