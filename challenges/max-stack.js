@@ -40,11 +40,16 @@ Stack.prototype.getMax = () => {
 
 module.exports = Stack;
 
-// let stacky = new Stack();
-// console.log(stacky.push(2));
-// console.log(stacky.push(3));
-// console.log(stacky.push(4));
+let stacky = new Stack();
+
+// console.log(stacky.getMax());
+// console.log(stacky.push(10));
+// console.log(stacky.push(11));
+// console.log(stacky.push(12));
 // console.log(stacky.getMax())
 // console.log(stacky.pop());
+// console.log(stacky.getMax())
+// console.log(stacky.pop());
+// console.log(stacky.getMax())
 // console.log(stacky.pop());
 // console.log(stacky.getMax())
