@@ -14,7 +14,13 @@
  */
 
 function mergeArrays(arr1, arr2) {
+    arr1.forEach(element => {arr2.push(element);})
+    return arr2.sort(function(a, b){return a-b});
 
 }
+
+var my_array = [3,4,6,10,11,15,21];
+var another_array = [1,5,8,12,14,19];
+
 
 module.exports = mergeArrays;
