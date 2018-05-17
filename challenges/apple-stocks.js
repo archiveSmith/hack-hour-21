@@ -19,8 +19,7 @@ function bestProfit(stock_prices_yesterday) {
     let sell;
     let mxprof = 0;
     for(let i = 0; i < stock_prices_yesterday.length; i++){
-    let j = i;
-        for(let j = 0; j < stock_prices_yesterday.length; j++){
+        for(let j = i; j < stock_prices_yesterday.length; j++){
             let profit = stock_prices_yesterday[j] - stock_prices_yesterday[i];
             if(profit > mxprof){
                 mxprof = profit
