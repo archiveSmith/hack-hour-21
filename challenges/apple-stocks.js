@@ -14,17 +14,20 @@
 
 function bestProfit(stock_prices_yesterday) {
   const arr = stock_prices_yesterday;
+  if (!Array.isArray(arr)) return 0;
   // let subs = arr.reduce((acc, val) => acc.concat(acc.map(ele => [val, ...ele])), [[]]);
   // pair first price with all other prices, shift first price, compare new first price with all remaining prices
   // calculate highest profit with all the arrays of two numbers
   let pairs = [];
-  for (let i = 0; i < arr.length; i += 1) {
+  let length = arr.length;
+  for (let i = 0; i < length; i += 1) {
     let temp = arr[0];
     arr.shift();
     arr.forEach(ele => {
       pairs.push([temp, ele]);
     });
   }
+  // console.log(pairs);
   // pairs.forEach(ele => ele = ele[1] - ele[0]);
   return pairs.reduce((acc, next) => {
     let profit = next[1] - next[0];
@@ -32,5 +35,8 @@ function bestProfit(stock_prices_yesterday) {
     else return acc;
   }, 0);
 }
+
+const stocks = [500, 200, 300, 600, 100, 700, 1000, 50, 700, 20, 65, 900];
+console.log(bestProfit(stock));
 
 module.exports = bestProfit;
