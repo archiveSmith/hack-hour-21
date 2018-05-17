@@ -32,28 +32,8 @@ Stack.prototype.pop = function(){
 }
 
 Stack.prototype.getMax = function(){
-  let max = 0;
-  this.storage.forEach(x => {
-    if(x > this.max) max = x;
-  })
-  return max;
-}
-
-Stack.prototype.getMaxone = function(){
   return this.max[this.length-1];
 }
-
-
-
-let stack = new Stack()
-stack.push(3);
-stack.push(7);
-stack.push(5);
-stack.push(9);
-stack.push(6);
-stack.push(6);
-
-console.log(stack);
 
 
 
