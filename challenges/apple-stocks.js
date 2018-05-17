@@ -35,6 +35,8 @@ function bestProfit(stock_prices_yesterday) {
 }
 
 
+
+
 let arr = [1, 2348, 42, 535, 234, 67, 2323, 656, 854, 32432, 543, 212, 788, 2];
 
 console.log(bestProfit(arr));
