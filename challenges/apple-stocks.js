@@ -11,9 +11,30 @@
  *
  *  Return 0 if no profit is possible OR if input is invalid.
  */
+//want to sell at highest cost and buy at lowest cost
+//highest cost = biggest difference between indice and value, lowest cost = smallest difference (i think??)
+
 
 function bestProfit(stock_prices_yesterday) {
-
+  let bigNum = 0;
+  let lilNum = 1000000;
+  let finalNum = 0;
+  if (stock_prices_yesterday.length > 0 && !stock_prices_yesterday.some(isNaN)) {
+    for (let i = 0; i < stock_prices_yesterday.length; i++){
+      if (stock_prices_yesterday[i] > bigNum){
+        bigNum = stock_prices_yesterday[i];
+      }
+    }
+    for (let z = 0; z < stock_prices_yesterday.length; z++){
+      if (stock_prices_yesterday[z] < lilNum){
+        lilNum = stock_prices_yesterday[z];
+      }
+    }
+    finalNum = bigNum - lilNum;
+    return finalNum;
+  }
+  return 0;
 }
+
 
 module.exports = bestProfit;
