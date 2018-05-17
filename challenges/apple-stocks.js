@@ -12,8 +12,31 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+// you cannot buy in the future and sell in the past so the lower value must have a lower index and a higher value must have a higher index
 
+// Solution 1:
+// start at [0] and iterate to the end of the array. save the max difference as 'maxDiff' if the value at [0] is less than the other itterated values.
+// repeate iteration for all values
+
+function bestProfit(stock_prices_yesterday) {
+    if (!Array.isArray(stock_prices_yesterday)) {
+        return 0;
+    }
+
+    let maxDiff = 0;
+    for (let i = 0; i < stock_prices_yesterday.length; i += 1) {
+        for (let j = i + 1; j < stock_prices_yesterday.length; j += 1) {
+            if (stock_prices_yesterday[j] - stock_prices_yesterday[i] > maxDiff) {
+                maxDiff = stock_prices_yesterday[j] - stock_prices_yesterday[i];
+            }
+        }
+    }
+    return maxDiff;
 }
+
+
+let arr = [1, 2348, 42, 535, 234, 67, 2323, 656, 854, 32432, 543, 212, 788, 2];
+
+console.log(bestProfit(arr));
 
 module.exports = bestProfit;
