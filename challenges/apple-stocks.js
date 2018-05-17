@@ -13,7 +13,27 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
+    // const time = Object.keys(stock_prices_yesterday);
+    // const price = Object.values(stock_prices_yesterday);
+    let buy;
+    let sell;
+    let mxprof = 0;
+    for(let i = 0; i < stock_prices_yesterday.length; i++){
+    let j = i;
+        for(let j = 0; j < stock_prices_yesterday.length; j++){
+            let profit = stock_prices_yesterday[j] - stock_prices_yesterday[i];
+            if(profit > mxprof){
+                mxprof = profit
+            }
+        }
+    }
+    return mxprof;
+
+
+
 
 }
+
+
 
 module.exports = bestProfit;
