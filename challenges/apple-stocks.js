@@ -35,17 +35,17 @@ function bestProfit(stock_prices_yesterday) {
     localMaxes[stock_prices_yesterday.length - 1] = stock_prices_yesterday[stock_prices_yesterday.length - 1]
     : localMins[stock_prices_yesterday.length - 1] = stock_prices_yesterday[stock_prices_yesterday.length - 1];
   // Loop through mins and check profit
+  console.log('maxes', localMaxes);
+  console.log('mins', localMins);
   let profit = 0;
   for (let min in localMins) {
     for (let max in localMaxes) {
-      if (min < max && localMaxes[max] > localMins[min]) {
+      if (Number(min) < Number(max) && localMaxes[max] > localMins[min]) {
         if (localMaxes[max] - localMins[min] > profit) profit = localMaxes[max] - localMins[min];
       } 
     }
   }
   return profit;
 }
-
-console.log(bestProfit([100, 110, 220]));
 
 module.exports = bestProfit;
