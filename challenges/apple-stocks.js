@@ -36,7 +36,7 @@ function bestProfit(stock_prices_yesterday) {
   }, 0);
 }
 
-const stocks = [500, 200, 300, 600, 100, 700, 1000, 50, 700, 20, 65, 900];
-console.log(bestProfit(stock));
+// const stocks = [500, 200, 300, 600, 100, 700, 1000, 50, 700, 20, 65, 900];
+// console.log(bestProfit(stock));
 
 module.exports = bestProfit;
