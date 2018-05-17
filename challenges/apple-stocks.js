@@ -18,6 +18,9 @@ function bestProfit(stock_prices_yesterday) {
     let buy;
     let sell;
     let mxprof = 0;
+    if(Array.isArray(stock_prices_yesterday)){
+    
+    
     for(let i = 0; i < stock_prices_yesterday.length; i++){
         for(let j = i; j < stock_prices_yesterday.length; j++){
             let profit = stock_prices_yesterday[j] - stock_prices_yesterday[i];
@@ -26,6 +29,7 @@ function bestProfit(stock_prices_yesterday) {
             }
         }
     }
+}
     return mxprof;
 
 
