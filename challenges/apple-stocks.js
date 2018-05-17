@@ -12,8 +12,20 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
+function bestProfit(arr) {
+    
+    if (!Array.isArray(arr) || !arr[0]) return 0; 
 
+    let profits = arr.reduce((maxes, el, i, array) => {
+        let sub = array.slice(i);
+        let profit = Math.max(...sub) - el;
+        maxes.push(profit);
+        return maxes
+    }, []);
+    return Math.max(...profits);
 }
 
 module.exports = bestProfit;
+
+
+
