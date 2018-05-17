@@ -23,6 +23,8 @@ function bestProfit(stock_prices_yesterday) {
         return 0;
     }
 
+
+
     let maxDiff = 0;
     for (let i = 0; i < stock_prices_yesterday.length; i += 1) {
         for (let j = i + 1; j < stock_prices_yesterday.length; j += 1) {
