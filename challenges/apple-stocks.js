@@ -31,7 +31,9 @@ function bestProfit(stock_prices_yesterday) {
       }
     }
     finalNum = bigNum - lilNum;
-    return finalNum;
+    if (finalNum > 0){
+      return finalNum;
+    }
   }
   return 0;
 }
