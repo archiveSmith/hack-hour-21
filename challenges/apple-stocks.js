@@ -13,7 +13,33 @@
  */
 
 function bestProfit(stock_prices_yesterday) {
-
+    //purchase at low, and sell at high
+    //sort the array, but make sure to keep track of the indices
+    //
+    let stock = [];
+    // stock_prices_yesterday.forEach(((e) => { stock[stock_prices_yesterday.indexOf(e)] = e }));
+    let copy = stock_prices_yesterday.slice(-1);
+    copy.sort((a, b) => { return a - b });
+    // let highKey = Object.keys(stock).find(key => stock[key] === value);
+    for(let i = 0; i<copy.length; i++){
+        let winner = function(j) {return function(){console.log("this is j", copy.slice(j)); compare(copy.slice(j))}();
+        }(i);
+    };
+        console.log(stock);    
+    //return Math.max(stock)};
+    function compare(array) {
+        if (array.length === 0) { return stock }
+        if (array[array.length - 1] > array[0]) {
+            if (stock_prices_yesterday.indexOf(array[array.length - 1]) > stock_prices_yesterday.indexOf(array[0])) {
+                stock.push(array[array.length - 1] - array[0])
+            }
+            array.shift();
+            return compare(array);
+        }
+    }
 }
+
+
+console.log(bestProfit([40,45,3,25,200,20,560]));
 
 module.exports = bestProfit;
