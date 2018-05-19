@@ -12,8 +12,31 @@
 ******
 
 */
+//write a recursive function that returns (100-N)spaces and N asterisks
+	//base case: when n = 1
 
 function drawStairs(n) {
+	if (n === 1){
+		let stars = "*".repeat(n) + '\b';
+		console.log(stars);
+		return stars;
+	}
+	let spaces = "";
+	for(let s = 0; s<n.length-1; s++){
+		spaces = " ".repeat(n)
+
+	}
+	// function innerFunc(){
+	// 	let spaces = '';
+	// 	spaces += " ";
+	// 	console.log(spaces);
+	// 	return spaces;
+	// };
+	drawStairs(n-1);
+	let stars = spaces + "*".repeat(n) + '\b';
+	console.log(stars);
+	return;
+	
 
 }
 

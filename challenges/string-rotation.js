@@ -16,6 +16,21 @@ function isSubstring(s1, s2) {
 }
 
 function stringRotation(s1, s2) {
+	let compString = isSubstring(s1,s2)
+	if (!compString) {
+		let newS1 = s1.slice(1,s1.length-1);
+		let newS2 = s2.slice(0,s2.length-2);
+		return stringRotation(newS1,newS2)
+	} 
+	if(s1.length !== s2.length){
+		return false;
+	}
+	if(s1.length === 0 && s2.length === 0){
+		return false;
+	}
+	else{
+		return true;
+	}
 
 }
 

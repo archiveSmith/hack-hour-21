@@ -14,6 +14,23 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
+    let trace = head;
+    let newNode = new Node(head.value);
+    newNode.next = null;
+    trace = newNode;
+    while(trace.next !== null){
+        let nextNode = new Node(head.next.value);
+        trace = head;
+        nextNode.next = trace;
+        head = head.next;
+        trace = nextNode;
+    }
+    return trace;
+
+
+
+    //use the head of the list
+    //when getting to the end
 
 }
 

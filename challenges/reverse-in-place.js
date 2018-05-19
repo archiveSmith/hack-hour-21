@@ -14,6 +14,21 @@
  */
 
 function reverseInPlace(array) {
+	// base case: whenn array is 0 or 1, do not reverse and return
+	// recursively swapping the first and the last elements of the array;
+	if(array.length = 0){return};
+	if(array.length  = 1){return};
+	console.log("here we go");
+	array.shift();
+	array = array.splice(array.length - 1, 1);
+	return reverseInPlace(array);
+	var tmp = array[0];
+	array[0] = array[array.length - 1];
+	array[array.length - 1] = tmp;
+	console.log("here is the reversed array");
+	console.log(array);
+	return array;
+
 
 }
 
