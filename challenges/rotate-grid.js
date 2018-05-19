@@ -17,7 +17,18 @@
  */
 
 function rotateGrid(grid, n) {
-
+  const output = JSON.parse(JSON.stringify(grid));
+  console.log(output);
+  for (let i = 0; i < grid.length; i += 1) {
+    for (let j = 0; j < grid.length; j += 1) {
+      output[j][Math.abs(i - n)] = grid[i][j];
+    }
+  }
+  output.forEach((a) => a.shift());
+  return output;
 }
+
+// const sampleGrid = [[1,2,3],[4,5,6],[7,8,9]];
+// console.log(rotateGrid(sampleGrid, 3));
 
 module.exports = rotateGrid;
