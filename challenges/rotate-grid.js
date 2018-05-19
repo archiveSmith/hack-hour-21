@@ -17,7 +17,15 @@
  */
 
 function rotateGrid(grid, n) {
-
+  grid = grid.reverse();
+  for (let r = 0; r < n; r += 1) {
+    for (let i = 0; i < r; i += 1) {
+      const target = grid[r][i];
+      grid[r][i] = grid[i][r];
+      grid[i][r] = target;
+    }
+  } 
+  return grid;
 }
 
 module.exports = rotateGrid;
