@@ -16,6 +16,8 @@
  * BONUS: Do this in place
  */
 
+
+ //REFACTOR THIS FOR MATRIX MULTIPLICATION!!!
 function rotateGrid(grid, n) {
   let newGrid = [];
   for (let i = 0; i < grid.length; i++){
