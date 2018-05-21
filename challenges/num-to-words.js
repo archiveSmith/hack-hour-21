@@ -61,6 +61,7 @@ function numToWords(num, str = "") {
       "Octillion",
       "Nonillion"
     ];
+    if (num === 0) return str + 'Zero';
     if (num < 20) return str + low[num];
     if (num < 100) {
       num = num.toString().split("");
