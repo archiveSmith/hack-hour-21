@@ -18,10 +18,10 @@ const isPalin = (str1) => {
 
 
 function permPalin(str2) {
-  //run isPalin on pieces of str2
+  if (str2.length === 1) return true;
   for (let i = 0; i < str2.length - 1; i++) {
     console.log(str2.substring(i));
-    if(isPalin(str2.substring(i + 1))) return true;
+    if(isPalin(str2.substring(i))) return true;
   }
   return false;
 }
