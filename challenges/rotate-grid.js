@@ -33,10 +33,10 @@ function rotateGrid(grid, n) {
 
 }
 
-// const grid = [[1, 2, 3],
-//               [4, 5, 6],
-//               [7, 8, 9]]
+const grid = [[1, 2, 3],
+              [4, 5, 6],
+              [7, 8, 9]]
 
-// console.log(rotateGrid(grid, 3));
+console.log(rotateGrid(grid, 3));
 
 module.exports = rotateGrid;
