@@ -9,8 +9,19 @@
  *
  */
 
+ 
+
 function permPalin(str) {
-	
+    let count = str.split('').reduce((count, char) => {
+        count[char] = (count[char] || 0) + 1
+        return count;
+    }, {});
+
+    let odd = 0;
+    Object.values(count).forEach(el => {
+        if (el % 2) odd++;
+    });
+    return odd === 0 || odd === 1;
 }
 
 module.exports = permPalin;
