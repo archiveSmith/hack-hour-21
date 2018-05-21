@@ -18,10 +18,12 @@ function permPalin(str) {
     }, {});
 
     let odd = 0;
+
     Object.values(count).forEach(el => {
         if (el % 2) odd++;
     });
-    return odd === 0 || odd === 1;
+
+    return odd <= 1;
 }
 
 module.exports = permPalin;
