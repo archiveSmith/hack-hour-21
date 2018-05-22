@@ -10,7 +10,12 @@
  */
 
 function permPalin(str) {
-	
+    let strLenght = str.length;
+    let splitStr = str.split('');
+
+    splitStr.reduce(function (acc, curr) {
+
+    }, {})
 }
 
 module.exports = permPalin;
