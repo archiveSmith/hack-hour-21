@@ -57,10 +57,10 @@ class Stack {
 * Queue Class
 */
 
-
-var Stack1 = [];
-var Stack2 = [];
-
+function Queue() {
+  var Stack1 = [];
+  var Stack2 = [];
+}
 
 function enqueue(element) {
   Stack1.push(element);
