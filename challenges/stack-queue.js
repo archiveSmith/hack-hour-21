@@ -6,18 +6,18 @@
 function Stack() {
   this.contents = [];
   this.length = 0;
-}
+};
 
 Stack.prototype.push = function(value) {
   this.contents[this.length] = value;
   return this.length++;
-}
+};
 
 Stack.prototype.pop = function() {
   let removed = this.contents[--this.length];
   this.contents.splice(this.length, 1);
   return removed;
-}
+};
 
 
 /**
@@ -26,24 +26,24 @@ Stack.prototype.pop = function() {
 
 
 function Queue() {
-  this.enqueue = new Stack();
-  this.dequeue = new Stack();
-}
+  this.estack = new Stack();
+  this.dstack = new Stack();
+};
 
 Queue.prototype.enqueue = function(value) {
-  this.enqueue.push(value);
-}
+  this.estack.push(value);
+};
 
 Queue.prototype.dequeue = function(value) {
-  if (!this.enqueue.length && !this.dequeue.length) return 'error';
-  if (!this.dequeue.length) {
-    let i = this.enqueue.length;
-    while (this.enqueue.length) {
-      this.dequeue.push(this.enqueue.contents[i]);
+  if (!this.estack.length && !this.dstack.length) return 'error';
+  if (!this.dstack.length) {
+    let i = this.estack.length;
+    while (this.estack.length) {
+      this.dstack.push(this.estack.contents[i]);
       i--;
     }
-    return this.dequeue.pop()
-  }
-}
+    return this.dstack.pop()
+  };
+};
 
 module.exports = {Stack: Stack, Queue: Queue};
