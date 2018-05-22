@@ -6,10 +6,10 @@
 function Stack() {
   this.store = [];
   this.push = function (data) {
-    this.store.push(data);
+    this.store.unshift(data);
   };
   this.pop = function (data) {
-    return this.store.pop();
+    return this.store.shift();
   }
 }
 
