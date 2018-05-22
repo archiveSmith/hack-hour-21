@@ -42,7 +42,7 @@ Queue.prototype.dequeue = function(value) {
       this.dstack.push(this.estack.contents[i]);
       i--;
     }
-    return this.dstack.pop()
+    return this.dstack.pop(); 
   };
 };
 
