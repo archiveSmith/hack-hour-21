@@ -41,6 +41,7 @@ class Queue {
     }
 
     dequeue(val) {
+        if (!this.stackCount) return undefined;
         for (let i = 0; i < this.stackCount; i++) {
             this.two.push(this.one.pop())
         }
