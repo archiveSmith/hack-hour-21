@@ -2,19 +2,12 @@
  * Create a stack.Then create a queue using two stacks.
  */
 
-
-function Stack() {
-
-}
-
+function Stack() {}
 
 /**
-* Queue Class
-*/
+ * Queue Class
+ */
 
+function Queue() {}
 
-function Queue() {
-
-}
-
-module.exports = {Stack: Stack, Queue: Queue};
+module.exports = { Stack, Queue };
