@@ -22,7 +22,7 @@ function Stack() {
 function Queue() {
   this.in = new Stack();
   this.out = new Stack();
-  this.queue = function (data) {
+  this.enqueue = function (data) {
     this.in.push(data);
   };
   this.dequeue = function (data) {
@@ -39,9 +39,9 @@ function Queue() {
 }
 
 // const q = new Queue();
-// q.queue(1);
-// q.queue(2);
-// q.queue(3);
+// q.enqueue(1);
+// q.enqueue(2);
+// q.enqueue(3);
 // console.log(q.dequeue());
 // console.log(q.dequeue());
 // console.log(q.dequeue());
