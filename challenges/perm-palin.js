@@ -30,6 +30,4 @@ function permPalin(str) {
     return false;
 }
 
-
-
 module.exports = permPalin;
