@@ -3,7 +3,17 @@
  */
 
 function twoSum(arr, n) {
-
-}
+    if (arr.length < 2) {
+      return false;
+    }
+    var curr;
+    for (var i=0; i<arr.length; i++) {
+      curr = arr[i];
+      if (arr.indexOf(n-curr) !== -1 && arr.indexOf(n-curr) !== i) {
+        return true;
+      }
+    }
+    return false;
+  }
 
 module.exports = twoSum;
