@@ -14,7 +14,16 @@
 */
 
 function drawStairs(n) {
+    let result = [];
 
+    for (let i = 1; i <= n; i += 1) {
+        let pads = Array(n - i).fill(' ');
+        let steps = Array(i).fill('*');
+        let currStair = '';
+
+        result.push(pads.concat(steps).join(''));
+    }
+    return result.join('\n');
 }
 
 
