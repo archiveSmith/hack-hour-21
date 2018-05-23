@@ -28,7 +28,7 @@ function twoSum(arr, n) {
 }
 
 // console.log(twoSum([1,1,1,1,1,1,2,1,3], 3));
-console.log(twoSum([1,-1,1,1,1,1,2,1,0], 3));
+// console.log(twoSum([1,-1,1,1,1,1,2,1,0], 3));
 // console.log(twoSum([1,2], 3));
 
 
