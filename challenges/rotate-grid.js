@@ -17,7 +17,17 @@
  */
 
 function rotateGrid(grid, n) {
-
+  const newGrid = [];
+  let iterator = 1;
+  for (let i = 0; i < grid.length; i++){
+    console.log(grid[i]);
+    if (i === n - 1){
+      grid[0][0] = grid[i][0];
+      while (i >= 0){
+        grid[i + iterator] = grid[i][iterator];
+      }
+    }
+  }
 }
 
 module.exports = rotateGrid;

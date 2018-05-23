@@ -15,6 +15,18 @@
 
 function mergeArrays(arr1, arr2) {
 
+  const finalArr = [];
+  for (let i = 0; i < arr1.length; i++){
+    finalArr.push(arr1[i]);
+  }
+  for (let z = 0; z < arr2.length; z++){
+    finalArr.push(arr2[z]);
+  }
+  
+  finalArr.sort(function(a,b){
+    return a - b;
+  });
+  return finalArr;
 }
 
 module.exports = mergeArrays;

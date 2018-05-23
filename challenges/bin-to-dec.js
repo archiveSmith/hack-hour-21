@@ -12,9 +12,20 @@
  * Extension:
  * Write a function that converts a decimal number to binary (then maybe hexadecimal)
  */
+//convert string to array
+//loop backwards through array
+//add that number * 2 ^ whatever power it needs (increments backwards) to zero
+//return the final number
 
 function binToDec(binary) {
-
-}
+    const binaryArray = binary.split('');
+    let final = 0;
+    let exponent = 0;
+    for (let i = binaryArray.length - 1; i >= 0; i--){
+      final = final + binaryArray[i] * Math.pow(2, exponent);
+      exponent++;
+    }
+    return final;
+  }
 
 module.exports = binToDec;
