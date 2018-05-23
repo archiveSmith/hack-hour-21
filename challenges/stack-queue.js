@@ -35,12 +35,10 @@ Queue.prototype.enqueue = function(value) {
 };
 
 Queue.prototype.dequeue = function(value) {
-  if (!this.estack.length && !this.dstack.length) return 'error';
+  if (!this.estack.length && !this.dstack.length) return undefined;
   if (!this.dstack.length) {
-    let i = this.estack.length;
     while (this.estack.length) {
       this.dstack.push(this.estack.contents[i]);
-      i--;
     }
     return this.dstack.pop(); 
   };
