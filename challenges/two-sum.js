@@ -12,8 +12,9 @@ function twoSum(arr, n) {
       pairs.push([temp, ele]);
     });
   }
+  console.log(pairs);
   for (let i = 0; i < pairs.length; i += 1) {
-    if (pairs[0] + pairs[1] === n) return true;
+    if (pairs[i][0] + pairs[i][1] === n) return true;
   }
   return false;
 }
