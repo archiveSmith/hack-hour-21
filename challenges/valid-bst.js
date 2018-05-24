@@ -73,18 +73,18 @@ function validBST(tree) {
 
 
 // make a test tree
-let t = new BinaryTree(6);
-t.left = new BinaryTree(5);
-t.right = new BinaryTree(9);
+// let t = new BinaryTree(6);
+// t.left = new BinaryTree(5);
+// t.right = new BinaryTree(9);
 
-console.log(t);
-t.left.left = new BinaryTree(4);
+// console.log(t);
+// t.left.left = new BinaryTree(4);
 // t.left.left.left = new BinaryTree(2);
 
 // t.right.left = new BinaryTree(8);
-t.right.right = new BinaryTree(1); 
+// t.right.right = new BinaryTree(1); 
 
-console.log(validBST(t));
+// console.log(validBST(t));
 
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
