@@ -51,7 +51,7 @@ function validBST_A(tree) {
 function validBST(tree) {
   
   // let retVal = true;
-  console.log(tree.left, tree.value, tree.right);
+  // console.log(tree.left, tree.value, tree.right);
   if (tree.left) {
     if ( tree.left.value < tree.value) {
       return validBST(tree.left);
