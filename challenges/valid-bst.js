@@ -12,8 +12,79 @@ function BinaryTree(val) {
     this.right = null;
 }
 
-function validBST(tree) {
 
+function validBST_A(tree) {
+
+  // check if left is there
+  if (tree.left) {
+    console.log(tree.left.value, tree.value);
+    if (tree.left.value < tree.value) {
+      // still valid
+      // walk down left
+      validBST(tree.left)
+    } else {
+      return false;
+    }
+  } else {
+    return;
+  }
+  
+  // check right
+  if (tree.right) {
+    console.log(tree.right.value, tree.value);
+    if (tree.right.value > tree.value) {
+      // still valid...
+      // walk down right
+      validBST(tree.right);
+    } else {
+      return false;
+    }
+  } else {
+    return;
+  }
+  
+  return true;
+  
 }
+
+
+function validBST(tree) {
+  
+  // let retVal = true;
+  // console.log(tree.left, tree.value, tree.right);
+  if (tree.left) {
+    if ( tree.left.value < tree.value) {
+      return validBST(tree.left);
+    } else {
+      return false;
+    }
+  }
+  
+  if (tree.right) {
+    if (tree.right.value > tree.value) {
+      return validBST(tree.right);
+    } else {
+      return false;
+    }
+  }
+  
+  return true;
+}
+
+
+// make a test tree
+let t = new BinaryTree(6);
+t.left = new BinaryTree(5);
+t.right = new BinaryTree(9);
+
+console.log(t);
+t.left.left = new BinaryTree(4);
+// t.left.left.left = new BinaryTree(2);
+
+// t.right.left = new BinaryTree(8);
+t.right.right = new BinaryTree(1); 
+
+console.log(validBST(t));
+
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
