@@ -15,4 +15,7 @@ function twoSum(arr, n) {
   return false
 }
 
+let nums = [5, 4, 3, 29, 30, 21, 18, 35, 2, 6]
+console.log(twoSum(nums, 44)); //true
+
 module.exports = twoSum;
