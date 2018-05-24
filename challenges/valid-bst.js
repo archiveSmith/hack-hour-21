@@ -12,17 +12,19 @@ function BinaryTree(val) {
   this.right = null;
 }
 
-const treeArray = [];
 
-function inOrderTraversal(tree) {
+function inOrderTraversal(tree, treeArray) {
   if (tree.left) inOrderTraversal(tree.left);
   treeArray.push(tree.value);
   if (tree.right) inOrderTraversal(tree.right);
 }
 
 function validBST(tree) {
+  // Guard clauses
+  if (tree.left === null && tree.right === null) return true;
   // Populate treeArray with values from inOrderTraversal
-  inOrderTraversal(tree);
+  const treeArray = [];
+  inOrderTraversal(tree, treeArray);
   // Check sorted
   for (let i = 0; i < treeArray.length - 1; i += 1) {
     if (!treeArray[i] < treeArray[i + 1]) return false;
