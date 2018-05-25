@@ -18,12 +18,12 @@ function union(a, b) {
 function gcd(a, b) {
   const aDiv = {};
   const bDiv = {};
-  for (let i = 1; i < a; i += 1) {
+  for (let i = 1; i < a + 1; i += 1) {
     if (a % i === 0) {
       aDiv[i] = ' ';
     }
   }
-  for (let j = 1; j < b; j += 1) {
+  for (let j = 1; j < b + 1; j += 1) {
     if (b % j === 0) {
       bDiv[j] = ' ';
     }
@@ -36,6 +36,6 @@ function gcd(a, b) {
   return max;
 }
 
-// console.log(gcd(20, 25));
+// console.log(gcd(24, 6));
 
 module.exports = gcd;
