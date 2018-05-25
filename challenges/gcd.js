@@ -7,8 +7,10 @@
  *
  */
 
-function gcd(a, b) {
-
+function gcd(a, b, n = Math.min(a, b)) {
+  if (n < 0) return undefined;
+  if (a % n === 0 && b % n === 0) return n;
+  return gcd(a, b, n - 1);
 }
 
 module.exports = gcd;
