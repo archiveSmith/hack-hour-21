@@ -10,6 +10,7 @@
 function gcd(a, b) {
     const lesser = a > b ? b : a;
     const greater = a < b ? b : a; 
+    if (greater % lesser === 0) return lesser;
     for (let i = 0; i < Math.floor(lesser / 2); i += 1) {
       const divisor = Math.floor(lesser / 2) - i;
       if (lesser % divisor === 0) {
@@ -20,3 +21,5 @@ function gcd(a, b) {
   }
 
 module.exports = gcd;
+
+console.log(gcd(24, 6));
