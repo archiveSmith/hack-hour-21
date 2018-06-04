@@ -11,6 +11,25 @@
 
 function countTwos(num) {
 
+    let i = 0;
+    let totalTwos = 0;
+    while (i <= num) {
+
+        String(i).split('').forEach((c) => {
+            if (c === '2') {
+                totalTwos += 1;
+            }
+        });
+
+        i += 1;
+
+    }
+
+    return totalTwos;
+
 }
+
+// console.log(countTwos(1000));
+// console.log(countTwos(13));
 
 module.exports = countTwos;

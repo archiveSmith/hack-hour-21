@@ -7,7 +7,29 @@
  *
  */
 
+function findDivs(n) {
+    const result = [];
+    
+    for(let i = 1; i <= n; i += 1) {
+        if (n % i === 0) {
+            result.push(i);
+        }
+    }
+    return result;
+}
+
 function gcd(a, b) {
+
+    const aDivs = findDivs(a);
+    const bDivs = findDivs(b);
+
+    [aDivs, bDivs].reduce((a, c) => {
+        
+
+
+    }, []);
+
+
 
 }
 
