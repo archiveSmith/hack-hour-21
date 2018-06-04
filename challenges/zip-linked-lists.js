@@ -11,23 +11,16 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  while(l1 !== null && l2 !== null){
-    let newNode = new Node(l1.value);
-    newNode.next = 
-    
+  while(l1.value !== null && l2.value !== null){
+    let newNode = new Node(l2.value);
+    newNode.next = l1.next;
+    l1.next = newNode;
+    l2 = l2.next;
+    l1 = newNode.next;
   }
-  // this.head = null;
-  // this.tail = null;
-  // while(this.tail.next !== l2.tail)
-  // if(this.head === null){
-  //   let newNode = new Node(l1.head.value);
-  //   newNode.next = l2.head
-  //   this.head = newNode;
-  //   this.tail = newNode;
-  // } else{
-  //   let nextNode = new Node(l2.head.value)
-  //   nextNode.next = l1.head.next
-  //   this.tail = nextNode
+  if(l1.value === null) {
+    l1.next = l2;
+  }
 
 
     
@@ -35,6 +28,6 @@ function zip(l1, l2) {
   //while this.next is not null, keeping zipping
 
   
-};
+
 
 module.exports = {Node: Node, zip: zip};
