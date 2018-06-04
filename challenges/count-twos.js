@@ -8,9 +8,22 @@
 // countTwos(1000);  -> 300
 // countTwos(11420);  -> 4483
 
+function parseNum(num) {
+  const stringArr = num.toString().split('');
+  let numTwos = 0;
+  stringArr.forEach((n) => {
+    if (n === '2') numTwos += 1;
+  });
+  return numTwos;
+}
 
 function countTwos(num) {
-
+  if (num < 2) return 0;
+  let numTwos = 0;
+  for (let i = 1; i < num + 1; i += 1) {
+    numTwos += parseNum(i);
+  }
+  return numTwos;
 }
 
 module.exports = countTwos;
