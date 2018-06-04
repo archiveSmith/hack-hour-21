@@ -10,7 +10,13 @@
 
 
 function countTwos(num) {
-
-}
+    let splitNum = num.toString().split('');
+    return splitNum.reduce((acc, curr) => {
+      if (curr === '2') {
+        acc++;
+      }
+      return acc;
+    }, 0);
+  }
 
 module.exports = countTwos;
