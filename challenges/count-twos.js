@@ -10,7 +10,24 @@
 
 
 function countTwos(num) {
+  let count = 0;
 
+  for (let i = 2; i < num; i += 1) {
+    let iterator = i;
+    while (iterator > 0) {
+      const last = iterator % 10;
+      if (last === 2) count += 1;
+      iterator = Math.floor(iterator / 10);
+    }
+  }
+
+  return count;
 }
+
+// console.log(countTwos(1));
+// console.log(countTwos(3));
+// console.log(countTwos(13));
+// console.log(countTwos(1000));
+// console.log(countTwos(11420));
 
 module.exports = countTwos;
