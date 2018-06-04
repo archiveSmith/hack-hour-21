@@ -9,8 +9,18 @@
 // countTwos(11420);  -> 4483
 
 
-function countTwos(num) {
+function countTwos(num, count = 0) {
+    
+    do {
+        let twosPerNum = String(num).split('').reduce((counter, digit) => {
+            if (digit == 2) counter = (Number(counter) || 0) + 1;
+            return counter;
+        }, 0)
 
+        count += twosPerNum;
+    } while (num--)
+
+    return count;
 }
 
 module.exports = countTwos;
