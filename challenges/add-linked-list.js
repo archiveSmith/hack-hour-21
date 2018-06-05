@@ -18,7 +18,8 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
-
+  console.log('linked list 1 is ', l1);
+  console.log('linked list 1 is ', l2);
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
