@@ -17,8 +17,41 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
-
+function addLinkedList(l1, l2, carried = 0, nlHead = new Node(0), nlCurrent = nlHead) {
+  // console.log(l1);
+  // console.log(l2);
+  // if there are no more nodes, check for carried over 1 and add it if neccessary and return new linked list
+  if (l1 === null && l2 === null && !carried) return nlHead;
+  if (l1 === null && l2 === null) {
+    nlCurrent.next = new Node(1);
+    return nlHead;
+  }
+  // add the two current nodes, retrain the carried over 1s
+  const added = l1.value + l2.value + carried;
+  if (carried > 0) carried = 0;
+  if (added < 10) nlCurrent.value = added;
+  else {
+    nlCurrent.value = added - 10;
+    carried = 1;
+  }
+  if (l1.next || l2.next || carried) nlCurrent.next = new Node(0);
+  // recurse through with nexts
+  return addLinkedList(l1.next, l2.next, carried, nlHead, nlCurrent.next)
 }
+
+// let a1 = new Node(2);
+// let a2 = new Node(1);
+// let a3 = new Node(5);
+// a1.next = a2;
+// a2.next = a3;
+
+// let b1 = new Node(5);
+// let b2 = new Node(9);
+// let b3 = new Node(2);
+// b1.next = b2;
+// b2.next = b3;
+
+// console.log(addLinkedList(a1, b1));
+
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
