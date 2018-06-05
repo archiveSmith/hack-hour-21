@@ -8,9 +8,22 @@
 // countTwos(1000);  -> 300
 // countTwos(11420);  -> 4483
 
+// 1,2,3,4,5,6,7,8,9,10
+// 11,12...
+// 21,22
 
+// brute force
 function countTwos(num) {
-
+  let count = 0;
+  for(let n=0; n<=num; n++){
+    let s = n.toString();
+    count += (s.split(2).length - 1);
+  }
+  return count;
 }
+
+// console.log(countTwos(11420));
+
+
 
 module.exports = countTwos;
