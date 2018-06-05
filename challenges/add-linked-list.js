@@ -12,29 +12,30 @@
  *
  */
 
-function Node(val) {
-  this.value = val;
-  this.next = null;
+function Node(value, next = null) {
+  return { value, next }
 }
 
-function addLinkedList(l1, l2) {
-  const summation = Node();
+function addLinkedList() {
+  const summation = Node(0);
 
-  let itterateL1 = l1;
-  let itterateL2 = l2;
+  let addNext = [...arguments].filter(val => !!val);
+  let itterator = summation;
 
-  while (itterateL1 || itterateL2) {
-    const sum = itterateL1.value + itterateL2.value;
-    const remainder = sum % 10;
-    const carry = (sum - remainder) / 10;
+  while (addNext.length > 0) {
 
-    summation.value = remainder;
+    const localSum = addNext.reduce((sum, cur) => sum += cur.value, 0);
+    const totalSum = localSum + itterator.value; // includes any carryover, if applicable
+    const remainder = totalSum % 10;
+    const carry = Math.floor(totalSum / 10);
 
-    itterateL1 = l1.next;
-    itterateL2 = l2.next;
+    itterator.value = remainder;
 
-    if (itterateL1 || itterateL2 || carry > 0) {
-      summation.next = Node(carry);
+    addNext = addNext.map(val => val.next).filter(val => !!val);
+
+    if (addNext.length > 0 || carry > 0) {
+      itterator.next = Node(carry);
+      itterator = itterator.next;
     }
 
   }
