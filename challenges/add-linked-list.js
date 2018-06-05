@@ -18,7 +18,27 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  const summation = Node();
 
+  let itterateL1 = l1;
+  let itterateL2 = l2;
+
+  while (itterateL1 || itterateL2) {
+    const sum = itterateL1.value + itterateL2.value;
+    const remainder = sum % 10;
+    const carry = (sum - remainder) / 10;
+
+    summation.value = remainder;
+
+    itterateL1 = l1.next;
+    itterateL2 = l2.next;
+
+    if (itterateL1 || itterateL2 || carry > 0) {
+      summation.next = Node(carry);
+    }
+
+  }
+  return summation;
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
