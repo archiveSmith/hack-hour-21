@@ -16,11 +16,11 @@ function countTwos(num, count = 0) {
             if (digit == 2) counter = (Number(counter) || 0) + 1;
             return counter;
         }, 0)
-
         count += twosPerNum;
     } while (num--)
 
     return count;
 }
 
+console.log(countTwos(11420))
 module.exports = countTwos;
