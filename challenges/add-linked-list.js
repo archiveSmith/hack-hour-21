@@ -17,8 +17,64 @@ function Node(val) {
   this.next = null;
 }
 
+// are the linked lists always going to be the same length?
+
 function addLinkedList(l1, l2) {
 
+    let carry = 0;
+    let currNode1 = l1;
+    let currNode2 = l2;
+    let outputNode;
+    let currOutputNode;
+
+    let val = currNode1.value + currNode2.value;
+    if (val > 9) {
+        carry = Math.floor(val / 10);
+        val = val % 10;
+    }
+
+    outputNode = new Node(val);
+    currOutputNode = outputNode;
+    currNode1 = currNode1.next;
+    currNode2 = currNode2.next;
+
+    while (currNode1 !== null) {
+        let val = currNode1.value + currNode2.value;
+        if (carry > 0) {
+            val = val + carry;
+            carry = 0;
+        }
+        if (val > 9) {
+            carry = Math.floor(val / 10);
+            val = val % 10;
+        }
+        currOutputNode.next = new Node(val);
+        currOutputNode = currOutputNode.next;
+
+        currNode1 = currNode1.next;
+        currNode2 = currNode2.next;
+    }
+
+    if (carry > 0) {
+        currOutputNode.next = new Node(carry);
+    }
+
+    return outputNode;
 }
 
+let list1 = new Node(9);
+list1.next = new Node(9);
+list1.next.next = new Node(9);
+
+let list2 = new Node(9);
+list2.next = new Node(9);
+list2.next.next = new Node(9);
+
+// console.log(list1);
+// console.log(list2);
+
+// console.log(JSON.stringify(addLinkedList(list1, list2)));
+
 module.exports = {Node: Node, addLinkedList: addLinkedList};
+
+
