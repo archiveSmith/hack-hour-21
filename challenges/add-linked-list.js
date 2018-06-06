@@ -23,8 +23,8 @@ function addLinkedList(l1, l2) {
   let nextL1 = l1;
   let nextL2 = l2;
 
-  console.log(nextL1);
-  console.log(nextL2);
+  // console.log(nextL1);
+  // console.log(nextL2);
 
   // handle cases where our inputs are undefined
   if ( !nextL1 && !nextL2 ) return undefined;
@@ -51,7 +51,7 @@ function addLinkedList(l1, l2) {
     let nextL2value = nextL2 ? nextL2.value : 0;
 
     digitSum = nextL1value + nextL2value;
-    console.log(digitSum);
+    // console.log(digitSum);
     if (digitSum > 9) {
       carry = 1;
       currSumNode.value = digitSum - 10;
