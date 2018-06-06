@@ -18,6 +18,28 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  prev = null;
+  curr = null;
+  let carry = 0;
+  while (l1.value !== null && l2.value !== null){
+    let carry = 0;
+    let newNode = new Node((l1.value + l2.value)%10);
+    prev = newNode;
+    curr.next = newNode;
+    if(Math.floor(newNode.value / 10 !== 0)){
+      carry = Math.floor(newNode.value/10);
+    }
+    l1 = carry + l1.next;
+    l2 = l2.next;
+    curr = newNode;
+  }
+  if(l1.value === null && l2.value === null && carry !== 0){
+    let newNode = new Node(carry);
+  }
+  else if (l1.value === null && carry !== 0){
+    
+  }
+
 
 }
 
