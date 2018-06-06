@@ -6,24 +6,25 @@
 3) The difference between heights of left subtree and right subtree is not more than 1.
 example: http://www.geeksforgeeks.org/wp-content/uploads/balanced_tree.GIF
  */
-class BinaryTree {
-  constructor(value) {
-    this.value = value;
-    this.left = null;
-    this.right = null;
-  }
-  insertLeft(value) {
-    this.left = new BinaryTree(value);
-    return this.left;
-  }
-  insertRight(value) {
-    this.right = new BinaryTree(value);
-    return this.right;
-  }
+
+function BinaryTree(value) {
+  this.value = value;
+  this.left = null;
+  this.right = null;
 }
 
+BinaryTree.prototype.insertLeft = function (value) {
+  this.left = new BinaryTree(value);
+  return this.left;
+};
+
+BinaryTree.prototype.insertRight = function (value) {
+  this.right = new BinaryTree(value);
+  return this.right;
+};
 
 function superbalanced(node, depth = 0, depths = []) {
+  console.log(`node: ${node}, depth: ${depth}, depths: ${depths}`);
   if (!node.left && !node.right) {
     if (depths.indexOf(depth) < 0) {
       depths.push(depth);
