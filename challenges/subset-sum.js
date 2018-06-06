@@ -9,7 +9,26 @@
  */
 
 function subsetSum(array, target) {
+<<<<<<< HEAD
+    for(let i = 0; i < array.length; i++){
+        let sum = 0;
+        let nwar = array.slice(i).concat(array.slice(0, i));
+        for(let j = 0; j < nwar.length; j++){
+                sum = sum + nwar[j];
+                if (sum === target){
+                    return true; 
+            }
+        }  
+    }
+    return false;
+=======
+>>>>>>> 91abb9dffde40c55783ca3b1d97c0da9bf1b9e42
 
 }
 
 module.exports = subsetSum;
+<<<<<<< HEAD
+
+console.log(subsetSum([8, -2, 1, -3], 6));
+=======
+>>>>>>> 91abb9dffde40c55783ca3b1d97c0da9bf1b9e42

@@ -25,7 +25,31 @@
  */
 
 function balancedParens(input){
+    arr = [];
+    let symbols = ["(", ")", "{", "}", "[", "]"];
+    for(let k = 0; k < input.length; k++){
+        if (symbols.includes(input[k])){
+            arr.push(input[k])
+        }
+    }
 
+    let j = arr.length-1;
+    for(let i = 0; i <= (arr.length-1)/2; i++){
+        console.log(arr[i], arr[j])
+        if(arr[i] === "(" && arr[j] !== ")"){
+            return false;
+        }
+        if(arr[i] === "{" && arr[j] !== "}"){
+            return false;
+        }
+        if(arr[i] === "[" && arr[j] !== "]"){
+            return false;
+        }
+        j--;
+    }
+    return true;
 }
 
+
+console.log(balancedParens(' var wow  = { yo: thisIsAwesome() }'));
 module.exports = balancedParens;
