@@ -28,7 +28,7 @@ BinaryTree.prototype.height = (count = 0) => {
 
 }
 
-function superbalanced(tree) {
+function isBalanced(tree) {
   let rightHeight = 0;
   let leftHeight = 0;
 
@@ -39,6 +39,13 @@ function superbalanced(tree) {
   else leftHeight = tree.left.height();
 
   return Math.abs(leftHeight - rightHeight) < 1;
+}
+
+function superbalanced(tree){
+  if(isBalanced(tree.left) && isBalanced(tree.right)){
+    return true;
+  }
+  else return false;
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
