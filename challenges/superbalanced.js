@@ -29,15 +29,4 @@ function superbalanced(mainTree) {
   return balanced;
 }
 
-let t = new BinaryTree(5);
-t.right = new BinaryTree(7);
-t.right.left = new BinaryTree(6);
-t.right.left = new BinaryTree(8);
-t.left = new BinaryTree(3);
-t.left.left = new BinaryTree(1);
-// t.left.left.right = new BinaryTree(2);
-console.log(t);
-
-superbalanced(t);
-
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
