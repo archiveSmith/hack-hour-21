@@ -13,8 +13,31 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalanced(tree) {
-
+function superbalanced(mainTree) {
+  let balanced = true;
+  function depth(tree, currDepth) {
+    if (!tree) return currDepth;
+    const val = tree.value;
+    // return whether both trees
+    const leftDepth = depth(tree.left, currDepth + 1);
+    const rightDepth = depth(tree.right, currDepth + 1);
+    let diff = leftDepth - rightDepth;
+    if (balanced && (diff > 1 || diff < -1)) balanced = false;
+    return Math.max(leftDepth, rightDepth);
+  }
+  depth(mainTree, 0);
+  return balanced;
 }
+
+let t = new BinaryTree(5);
+t.right = new BinaryTree(7);
+t.right.left = new BinaryTree(6);
+t.right.left = new BinaryTree(8);
+t.left = new BinaryTree(3);
+t.left.left = new BinaryTree(1);
+// t.left.left.right = new BinaryTree(2);
+console.log(t);
+
+superbalanced(t);
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
