@@ -14,7 +14,59 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
+  let leftHeight = 0;
+  let rightHeight = 0;
+  let balanced = false;
+  if (!tree.left && !tree.right) return;
+  if (tree.left !== null && tree.right !== null) {
+    leftHeight = leftHeight + superbalanced(tree.left);
+    rightHeight = rightHeight + superbalanced(tree.right);
+  }
+  if (leftHeight - rightHeight < 2) {
+    if (tree.left || tree.right) {
+      balanced = true;
+    } else {
+      return false;
+    }
+  }
+  else {
+    return false;
+  }
+  return balanced;
 
+  //   if (!tree) return false;
+  //   if (tree.left === null && tree.right === null) return true;
+  //   let heights = [];
+  //   function getChildH(tree, height = 0) {
+  //     if (!tree.left && !tree.right) {
+  //       heights.push(height);
+  //       return;
+  //     } else {
+  //       if (tree.left) {
+  //         getChildH(tree.left, height + 1);
+  //       }
+  //       if (tree.right) {
+  //         getChildH(tree.right, height + 1);
+  //       }
+  //     }
+  //   }
+  //   getChildH(tree);
+  //   for(let i = 0; i< heights.length; i++){
+  //     for(let j = i+1; j< heights.length; j++){
+  //       if(Math.abs(heights[j] - heights[i]) > 1 ){
+  //           return false;
+  //       }
+  //     }
+  //   }
+  //   return true;
 }
 
-module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
+// const tree = new BinaryTree(5);
+// tree.left = new BinaryTree(3);
+// tree.left.left = new BinaryTree(2);
+// tree.left.left.left = new BinaryTree(1);
+// tree.left.right = new BinaryTree(4);
+// tree.right = new BinaryTree(6);
+
+// console.log(superbalanced(tree));
+module.exports = { BinaryTree: BinaryTree, superbalanced: superbalanced };
