@@ -20,6 +20,9 @@ function Node(val) {
 function addLinkedList(l1, l2) {
   console.log('linked list 1 is ', l1);
   console.log('linked list 1 is ', l2);
+
 }
+
+//Encountered the following errors running your code: linked list 1 is Node { value: 2, next: null } linked list 1 is Node { value: 2, next: null } linked list 1 is Node { value: 1, next: Node { value: 2, next: null } } linked list 1 is Node { value: 2, next: Node { value: 3, next: null } } linked list 1 is Node { value: 5, next: Node { value: 1, next: Node { value: 2, next: null } } } linked list 1 is Node { value: 3, next: null } linked list 1 is Node { value: 3, next: Node { value: 1, next: Node { value: 5, next: null } } } linked list 1 is Node { value: 5, next: Node { value: 9, next: Node { value: 2, next: null } } } linked list 1 is Node { value: 3, next: Node { value: 1, next: Node { value: 9, next: null } } } linked list 1 is Node { value: 5, next: Node { value: 9, next: Node { value: 2, next: null } } } linked list 1 is Node { value: 0, next: null } linked list 1 is Node { value: 1, next: Node { value: 3, next: Node { value: 2, next: [Object] } } } linked list 1 is Node { value: 5, next: Node { value: 4, next: Node { value: 3, next: [Object] } } } linked list 1 is Node { value: 5, next: Node { value: 4, next: Node { value: 2, next: [Object] } } }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
