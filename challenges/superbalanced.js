@@ -14,7 +14,16 @@ function BinaryTree(value) {
 }
 
 function superbalanced(tree) {
-
+  if (!tree) return true;
+  console.log(tree);
 }
+
+let top = new BinaryTree(10);
+top.left = new BinaryTree(8);
+top.left.right = new BinaryTree(9);
+
+top.right = new BinaryTree(12);
+
+console.log(superbalanced(top));
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};
