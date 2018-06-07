@@ -11,7 +11,7 @@
  */
 
 function repeatNumbers(array) {
-    return array.reduce((a, b) => a ^ b);
+    return array.filter((num, index) => array.indexOf(num) !== index)[0];
 }
 
 module.exports = repeatNumbers;
