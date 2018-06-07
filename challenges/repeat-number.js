@@ -11,7 +11,21 @@
  */
 
 function repeatNumbers(array) {
+    let i = 0;
 
+    while (true) {
+        if (array[Math.abs(array[i])] > 0) {
+            array[Math.abs(array[i])] = - array[Math.abs(array[i])];
+        } else {
+            return Math.abs(array[i]);
+        }
+        i += 1;
+    }
 }
 
+// let a = [1, 2, 3, 4, 5, 6, 7, 4, 9]
+
+// console.log(repeatNumbers(a));
+
 module.exports = repeatNumbers;
+
