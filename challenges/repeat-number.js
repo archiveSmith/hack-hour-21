@@ -11,7 +11,16 @@
  */
 
 function repeatNumbers(array) {
-
+  const sum = array.reduce((acc, val) => acc + val);
+  let fact = array.length - 1;
+  let factorial = 0;
+  while (fact > 0) {
+    factorial += fact;
+    fact -= 1;
+  }
+  return sum - factorial;
 }
+
+// console.log(repeatNumbers([1,5,5,2,4,3]));
 
 module.exports = repeatNumbers;
