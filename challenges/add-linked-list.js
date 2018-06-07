@@ -17,8 +17,15 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
+function addLinkedList(l1, l2, carryover) {
+  if (!l1 && !l2 && !carryover) {
+    return null;
+  }
 
+  let sum = carryover || 0;
+  if (l1) { 
+    sum += l1.value;
+  }
 }
 
 module.exports = {Node: Node, addLinkedList: addLinkedList};
