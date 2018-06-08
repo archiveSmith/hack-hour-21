@@ -7,6 +7,7 @@
  example: http://www.geeksforgeeks.org/wp-content/uploads/balanced_tree.GIF
  */
 
+
 function BinaryTree(value) {
   this.value = value;
   this.left = null;
@@ -66,6 +67,8 @@ function superbalanced(tree) {
 
   if (Math.abs(leftHeight-rightHeight) <= 1 ) {
     return true;
+  } else {
+    return false;
   }
 
 }
