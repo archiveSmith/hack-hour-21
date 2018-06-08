@@ -11,25 +11,22 @@
  */
 
 // Brute force. O(n) time,  O(n) space
-function repeatNumbersBrute(array) {
-  let occurs = {};
-  for(let i=0; i<array.length; i++){
-    if (occurs[array[i]]) {
-      return array[i]
-    } else {
-      occurs[array[i]] = 'y';
-    }
-  }
-}
+// function repeatNumbersBrute(array) {
+//   let occurs = {};
+//   for(let i=0; i<array.length; i++){
+//     if (occurs[array[i]]) {
+//       return array[i]
+//     } else {
+//       occurs[array[i]] = 'y';
+//     }
+//   }
+// }
 
 // O(n), O(1) space
 function repeatNumbers(array) {
   let sum = array.reduce( (elem, curr ) => elem + curr );
   return (sum - (array.length)*((array.length-1)/2) );
-
 }
-
-
 
 // console.log(repeatNumbers([1,2,2,3,4,5,6,7,8,9]));
 
