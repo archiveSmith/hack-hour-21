@@ -22,17 +22,15 @@ function repeatNumbersBrute(array) {
   }
 }
 
+// O(n), O(1) space
+function repeatNumbers(array) {
+  let sum = array.reduce( (elem, curr ) => elem + curr );
+  return (sum - (array.length)*((array.length-1)/2) );
 
-// function repeatNumbersTrick(array) {
-//   let factorial = array.reduce( (elem, 1 ) => { elem * curr );
-//   console.log(factorial);
-
-//   // let dup = factorial / 
-
-// }
+}
 
 
 
-// console.log(repeatNumbers([1,2,11,3,4,5,6,7,8,9,11,100,24]));
+// console.log(repeatNumbers([1,2,2,3,4,5,6,7,8,9]));
 
 module.exports = repeatNumbers;
