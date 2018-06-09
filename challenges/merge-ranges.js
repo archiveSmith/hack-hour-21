@@ -9,7 +9,6 @@
  * Do not assume the ranges are in order
  */
 
-
 function mergeRanges(array) {
   const obj = {};
   for (let i = 0; i < array.length; i += 1) {
@@ -17,7 +16,6 @@ function mergeRanges(array) {
       obj[j] = ' ';
     }
   }
-  console.log(obj);
   let count = 0;
   const output = [];
   let range = [];
