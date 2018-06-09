@@ -18,6 +18,29 @@
 
 function rotateGrid(grid, n) {
 
-}
+  let newGrid = [];
+
+  // basically read columns from the initial grid bottom to top...start at the left column
+  // to get the rotated grid
+  for (let col=0; col<n; col++){
+    let newRow = [];
+    for (let row=n-1; row>=0; row--) {
+      newRow.push(grid[row][col]);
+    }
+    newGrid.push(newRow);
+  }
+
+  return newGrid;
+
+} 
+
+// sampleGrid = [[1, 2, 3, 4], [5, 6, 7, 8], [9,10,11,12], [13,14,15,16]]
+// console.log(rotateGrid(sampleGrid, 4));
+// sampleGrid = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+// console.log(rotateGrid(sampleGrid, 3));
+// sampleGrid = [[1, 2],[3, 4]]
+// console.log(rotateGrid(sampleGrid, 2));
+// sampleGrid = [['a']]
+// console.log(rotateGrid(sampleGrid, 1));
 
 module.exports = rotateGrid;
