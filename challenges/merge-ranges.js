@@ -11,19 +11,19 @@
 
 
 function mergeRanges(array) {
-  let sortedArrs = [];
-  for (let j = 0; j < array.length; j++) {
-    sortedArrs.push(array[j].sort(function(a, b) {return a[0] - b[0]}));
+  const sortedArrs = [];
+  for (let i = 0; i < array.length; i += 1) {
+    sortedArrs.push(array[i].sort((a, b) => a[0] - b[0]));
   }
-  let returnArr = [array[0].sort()];
-  for (let i = 1; i < array.length; i++) {
-    if (returnArr[returnArr.length-1][1] >= array[i].sort()[0]) {
-    returnArr[returnArr.length-1] = [returnArr[returnArr.length-1][0],array[i].sort()[1]];
+  const returnArr = [array[0].sort()];
+  for (let j = 1; j < array.length; j += 1) {
+    if (returnArr[returnArr.length - 1][1] >= array[j].sort()[0]) {
+      returnArr[returnArr.length - 1] = [returnArr[returnArr.length - 1][0], array[j].sort()[1]];
     } else {
-      returnArr.push(array[i]);
+      returnArr.push(array[j]);
     }
   }
-    return returnArr;
+  return returnArr;
 }
 
 module.exports = mergeRanges;
