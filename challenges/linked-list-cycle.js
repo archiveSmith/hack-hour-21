@@ -32,8 +32,30 @@ var Node = function(value) {
   this.next = null;
 }
 
+// strategy: have two pointers, one moving twice as fast as the other. Eventually, if cyclical, the fast one will catch up
 function hasCycle(head) {
-
+  let slow = head;
+  let fast = head;
+  if(!head || head.next === null) return false;
+  if (head.next === head) return true;
+  
+  while (fast.next !== null) {
+    slow = slow.next;
+    if (fast.next.next === null) return false;
+    fast = fast.next.next;
+    if (slow === fast) return true;
+  }
+  return false;
 }
+
+var node1 = new Node('1');
+var node2 = node1.next = new Node('2');
+var node3 = node2.next = new Node('3');
+var node4 = node3.next = new Node('4');
+var node5 = node4.next = new Node('5');
+
+console.log(hasCycle(node1));
+node5.next = node2;
+console.log(hasCycle(node1));
 
 module.exports = {Node: Node, hasCycle: hasCycle}
