@@ -17,13 +17,14 @@ function mergeArrays(arr1, arr2) {
   const merged = [];
   let arr1Index = 0, arr2Index = 0;
 
-  for (let i = 0; i < Math.max(arr1.length, arr2.length); i += 1) {
+  for (let i = 0; i < arr1.length + arr2.length; i += 1) {
+    // TODO: fix this
     const arr1Val = arr1[arr1Index];
     const arr2Val = arr2[arr2Index];
     const smallerVal = Math.max(arr1Val, arr2Val);
 
     merged.push(smallerVal);
-    
+
     if (smallerVal === arr1Val) arr1Index += 1;
     else arr2Index += 1;
   }

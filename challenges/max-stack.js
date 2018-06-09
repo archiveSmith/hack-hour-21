@@ -13,13 +13,13 @@ function Stack() {
 
   return {
     push: (val) => {
-
+      
     },
     pop: () => {
 
     },
     getMax: () => {
-
+      return max;
     },
   }
 }

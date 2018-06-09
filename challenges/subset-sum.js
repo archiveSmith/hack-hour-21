@@ -9,6 +9,26 @@
  */
 
 function subsetSum(array, target) {
+    // Check sum of all numbers
+    // Check sum of all but one number (looping from left-to-right)
+    // Check sum of all but two numbers 
+    // O O O O O
+    // - O O O O
+    // O - O O O
+    // O O - O O
+    // O O O - O
+    // O O O O -
+    // - - O O O
+    // - O - O O
+    // - O O - O
+    // - O O O -
+    // O - - O O 
+    // O - O - O 
+    // O - O O -
+    // O - - O O
+    // - - - O O
+    // - 
+
 
 }
 

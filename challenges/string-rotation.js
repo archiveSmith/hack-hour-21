@@ -17,6 +17,18 @@ function isSubstring(s1, s2) {
 
 function stringRotation(s1, s2) {
 
+  // IDEA 1
+  // ———————————————–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+  // • loop through s2
+  // • check indexOf() on cumulative substring to find pivot point
+  // • when indexOf() become undefined, you've reached the pivot point
+  // • ensure remainder of string is a substring of s1
+  // • check lengths to ensure they're equal
+
+  // IDEA 2
+  // ———————————————–––––––––––––––––––––––––––––––––––––––––––––––––––––––
+  // • 
+
 }
 
 module.exports = {isSubstring: isSubstring, stringRotation: stringRotation};
