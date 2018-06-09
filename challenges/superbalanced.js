@@ -12,27 +12,39 @@ function BinaryTree(value) {
   this.left = null;
   this.right = null;
 }
+function getHeight(tree) {
+  let height = 0;
+  // console.log("here is the start of the tree", tree);
+  if (tree === null) return 0;
+  if (!tree.right && !tree.left) return 1;
+  if (tree.left) {
+    height = 1 + getHeight(tree.left);
+    // console.log(height)
+  }
+  else if (tree.right) {
+    height = 1 + getHeight(tree.right);
+    // console.log("here is the right tree height", height);
+  }
+  return height;
+}
 
 function superbalanced(tree) {
-  let leftHeight = 0;
-  let rightHeight = 0;
-  let balanced = false;
-  if (!tree.left && !tree.right) return;
-  if (tree.left !== null && tree.right !== null) {
-    leftHeight = leftHeight + superbalanced(tree.left);
-    rightHeight = rightHeight + superbalanced(tree.right);
-  }
-  if (leftHeight - rightHeight < 2) {
-    if (tree.left || tree.right) {
-      balanced = true;
-    } else {
+  // let balanced = false;
+  if (!tree) return true;
+  if (!tree.right && !tree.left) return true;
+  else {
+    if (Math.abs(getHeight(tree.left) - getHeight(tree.right)) < 2) {
+      // console.log('DONNEEEEEEEE');
+      return (superbalanced(tree.left) && superbalanced(tree.right));
+      // console.log("TREEEE", tree);
+      
+    }
+    else {
       return false;
     }
   }
-  else {
-    return false;
-  }
-  return balanced;
+
+
 
   //   if (!tree) return false;
   //   if (tree.left === null && tree.right === null) return true;
@@ -61,12 +73,17 @@ function superbalanced(tree) {
   //   return true;
 }
 
-// const tree = new BinaryTree(5);
-// tree.left = new BinaryTree(3);
-// tree.left.left = new BinaryTree(2);
-// tree.left.left.left = new BinaryTree(1);
-// tree.left.right = new BinaryTree(4);
-// tree.right = new BinaryTree(6);
+const tree = new BinaryTree(5);
+tree.left = new BinaryTree(3);
+tree.left.left = new BinaryTree(2);
+//tree.left.left.left = new BinaryTree(1);
+tree.left.right = new BinaryTree(4);
+tree.right = new BinaryTree(6);
+tree.right.left = new BinaryTree(6);
+tree.right.right = new BinaryTree(7);
+tree.right.right.right = new BinaryTree(8);
+//ree.right.right.right.right = new BinaryTree(9);
 
-// console.log(superbalanced(tree));
+
+console.log(superbalanced(tree));
 module.exports = { BinaryTree: BinaryTree, superbalanced: superbalanced };
