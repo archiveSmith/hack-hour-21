@@ -11,7 +11,9 @@
  */
 
 function repeatNumbers(array) {
-    return array.filter(((a, b) => !(a ^ b)))[0];
+    return array.reduce(((a, b) => (b^a)));
 }
+
+console.log(repeatNumbers([1, 2, 3, 4, 4, 5, 6]))
 
 module.exports = repeatNumbers;
