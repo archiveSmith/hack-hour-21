@@ -33,6 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
+  if (head === null) return false;
   let seen = [];
   function checkNodes(node) {
     if (node.next === null) return false;
