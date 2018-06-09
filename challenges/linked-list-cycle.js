@@ -33,7 +33,14 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+  const vals = {};
+  let nextNode = head;
+  while (nextNode) {
+    if (vals[nextNode.value]) return true;
+    vals[nextNode.value] = 1;
+    nextNode = nextNode.next;
+  }
+  return false
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}

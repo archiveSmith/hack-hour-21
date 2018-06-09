@@ -11,7 +11,33 @@
 
 
 function mergeRanges(array) {
+  const mergeRange = (range1, range2) => {
+    // ...
+    return {
+      merged: false,
+      range: null,
+    };
+  };
 
+  const merged = [];
+
+  for (let i = 0; i < array.length; i += 1) {
+    const range = array[i];
+
+    for (let j = 0; j < array.length; j += 1) {
+      const mergedRange = mergeRange(array[i], merged[j]);
+      if (mergedRange.merged) {
+
+      }
+      else {
+        
+      }
+      // const updated = updateRange(range[0], range[1]);
+
+    }
+  }
+
+  return merged;
 }
 
 module.exports = mergeRanges;

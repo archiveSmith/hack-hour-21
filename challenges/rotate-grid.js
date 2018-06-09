@@ -17,7 +17,7 @@
  */
 
 function rotateGrid(grid, n) {
-
+  const rotated = [];
 }
 
 module.exports = rotateGrid;
