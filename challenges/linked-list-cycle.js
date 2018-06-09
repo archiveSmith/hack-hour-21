@@ -36,6 +36,8 @@ function hasCycle(head) {
   let tortoise = head;
   let hare = head;
 
+  if (head === null) return false;
+
   do {
     if (hare.next === null) return false;
     hare = hare.next;
