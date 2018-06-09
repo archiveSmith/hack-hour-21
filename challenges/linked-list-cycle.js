@@ -27,13 +27,23 @@
  *
  */
 
-var Node = function(value) {
+let Node = function (value) {
   this.value = value;
   this.next = null;
-}
+};
 
 function hasCycle(head) {
+  let tortoise = head;
+  let hare = head;
 
+  do {
+    if (hare.next === null) return false;
+    hare = hare.next;
+    if (hare.next === null) return false;
+    hare = hare.next;
+    tortoise = tortoise.next;
+  } while (tortoise !== hare);
+  return true;
 }
 
-module.exports = {Node: Node, hasCycle: hasCycle}
+module.exports = { Node, hasCycle };
