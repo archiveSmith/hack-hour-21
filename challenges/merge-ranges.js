@@ -27,6 +27,7 @@ function mergeRanges(array) {
     // acc.push(next);
     return acc;
   }, []);
+  
 }
 
 console.log(mergeRanges([[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]));
