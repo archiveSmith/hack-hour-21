@@ -19,7 +19,7 @@ function sumMultiples3Or5Below1000() {
 function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
   for (let i = 0; i < z; i++) {
-    if (i % x === 0 || i % y === 0) sum += i;
+    if (i % x === 0 || i % y ===0) sum += i;
   }
   return sum;
 }
