@@ -35,7 +35,11 @@ function superbalanced(tree) {
   else {
     if (Math.abs(getHeight(tree.left) - getHeight(tree.right)) < 2) {
       // console.log('DONNEEEEEEEE');
-      return (superbalanced(tree.left) && superbalanced(tree.right));
+      let leftbal = superbalanced(tree.left);
+      console.log("HERE IS THE TREE",tree);
+      let rightbal = superbalanced(tree.right);
+      return (leftbal && rightbal);
+      // return (superbalanced(tree.left) && superbalanced(tree.right));
       // console.log("TREEEE", tree);
       
     }
@@ -79,7 +83,7 @@ tree.left.left = new BinaryTree(2);
 //tree.left.left.left = new BinaryTree(1);
 tree.left.right = new BinaryTree(4);
 tree.right = new BinaryTree(6);
-tree.right.left = new BinaryTree(6);
+//tree.right.left = new BinaryTree(6);
 tree.right.right = new BinaryTree(7);
 tree.right.right.right = new BinaryTree(8);
 //ree.right.right.right.right = new BinaryTree(9);
