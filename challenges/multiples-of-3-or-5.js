@@ -8,7 +8,7 @@
 function sumMultiples3Or5Below1000() {
   let sum = 0;
   let counter = 3;
-  while (counter <= 1000) {
+  while (counter < 1000) {
     if (counter % 5 === 0 || counter % 3 === 0) sum += counter;
     counter++
   }
@@ -20,7 +20,7 @@ function sumMultiples3Or5Below1000() {
 function sumMultiplesXOrYBelowZ(x, y, z) {
   let sum = 0;
   let counter = Math.min(x,y);
-  while (counter <= z) {
+  while (counter < z) {
     if (counter % x === 0 || counter % y === 0) sum += counter;
     counter++;
   }
