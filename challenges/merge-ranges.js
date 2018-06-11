@@ -32,10 +32,16 @@ function mergeRanges(array) {
       mergedSlot = [];
       merged = false;
 
-      // if both slots are within an existing range
+      // if one slots is within an existing range
       if ( time[0] >= mTime[0] && time[1] <= mTime[1] ) {
         mergedSlot[0] = mTime[0];
         mergedSlot[1] = mTime[1];
+        merged = true;
+      }
+
+      if ( time[0] <= mTime[0] && time[1] >= mTime[1] ) {
+        mergedSlot[0] = time[0];
+        mergedSlot[1] = time[1];
         merged = true;
       }
 
@@ -76,7 +82,8 @@ function mergeRanges(array) {
 // var times = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]];
 // var times = [[3, 5], [4, 8]];
 // var times = [[4, 8], [5, 6]];
-// var times = [[10,12], [9,10]]
+// var times = [[10,14], [10, 11]];
+// var times = [[10, 11]], [10,14];
 // console.log(mergeRanges(times));
 
 
