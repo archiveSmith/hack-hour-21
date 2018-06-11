@@ -33,7 +33,7 @@ var Node = function(value) {
 }
 
 function hasCycle(head) {
-
+// I've got nothing :(
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
