@@ -32,8 +32,11 @@ var Node = function(value) {
   this.next = null;
 }
 
-function hasCycle(head) {
-
+function hasCycle(node, seen = []) {
+  if (!node.next) return false;
+  if (seen.includes(node.next)) return true;
+  seen.push(node);
+  return hasCycle(node.next, seen);
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}

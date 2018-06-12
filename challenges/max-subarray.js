@@ -7,8 +7,22 @@
  *
  */
 
-function maxSubarray(arr) {
+// O(n ^ 3) >_<
 
+function maxSubarray(arr) {
+  let bestSum = -Infinity;
+  function recurSubSum(array) {
+    if (array.length <= 0) return;
+    const newArray = [];
+    array.forEach((el) => {
+      newArray.push(el);
+      const sum = newArray.reduce((acc, e) => acc + e, 0);
+      if (sum > bestSum) bestSum = sum;
+    });
+    recurSubSum(array.slice(1));
+  }
+  recurSubSum(arr);
+  return bestSum;
 }
 
 module.exports = maxSubarray;

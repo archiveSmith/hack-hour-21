@@ -17,8 +17,37 @@ function Node(val) {
   this.next = null;
 }
 
-function addLinkedList(l1, l2) {
+// total hack
+Node.prototype.addNode = function push(val) {
+  let currentNode = this;
+  while (currentNode.next) {
+    currentNode = currentNode.next;
+  }
+  currentNode.next = new Node(val);
+};
 
+function addLinkedList(l1, l2) {
+  function sumList(list) {
+    let pow = 0;
+    let sum = 0;
+    let currentNode = list;
+    while (currentNode.next) {
+      pow += 1;
+      currentNode = currentNode.next;
+    }
+    currentNode = list;
+    while (currentNode) {
+      sum += currentNode.value * (10 ** pow--);
+      currentNode = currentNode.next;
+    }
+    return sum;
+  }
+  const summedString = String(sumList(l1) + sumList(l2));
+  const summedList = new Node(Number(summedString[summedString.length - 1]));
+  for (let i = summedString.length - 2; i >= 0; i--) {
+    summedList.push(Number(summedString[i]));
+  }
+  return summedList;
 }
 
-module.exports = {Node: Node, addLinkedList: addLinkedList};
+module.exports = { Node: Node, addLinkedList: addLinkedList };

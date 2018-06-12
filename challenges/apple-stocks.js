@@ -12,8 +12,17 @@
  *  Return 0 if no profit is possible OR if input is invalid.
  */
 
-function bestProfit(stock_prices_yesterday) {
-
+function bestProfit(prices) {
+  if (!Array.isArray(prices) || prices.length < 2) return 0;
+  return prices.reduce((acc, e) => {
+    if (e < acc.low) acc.low = e;
+    else if (e > acc.high) acc.high = e;
+    if (acc.high - acc.low > acc.best) {
+      acc.best = acc.high - acc.low;
+      acc.high = 0;
+    }
+    return acc;
+  }, { low: Infinity, high: 0, best: 0 }).best;
 }
 
 module.exports = bestProfit;

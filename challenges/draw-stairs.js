@@ -14,8 +14,13 @@
 */
 
 function drawStairs(n) {
-
+  // start opening whitespace as n-1
+  const space = ' ';
+  const ast = '*';
+  // loop n times
+  for (let i = 1; i <= n; i++) {
+    console.log(space.repeat(n - i), ast.repeat(i));
+  }
 }
-
 
 module.exports = drawStairs;

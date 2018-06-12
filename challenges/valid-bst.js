@@ -7,13 +7,24 @@
  
 
 function BinaryTree(val) {
-    this.value = val;
-    this.left = null;
-    this.right = null;
+  this.value = val;
+  this.left = null;
+  this.right = null;
 }
 
 function validBST(tree) {
-
+  // base case: if we've hit an end, we're good (null never fails the test)
+  if (tree === null) return true;
+  // compare the values on either side of the tree, checking for bad placement of values
+  if (tree.left !== null) {
+    if (tree.left.value > tree.value) return false;
+  }
+  if (tree.right !== null) {
+    if (tree.right.value < tree.value) return false;
+  }
+  // call recursion on the nodes from both sides,
+  // ultimately returning true only if both sub trees are valid
+  return validBST(tree.left) && validBST(tree.right);
 }
 
 module.exports = {BinaryTree: BinaryTree, validBST: validBST};
