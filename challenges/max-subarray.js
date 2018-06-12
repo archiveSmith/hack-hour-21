@@ -14,10 +14,9 @@
 
 function maxSubarray(arr) {
     return getAllSubArrs(arr).reduce((a, c) => {
-        let cr = c.reduce((a, c) => a + c);
-        let ar = a.reduce((a, c) => a + c);
-        return ar > cr ? a : c;
-    });
+        c = c.reduce((a, c) => a + c);
+        return a > c ? a : c;
+    }, -Infinity);
 }
 
 function getAllSubArrs(arr) {
@@ -39,7 +38,7 @@ function getAllSubArrs(arr) {
     return resultArrs;
 }
 
-// let z = [1, 2, 3, 4];
+// let z = [1, 2,];
 // let u = [1, -2, 3, 10, -4, 7, 2, -5];
 // 
 // console.log(getAllSubArrs(z));
