@@ -7,14 +7,14 @@
 
 function sumMultiples3Or5Below1000() {
 
-  let sumMlpThree = (Math.floor(1000/3)/2) * (2 * 3 + ((Math.floor(1000/3)-1) * 3));
-  let sumMlpFive = (Math.floor(1000/5)/2) * (2 * 5 + ((Math.floor(1000/5)-1) * 5));
-  let sumMlpFifteen = (Math.floor(1000/15)/2) * (2 * 15 + ((Math.floor(1000/15)-1) * 15));
+  let sumMlpThree = (Math.floor(999/3)/2) * (2 * 3 + ((Math.floor(999/3)-1) * 3));
+  let sumMlpFive = (Math.floor(999/5)/2) * (2 * 5 + ((Math.floor(999/5)-1) * 5));
+  let sumMlpFifteen = (Math.floor(999/15)/2) * (2 * 15 + ((Math.floor(999/15)-1) * 15));
 
   // let S=333/2[2*3+(333–1)*3] =166833
 
 
-  return sumMlpFive;
+  return sumMlpFive + sumMlpThree - sumMlpFifteen;
 
 }
 
@@ -22,9 +22,10 @@ function sumMultiples3Or5Below1000() {
 // extension make it dynamic function that takes input x,y,z
 // and returns the sum of multiples of x and y below z
 function sumMultiplesXOrYBelowZ(x, y, z) {
-  let sumMlpX = x * ((Math.floor(z/x) * (Math.floor(z/x) + 1)) / 2);
-  let sumMlpY = y * ((Math.floor(z/y) * (Math.floor(z/y) + 1)) / 2);
-  let sumMlpYX = xy * ((Math.floor(z/xy) * (Math.floor(z/xy) + 1)) / 2);
+  let t = z -1;
+  let sumMlpX = x * ((Math.floor(t/x) * (Math.floor(t/x) + 1)) / 2);
+  let sumMlpY = y * ((Math.floor(t/y) * (Math.floor(t/y) + 1)) / 2);
+  let sumMlpYX = xy * ((Math.floor(t/xy) * (Math.floor(t/xy) + 1)) / 2);
 
   return sum;
 }
