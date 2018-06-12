@@ -8,6 +8,8 @@
  */
 
 function maxSubarray(arr) {
+  if (Math.max(arr) > 0) return Math.max(arr);
+
   let currMax = 0;
   let max = 0;
   for (let i = 0; i < arr.length; i += 1) {
