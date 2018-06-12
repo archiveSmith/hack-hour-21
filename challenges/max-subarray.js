@@ -7,8 +7,26 @@
  *
  */
 
-function maxSubarray(arr) {
-
+function sum(arr) {
+  let total = 0;
+  arr.forEach((num) => { total += num; });
+  return total;
 }
+
+function maxSubarray(arr) {
+  if (arr.length === 0) return undefined;
+  if (arr.length === 1) return arr[0];
+  let max = sum(arr);
+  for (let i = 1; i < arr.length; i += 1) {
+    for (let j = 0; j < i + 1; j += 1) {
+      let slice = arr.slice(j, j + arr.length - i);
+      console.log(slice, sum(slice));
+      if (sum(slice) > max) max = sum(slice);
+    }
+  }
+  return max;
+}
+
+// console.log(maxSubarray([15,20,-5,10]));
 
 module.exports = maxSubarray;
