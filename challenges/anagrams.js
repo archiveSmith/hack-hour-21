@@ -13,17 +13,16 @@
   */
 
 function anagrams(string) {
-  function anagrams(string) {
-    let output = [];
-    let strArr = string.split('');
-    
-    for (let i = 0; i < strArr.length; i += 1) {
-      for (let j = 0; j < strArr.length; j += 1) {
-        for (let k = 0; k < strArr.length; k += 1) {
-          output.push(strArr[i] + strArr[j] + strArr[k]);
-        }  
+  const output = [];
+  const strArr = string.split('');
+
+  for (let i = 0; i < strArr.length; i += 1) {
+    for (let j = 0; j < strArr.length; j += 1) {
+      for (let k = 0; k < strArr.length; k += 1) {
+        output.push(strArr[i] + strArr[j] + strArr[k]);
       }
     }
+  }
   return output.join(' ');
 }
 
