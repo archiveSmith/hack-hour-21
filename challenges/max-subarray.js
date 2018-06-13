@@ -23,7 +23,7 @@ function getSum(arr) {
     return arr.reduce((a, b) => a + b);
 }
 
-// console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5])) 
+console.log(maxSubarray([1, -2, 3, 10, -4, 7, 2, -5])) 
 // console.log(maxSubarray([15,20,-5,10])) 
 
 module.exports = maxSubarray;

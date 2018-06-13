@@ -13,7 +13,24 @@
   */
 
 function anagrams(string) {
+  let grams = []; 
+  
+  if (string.length === 1) {
+    grams.push(string);
+    return grams;
+  }
 
+  string.split('').forEach((letter, index) => {
+    let rest = string.slice(0, index) + string.slice(index + 1);
+    let subGrams = anagrams(rest);
+    subGrams.forEach(gram => {
+      grams.push(letter + gram)
+    })
+  })
+
+  return grams;
 }
 
 module.exports = anagrams;
+
+console.log(anagrams('abc'))
