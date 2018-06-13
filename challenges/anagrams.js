@@ -12,8 +12,26 @@
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-function anagrams(string) {
+function recursiveAn(arr, output = [], string = '') {
+  if (string.length === arr.length) {
+    return string;
+  }
+  for (let i = 0; i < arr.length; i += 1) {
+    if (string.indexOf(arr[i]) === -1) {
+      string += arr[i];
+      output.push(recursiveAn(arr, output, string));
+      string = string.slice(0, -1);
+    }
+  }
+  return output;
 
 }
+
+function anagrams(string) {
+  const pieces = string.split('');
+  return recursiveAn(pieces).filter(str => str.length === pieces.length);
+}
+
+console.log(anagrams('abcd'));
 
 module.exports = anagrams;
