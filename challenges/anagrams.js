@@ -16,7 +16,7 @@ function anagrams(string) {
   
   let grams = []; 
   
-  if (!string) return grams;
+  if (!string) return [''];
   
   if (string.length === 1) {
     grams.push(string);
@@ -35,5 +35,3 @@ function anagrams(string) {
 }
 
 module.exports = anagrams;
-
-console.log(anagrams(''))
