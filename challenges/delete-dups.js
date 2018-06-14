@@ -13,7 +13,18 @@
 
 
 function deleteDups(head) {
-
+  let currentNode = prevNode = head;
+  let cache = {}
+  while (currentNode !== null) {
+    if (!cache[head.value]) {
+      cache[head.value] = 1;
+      prevNode = currentNode;
+      currentNode = currentNode.next;
+    } else {
+      prevNode.next = currentNode.next;
+      currentNode = currentNode.next;
+    }
+  }
 }
 
 module.exports = deleteDups;
