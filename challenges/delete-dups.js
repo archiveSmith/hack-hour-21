@@ -14,6 +14,21 @@
 
 function deleteDups(head) {
 
+    const buffer = [];
+    let currNode = head;
+    let prevNode;
+
+    while (currNode.next !== null) {
+        if (buffer.includes(currNode.value)) {
+            // remove node and route list around it
+            currNode = currNode.next;
+            prevNode.next = currNode;
+        } else {
+            buffer.push(currNode.value);
+            prevNode = currNode;
+            currNode = currNode.next;
+        }
+    }
 }
 
 module.exports = deleteDups;
