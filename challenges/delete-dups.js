@@ -14,12 +14,15 @@
 function deleteDups(head) {
   if (head === null || head.next === null) return head;
   let curr = head;
-
+while (current !== null) {
   while( curr.next !== null ) {
-      if (curr.value == curr.next.value) curr.next = curr.next.next;
-      else curr = curr.next
+      if (curr.value === curr.next.value) {
+        let dup = curr.next.value;
+        curr.next = curr.next.next;
+      } else {curr = curr.next}
   }
-  return head;
+  curr = curr.next;
+ }
 }
 
 module.exports = deleteDups;
