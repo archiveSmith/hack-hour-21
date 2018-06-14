@@ -10,10 +10,6 @@
  * How would you solve this problem if a temporary buffer is not allowed?
  */
 
-const Node = function(value) {
-    this.value = value;
-    this.next = null;
-}
 
 function deleteDups(head) {
   if (head === null || head.next === null) return head;
