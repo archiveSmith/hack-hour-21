@@ -10,10 +10,16 @@
  * How would you solve this problem if a temporary buffer is not allowed?
  */
 
-
-
 function deleteDups(head) {
-
+  let curr = head;
+  while (curr.next) {
+    if (curr.value === curr.next.value) {
+      curr = curr.next.next;
+    } else {
+      curr = curr.next;
+    }
+  }
+  return JSON.stringify(head);
 }
 
 module.exports = deleteDups;
