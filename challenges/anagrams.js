@@ -27,4 +27,6 @@ function anagrams(string) {
   return anagramArray;
 }
 
+console.log(anagrams(''));
+
 module.exports = anagrams;
