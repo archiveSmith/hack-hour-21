@@ -26,6 +26,7 @@ function anagrams(string) {
   string.split('').forEach((letter, index) => {
     let rest = string.slice(0, index) + string.slice(index + 1);
     let subGrams = anagrams(rest);
+    
     subGrams.forEach(gram => {
       grams.push(letter + gram)
     })
