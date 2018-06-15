@@ -37,7 +37,7 @@ function anagrams(string) {
   return result;
 
 }
-var result = anagrams('abc');
+var result = anagrams('abcdd');
 console.log(result);
 
 module.exports = anagrams;
