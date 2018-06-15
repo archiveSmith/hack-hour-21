@@ -26,11 +26,29 @@ function EventEmitter() {
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-
+    // createa an array for functions. on array per unique funcName given
+    if (this[funcName]) {
+        this[funcName].push(func);
+    } else {
+        this[funcName] = [func];
+    }
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
-
+    this[funcName].forEach(func => {
+        func(args);
+    });
 };
+
+// let e = new EventEmitter();
+// let counter = 0;
+// 
+// e.on('increment', function() {
+//     counter += 1;
+// });
+// 
+// e.on('printArgs', function(args) {
+//     console.log(args);
+// });
 
 module.exports = EventEmitter;
