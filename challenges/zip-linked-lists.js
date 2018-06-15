@@ -13,4 +13,9 @@ function Node(val) {
 function zip(l1, l2) {
 };
 
+
+let node = new Node();
+
+
+console.log(node(''));
 module.exports = {Node: Node, zip: zip};

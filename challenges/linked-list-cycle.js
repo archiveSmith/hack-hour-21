@@ -25,6 +25,12 @@
  * Challenge 2: Do this in constant space
  * Challenge 3: Do not mutate the original nodes in any way
  *
+ * input: linked list
+ * output: {boolean}
+ * approach:
+ * 
+ * 
+ * 
  */
 
 var Node = function(value) {
@@ -32,8 +38,12 @@ var Node = function(value) {
   this.next = null;
 }
 
-function hasCycle(head) {
+
+function hasCycle(head) { //head = node
+
 
 }
+
+console.log(nody);
 
 module.exports = {Node: Node, hasCycle: hasCycle}
