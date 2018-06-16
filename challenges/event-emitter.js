@@ -26,11 +26,12 @@ function EventEmitter() {
 }
 
 EventEmitter.prototype.on = function (funcName, func) {
-  this.events[funcName] = func;
+  if (this.events[funcName]) this.events[funcName].push(func);
+  else this.events[funcName] = [func];
 };
 
 EventEmitter.prototype.trigger = function (funcName, ...args) {
-  if (this.events.hasOwnProperty(funcName)) this.events[funcName](args);
+  if (this.events.hasOwnProperty(funcName)) this.events[funcName].forEach((func) => { func(args); });
 };
 
 module.exports = EventEmitter;
