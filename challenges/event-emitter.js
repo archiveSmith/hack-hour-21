@@ -26,8 +26,7 @@ function EventEmitter() {
 }
 
 EventEmitter.prototype.on = function(funcName, func) {
-    this.callbacks[funcName] = func;
-    console.log(this.callbacks);
+    if (!this.callbacks[funcName]) this.callbacks[funcName] = func;
 };
 
 EventEmitter.prototype.trigger = function(funcName, ...args) {
