@@ -3,7 +3,12 @@
  */
 
 function twoSum(arr, n) {
-
+    const tracker = {};
+    for (let i = 0; i < arr.length; i++) {
+        if (tracker[arr[i]]) return true;
+        tracker[n - arr[i]] = "num"
+    }
+    return false
 }
 
 module.exports = twoSum;

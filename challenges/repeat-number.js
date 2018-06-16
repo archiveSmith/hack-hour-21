@@ -11,7 +11,9 @@
  */
 
 function repeatNumbers(array) {
-
+    return array.reduce(((a, b) => (b^a)));
 }
+
+console.log(repeatNumbers([1, 2, 3, 4, 4, 5, 6]))
 
 module.exports = repeatNumbers;
