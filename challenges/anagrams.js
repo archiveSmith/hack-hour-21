@@ -7,38 +7,40 @@
  */
 
 /**
-  * example:
-  * var result = anagrams('abc');
-  * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-  */
+ * example:
+ * var result = anagrams('abc');
+ * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
+ */
 
 function anagrams(string) {
   //for each letter in string, loop over the same string
   //if the letter is not the same as the iterable, then form concat the string and collect them
   // taking each of the collection, loop through them and compare with each letter in string
-    //if not found, then concat the collection item to the letter compared 
-  let collection = [];
-  let result = [];
-  let arraystring = string.split("");
-  for(let i = 0; i<arraystring.length; i++){
-    for(let a = 0; a<string.length; a++){
-      if(arraystring[i] !== string[a]){
-        collection.push(arraystring[i].concat(string[a]))
-      }
-    }
-  }
-  for(let c = 0; c<string.length; c++){
-    for(let e = 0; e<collection.length; e++){
-      if(!collection[e].includes(string[c])){
-        result.push(collection[e].concat(string[c]))
-      }
-    }
-  }
-  return result;
+  //if not found, then concat the collection item to the letter compared
+  //each letter, adding the different combinations of the rest.
+  //recurse through the string until string is length of zero, return the concated string.
 
+  
+  let collection = {};
+  let firstLetter;
+  function getperms(string, final=''){
+    if (string.length === 1) return collection[final] = true;
+  for (let s = 0; s < string.length; s++) {
+    firstLetter = string[s];
+    let remaining = string.replace(string[s], "");
+    getperms(remaining, final.concat(firstLetter))
+  }
+  return;
+ 
 }
-var result = anagrams('abcdd');
+console.log("getperms",getperms(string));
+return Object.keys(collection);
+
+ 
+  //capture the first letter
+  
+}
+var result = anagrams("abcd");
 console.log(result);
 
 module.exports = anagrams;
-
