@@ -15,6 +15,7 @@ function insertionSort(array) {
        array[j + 1] = value
     }
     // console.log(array);
+    return array;
 }
 
 // let array = [5, 2, 8, 33, 10];
@@ -22,3 +23,4 @@ function insertionSort(array) {
 // insertionSort(array);
 
 module.exports = insertionSort;
+
