@@ -11,7 +11,8 @@ findInOrderedSet(nums, 2);  -> false
 
 
 function findInOrderedSet(arr, target) {
-
+// split the array in half until each element has it's own separate array.
+// Do something like a binary search tree
 }
 
 
