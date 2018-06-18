@@ -19,28 +19,24 @@ function anagrams(string) {
   //if not found, then concat the collection item to the letter compared
   //each letter, adding the different combinations of the rest.
   //recurse through the string until string is length of zero, return the concated string.
-
-  
   let collection = {};
-  let firstLetter;
-  function getperms(string, final=''){
-    if (string.length === 1) return collection[final] = true;
-  for (let s = 0; s < string.length; s++) {
-    firstLetter = string[s];
-    let remaining = string.replace(string[s], "");
-    getperms(remaining, final.concat(firstLetter))
+  function getperms(string, final = "") {
+    if (string.length === 0) return (collection[final] = true);
+    for (let s = 0; s < string.length; s++) {
+      let firstLetter = string[s];
+      let remaining = string.replace(string[s], "");
+      // console.log("REMAINING", final.concat(firstLetter));
+      getperms(remaining, final.concat(firstLetter));
+    }
+    return;
   }
-  return;
- 
-}
-console.log("getperms",getperms(string));
-return Object.keys(collection);
+  getperms(string);
+  // console.log("collection",collection);
+  return Object.keys(collection);
 
- 
   //capture the first letter
-  
 }
-var result = anagrams("abcd");
-console.log(result);
+// var result = anagrams("abcsdft");
+// console.log(result);
 
 module.exports = anagrams;
