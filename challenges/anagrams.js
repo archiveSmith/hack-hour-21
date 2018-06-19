@@ -12,8 +12,21 @@
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-function anagrams(string) {
+  //time complexity is n^k where k is the length of the input string
 
+function anagrams(string) {
+  let result = [];
+  let split = string.split('');
+
+  for (let i = 0; i < split.length; i++) {
+    for (let j = 0; j < split.length; j++) {
+      for (let k = 0; k < split.length; k++) {
+        if (split[i] !== split[j] && split[j] !== split[k] && split[i] !== split[k]) result.push(split[i] + split[j] + split[k]);
+      }
+    }
+  }
+
+  return result;
 }
 
 module.exports = anagrams;
