@@ -9,8 +9,16 @@
  * Complete the challenge in O(1) space
  *
  */
-function uniqueNumber(array) {
 
+// use values as index
+// use each value will point to an index twice except for the unique value
+function uniqueNumber(array) {
+    return array.reduce((a, c) => a ^ c);
 }
+
+// console.log(uniqueNumber([4, 4, 5, 5, 2, 8, 8, 12, 12, 99, 99]));
+// 
+// console.log(uniqueNumber([1,2,1,3,3]));
+// -> 2
 
 module.exports = uniqueNumber;
