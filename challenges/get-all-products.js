@@ -10,7 +10,15 @@
  */
 
 function getAllProducts(array) {
-
+  return array.map((_, i, arr) => {
+    let copy = Array.from(arr);
+    copy.splice(i, 1);
+    return getProduct(copy);
+  })
 }
+
+const getProduct = (array) => array.reduce((a, b) => a * b)
+
+// console.log(getAllProducts([1, 7, 3, 4]))
 
 module.exports = getAllProducts;
