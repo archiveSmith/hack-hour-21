@@ -10,7 +10,18 @@
  */
 
 function getAllProducts(array) {
+  const products = [];
+  // go through and splice out each item and then get the product of the remaining array
+  array.forEach( (elem, idx, array) => {
+    let a = [...array];
+    a.splice(idx, 1);
+    products.push( a.reduce( (acc, elem) => acc*elem ));
+  }); 
+
+  return products;
 
 }
+
+// console.log(getAllProducts([1,7,3,4]));
 
 module.exports = getAllProducts;
