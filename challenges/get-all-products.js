@@ -13,7 +13,7 @@ function getAllProducts(array) {
   
   const getProduct = (array) => array.reduce((a, b) => a * b)
   
-  return array[0] ? array.map((_, i, arr) => {
+  return array[0] !== undefined ? array.map((_, i, arr) => {
     let copy = Array.from(arr);
     copy.splice(i, 1);
     return getProduct(copy);
@@ -21,6 +21,6 @@ function getAllProducts(array) {
 }
 
 
-// console.log(getAllProducts([1, 7, 3, 4]))
+// console.log(getAllProducts([0, 7, 3, 4]))
 
 module.exports = getAllProducts;
