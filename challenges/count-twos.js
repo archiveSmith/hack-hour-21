@@ -3,14 +3,17 @@
 // Each 2 should be counted. For instance,  the number 2222 has four 2s. 
 
 // countTwos(1);  -> 0
+// countTwos(2);  -> 1?
 // countTwos(3);  -> 1
 // countTwos(13);  -> 2
+// countTwos(2222);  -> 4?
 // countTwos(1000);  -> 300
 // countTwos(11420);  -> 4483
 
 
-function countTwos(num) {
 
+function countTwos(num) {
+  
 }
 
 module.exports = countTwos;

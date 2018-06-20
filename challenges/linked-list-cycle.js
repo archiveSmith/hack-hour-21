@@ -27,13 +27,27 @@
  *
  */
 
+//i: node object
+//o: boolean
+
 var Node = function(value) {
   this.value = value;
   this.next = null;
 }
 
 function hasCycle(head) {
+  if (head.next === null) return false;
+  // return head.next === null ? false : hasCycle(head.next)
 
+  let obj = {};
+  const check = (head, obj) => {
+    obj[head.next] = head.value;
+
+  }
+
+
+  // if (head.next !== null) return hasCycle(head.next);
+  
 }
 
 module.exports = {Node: Node, hasCycle: hasCycle}
