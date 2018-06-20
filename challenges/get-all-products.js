@@ -10,7 +10,24 @@
  */
 
 function getAllProducts(array) {
-
+  let newArr = [];
+  array.forEach((ele, index) => {
+    console.log(array);
+    let newEle = ele;
+    let counter = 0;
+    for (let i = 1; i < array.length - 1; i += 1) {
+      console.log(newEle)
+      if (array[index + i] !== undefined) newEle *= array[index + i];
+      else {
+        newEle *= array[0 + counter];
+        counter += 1;
+      }
+    }
+    newArr.push(newEle);
+  });
+  return newArr;
 }
+
+// console.log(getAllProducts([1, 7, 3, 4]));
 
 module.exports = getAllProducts;
