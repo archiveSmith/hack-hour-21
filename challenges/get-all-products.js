@@ -10,7 +10,7 @@
  */
 
 function getAllProducts(array) {
-
+// do it
 }
 
 module.exports = getAllProducts;
