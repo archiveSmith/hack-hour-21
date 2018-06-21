@@ -10,6 +10,6 @@
  *
  */
 
-const uniqueNumber = array => array.sort().reduce((acc, e, i, arr) => e !== arr[i + 1] && e !== arr[i - 1] ? e : acc, null);
+ const uniqueNumber = array => array.sort().reduce((acc, e, i, arr) => e !== arr[i + 1] && e !== arr[i - 1] ? e : acc, null);
 
 module.exports = uniqueNumber;

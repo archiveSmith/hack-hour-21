@@ -10,7 +10,11 @@
  */
 
 function getAllProducts(array) {
-
+  const output = [];
+  for (let i = 0; i < array.length; i++) {
+    output.push(array.reduce((acc, e, rI) => rI !== i ? acc *= e : acc, 1));
+  }
+  return output;
 }
 
 module.exports = getAllProducts;
