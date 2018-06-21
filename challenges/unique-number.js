@@ -13,10 +13,12 @@ function uniqueNumber(array) {
     let arr = [];
     let count = {};
     for(let i = 0; i < array.length; i++){
-        if(count[array[i]]) count[array[i]] += 1;
-        if (!count[array[i]]) count[array[i]] = 1;
-        if (count[array[i]] === 1) arr.push(array[i]);
-        if (count[array[i]] === 2) arr.splice(arr.indexOf(array[i]), 1);
+        console.log(arr.includes([array[i]])
+        if (arr.includes([array[i]]) === false) arr.push(array[i])
+        
+        else  arr.splice(arr.indexOf(array[i]), 1);
+        
+        console.log(arr)
     }
     return arr[0];
 }
