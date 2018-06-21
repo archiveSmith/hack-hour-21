@@ -10,15 +10,20 @@
  *
  */
 function uniqueNumber(array) {
-  let output;
-  const sortedArr = array.sort((a, b) => a - b);
+  // let output;
+  // const sortedArr = array.sort((a, b) => a - b);
 
-  for (let i = 0; i < sortedArr.length; i += 1) {
-    if (sortedArr[i] !== sortedArr[i + 1] && sortedArr[i] !== sortedArr[i - 1]) {
-      output = sortedArr[i];
-    }
-  }
-  return output;
+  // for (let i = 0; i < sortedArr.length; i += 1) {
+  //   if (sortedArr[i] !== sortedArr[i + 1] && sortedArr[i] !== sortedArr[i - 1]) {
+  //     output = sortedArr[i];
+  //   }
+  // }
+  // return output;
+
+  return array.reduce((x, y) => {
+    return x ^ y;  
+  }, 0);
 }
+console.log(uniqueNumber([1, 2, 1, 3, 3]));
 
 module.exports = uniqueNumber;
