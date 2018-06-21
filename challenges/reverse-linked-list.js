@@ -14,39 +14,38 @@ function Node(value) {
 }
 
 function reverseLinkedList(head) {
-    let curr = head;
     let prev = null;
+    let curr = head;
     let next;
-    while(curr.value !== null) {
-        next = curr.head;
+    while(curr !== null){
+        next = curr.next; 
         curr.next = prev;
-        curr = next;
         prev = curr;
-        
+        curr = next;
+       
     }
     head = prev;
     return head;
+    // let curr = head;
+    // let prev = null;
+    // let next;
+    // while(curr.value !== null) {
+    //     next = curr.head;
+    //     curr.next = prev;
+    //     curr = next;
+    //     prev = curr;
+        
+    // }
+    // head = prev;
+    // return head;
 
-
+}
     //recursively solve the problem by setting the head.next and current
     //linking to the prev, and pointing to the nxt
-
-    if(head.next === null) return head;
-    let h = head;
-    let t = head.next;
-    reverseLinkedList(t);
-    // let trace = head;
-    // let newNode = new Node(head.value);
-    // newNode.next = null;
-    // trace = newNode;
-    // while(trace.next !== null){
-    //     let nextNode = new Node(head.next.value);
-    //     trace = head;
-    //     nextNode.next = trace;
-    //     head = head.next;
-    //     trace = nextNode;
-    // }
-    // return trace;
+let list = new Node(1);
+list.next = new Node(2);
+list.next.next = new Node(3);
+console.log(reverseLinkedList(list));
 
 
 
