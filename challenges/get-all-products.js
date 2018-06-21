@@ -10,6 +10,7 @@
  */
 
 function getAllProducts(array) {
+  if (!array.length) return [0];
   let newArr = [];
   array.forEach((ele, index) => {
     console.log(array);
