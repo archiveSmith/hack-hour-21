@@ -18,6 +18,11 @@ Adds a node to the end of the list
  */
 LinkedList.prototype.add = function(val) {
   const addedNode = new Node(val);
+  if (this.head === null) {
+    this.head = addedNode;
+    this.tail = addedNode;
+    return;
+  }
   addedNode.prev = this.tail;
   this.tail.next = addedNode;
   this.tail = addedNode;
@@ -68,8 +73,10 @@ LinkedList.prototype.remove = function(val) {
 // node5.prev = node4;
 // node6.prev = node5;
 
-// list1.add(7);
-// list1.remove(6);
+// list1.add(1);
+// list1.add(2);
+// list1.remove(1);
+// list1.add(3);
 // console.log(list1);
 
 module.exports = LinkedList;
