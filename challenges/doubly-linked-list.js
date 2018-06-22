@@ -1,3 +1,5 @@
+//Will have to do this after CodeSmith......
+
 /*
 Create a doubly linked list with an add and remove method
  */
