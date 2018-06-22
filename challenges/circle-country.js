@@ -22,8 +22,52 @@
  *
  */
 
+
+
+// Assume that the only circles we have to count are the circles that starting point and 
+// ending points are within.
+
+
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+  let circlesWeAreIn=0;
+  
+  let dist;
+  let start_loc_inside = false;
+  for (let i = 0; i < r.length; i++) {
+    start_loc_inside = false;
+    distFromCircleCenter = Math.floor(Math.hypot((start_x - x[i]), (start_y - y[i])));
+    if ( distFromCircleCenter < r[i] ) {
+      circlesWeAreIn++;
+      start_loc_inside = true;
+    }
+    distFromCircleCenter = Math.floor(Math.hypot((end_x - x[i]), (end_y - y[i])));
+    if ( distFromCircleCenter < r[i] ) {
+      
+      if (!start_loc_inside) {
+        circlesWeAreIn++;
+       } else {
+        // so we don't double count if the start and end points are in the same circle
+        circlesWeAreIn--;
+       }
+    }
+  }  
+
+  return circlesWeAreIn;
 
 }
+
+// let start_x = 5;
+// let start_y = 5;
+// // let end_x = 10;
+// // let end_y = 10;
+
+// let end_x = 6;
+// let end_y = 6;
+
+// let x=[5,10];
+// let y=[5,10];
+// let r = [2,2];
+
+// console.log(circleCountry(x,y,r,start_x, start_y, end_x, end_y));
 
 module.exports = circleCountry;
