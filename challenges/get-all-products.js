@@ -10,7 +10,17 @@
  */
 
 function getAllProducts(array) {
+    let result = []
+    // for (let a = 0; a < array.length; a++){
+    //     let copy = array.slice();
+    //     copy.splice(a,1);
+    //     result.push(copy.reduce((accumulator,current) => accumulator * current));
+    // }
+    array.forEach( a => {let copy = array.slice();copy.splice(a,1); result.push(copy.reduce((accumulator,current) => accumulator * current)) })
+    
+    return result;
 
 }
 
+console.log(getAllProducts([1, 7, 3, 4]));
 module.exports = getAllProducts;

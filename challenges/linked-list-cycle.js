@@ -30,10 +30,39 @@
 var Node = function(value) {
   this.value = value;
   this.next = null;
-}
+};
 
 function hasCycle(head) {
 
+  //linear time
+  //if you have two nodes pointing at the same node
+  //for every suceeding node, compare the head to the current node.
+  /*Challenge 1 */
+  if (head.value === null) return false;
+  let curr = head.next;
+  let next = null;
+  while (curr){
+    next = curr.next;
+    if(next){
+      if(head.next === next) return true;
+      else{
+        curr = next;
+      }
+    }
+    else{
+      return false;
+    }
 }
+return false;
+}
+/*Challenge 1 */
+//evaluate the the situation of d
+// var node1 = new Node("1");
+// var node2 = (node1.next = new Node("2"));
+// var node3 = (node2.next = new Node("3"));
+// var node4 = (node3.next = new Node("4"));
+// var node5 = (node4.next = new Node("5"));
+// //node5.next = node2;
 
-module.exports = {Node: Node, hasCycle: hasCycle}
+// console.log(hasCycle(node1));
+module.exports = { Node: Node, hasCycle: hasCycle };

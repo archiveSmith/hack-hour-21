@@ -17,7 +17,20 @@
  */
 
 function rotateGrid(grid, n) {
+    //create 2D array with the n
+    //map the first elements of each row to the first row
+    let x = new Array(n);
+    for (let i = 0; i < n; i++) {
+        x[i] = new Array(n)
+    }
+    for (let s = 0 ; s < n; s++){
+        for (let f = 0 ; f< n; f ++){
+            x[s][f] = grid[n-f-1][s]
+        }
+    }
+    return x;
 
 }
-
+// sampleGrid = [[1,2,3],[4,5,6],[7,8,9]];
+// console.log(rotateGrid(sampleGrid, 3));
 module.exports = rotateGrid;

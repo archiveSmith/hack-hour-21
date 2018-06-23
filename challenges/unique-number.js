@@ -10,6 +10,9 @@
  *
  */
 function uniqueNumber(array) {
+    array.reduce((accumulator,current) => {accumulator + current});
+    
+    
 
 }
 

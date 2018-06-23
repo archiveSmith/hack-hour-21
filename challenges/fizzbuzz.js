@@ -17,6 +17,31 @@
 //                     16 ]
 
 function fizzbuzz(num) {
+	function fizzbuzz(num){
+	let final = [];
+	for (let i = 1; i<=num; i++){
+		final.push(i);
+	}
+	console.log(final);
+	function result(){
+		return final.map(el => fizz(el));
+	}
+	function fizz(num){
+		if(num%3 === 0 && num%5 !== 0){
+			return "fizz";
+		}
+		if (num%5 === 0 && num%3 !== 0){
+			return "buzz";
+		}
+		if (num%5 === 0 && num%3 === 0){
+			return "fizzbuzz";
+		}
+		else{
+			return num;
+		};	
+	};
+	return result();
+}
 
 }
 

@@ -4,6 +4,17 @@
 
 
 function Stack() {
+    this.stack = [];
+    this.pop = () => {
+        if(this.stack.length > 0){
+        return this.stack[this.stack.length - 1];
+        } else{
+            return undefined;
+        }
+    };
+    this.push = (el) => {
+        this.stack.concat(el);
+    };
 
 }
 

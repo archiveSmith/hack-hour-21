@@ -23,6 +23,8 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
+    //calculate the distance between the two circles
+    //loop through the array and compare the the distance of each to the starting point to see if its smaller than
 
 }
 
