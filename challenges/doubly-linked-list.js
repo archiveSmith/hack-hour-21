@@ -35,9 +35,7 @@ LinkedList.prototype.add = function(val) {
 Removes the first node with the inputted value
  */
 LinkedList.prototype.remove = function(val) {
-  let forward = [];
   let newhead = this.head;
-  let backward = [];
   let newtail = this.tail;
   //moving from the head (forward), and moving from the back (backward)
   while(this.newhead !== value){
@@ -50,9 +48,6 @@ LinkedList.prototype.remove = function(val) {
   }else{
     this.newhead = this.newhead.next;
   }
-        
-  
-    
 }//when meeting having, stop, and evaluate the index of val of the traversed position
   
 };

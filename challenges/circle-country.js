@@ -23,9 +23,24 @@
  */
 
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
-    //calculate the distance between the two circles
-    //loop through the array and compare the the distance of each to the starting point to see if its smaller than
-
+    let cross = 0;
+    //case 1: end is in start
+    //case 2: array circle is ouside of the start
+    //case 3: array circle contains the end coordinate
+    //distance is sqrt of the (x-diff)^2 plus the (y-diff)^2
+    for (let i = 0 ; i < array.length; i++){
+        let c1c2 = Math.sqrt(Math.pow((x[i]-start_x),2) + Math.pow((y[i]-start_y),2));
+        let c2c3 = Math.sqrt(Math.pow((x[i]-end_x),2) + Math.pow((y[i]-end_y),2));
+        if (c1c2 < r[i] && c2c3 < r[i]){
+            return 0
+        }else if(c1c2< r[i] && c2c3>r[i]){
+            cross += 1;
+        }else if (c1c2 > r[i] && c2c3 < r[i]){
+            cross += 1;
+        }else{
+            continue;
+        }
+}
 }
 
 module.exports = circleCountry;
