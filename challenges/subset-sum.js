@@ -8,8 +8,21 @@
  * subsetSum([8, -2, 1, -3], 6) -> true, 8 + 1 + (-3) = 6
  */
 
-function subsetSum(array, target) {
-
+function sum(array) {
+    return array.reduce((a, b) => a + b);
 }
+
+function subsetSum(array, target) {
+    array.sort();
+    if (target < sum(array))
+}
+// // 
+// iterate the array
+// for each number
+// calculate the gap which is number - target
+// if gap is positive
+//     if some element of the array can be added to gap such that gap gets smaller, add it to subset 
+
+console.log(subsetSum([3, 7, 4, 2]))
 
 module.exports = subsetSum;
