@@ -25,7 +25,7 @@
 function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
     let cross = 0;
     //case 1: end is in start
-    //case 2: array circle is ouside of the start
+    //case 2: aarray circle contains the start coordinate
     //case 3: array circle contains the end coordinate
     //distance is sqrt of the (x-diff)^2 plus the (y-diff)^2
     for (let i = 0 ; i < array.length; i++){
@@ -41,6 +41,7 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
             continue;
         }
 }
+return cross;
 }
 
 module.exports = circleCountry;
