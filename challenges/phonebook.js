@@ -1,6 +1,6 @@
 /**
 * Part 1:
-* You are given an array of arrays.  The subarrays are first names and phone numbers.
+* You are given anele ofeles.  The sueles are first names and phone numbers.
 *
 * Example:
 *   jazbook = [
@@ -26,12 +26,22 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
-
+  let phone = false;
+  jazbook.forEach((ele) => {
+    if (ele[0] === name) {
+      phone = ele[1];
+    }
+  })
+  return phone;
 }
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
-
+  let phoneBook = {};
+  jazbook.forEach((ele) => {
+    phoneBook[ele[0]] = ele[1];
+  });
+  return phoneBook;
 }
 
 const objectToExport = {
