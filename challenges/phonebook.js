@@ -46,7 +46,7 @@ function makePhoneBookObject(jazbook){
     pBook.addEntry(elem[0], elem[1])
   });
 
-  return pBook;
+  return pBook.entries;
 
 }
 
@@ -68,6 +68,9 @@ class Phonebook {
     delete this.entries[name];
   }
 
+  get entries() {
+    return this.entries;
+  }
 };
 
 
