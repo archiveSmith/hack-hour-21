@@ -22,10 +22,26 @@
  * balancedParens(' var hubble = function() { telescopes.awesome();'); // false
  *
  *
+ * input: {string}
+ * output: {boolean}- true if the parens are balanced, otherwise false
+ * approach:   
+ *  - convert string to array -> .split('')
+ *  - check for opening bracket (, {, [, ], }, )
+ *      - /\(/ |/\)/ |/\{/| /\}/| /\[/| /\]/
+ *  - 
  */
 
 function balancedParens(input){
+    let stringArr = input.split(''); //convert string to array
+    console.log(stringArr);
+    let checkParens = []
+    stringArr.foreach (function(elem) {
+        if (elem === /\(/ ))
+    }
+    }
 
 }
 
 module.exports = balancedParens;
+
+balancedParens('hello');

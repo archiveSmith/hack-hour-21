@@ -6,6 +6,8 @@
  * BONUS:
  * Do it in place
  *
+ * input: head of the list
+ * output: new head of the list
  */
 
 function Node(value) {

@@ -10,6 +10,9 @@
  * The 0 is the tens digit (1 + 9, carry the 1).
  * The 8 is the hundreds digit (1 carried over + 5 + 2).
  *
+ * input-
+ * output-
+ * 
  */
 
 function Node(val) {
