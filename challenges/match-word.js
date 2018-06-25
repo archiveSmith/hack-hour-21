@@ -10,8 +10,40 @@
 // matchWord('%%$@$while  try ! yrt  for if_fi rof #*#  elihw');  -> true
 // matchWord('');  -> true
 
+/*
+input: {string}
+output: {true} if every word is closed by its backwards counerpart. otherwise false
+approach:
+- lowercase toLowerCase
+- words must be separated by space or punctuation
+- call stack approach
+- 
+
+*/
+
 function matchWord(str) {
+  newStr = str.toLowerCase();
+  const matches = {
 
 }
+}
 
+function balancedParens(input) {
+    const tracker = [];
+    const matches = {
+      '{': '}',
+      '[': ']',
+      '(': ')',
+    };
+    for (let i = 0; i < input.length; i++) {
+      if (input[i] in matches) tracker.push(input[i]);
+      else if (input[i] === ')' || input[i] === '}' || input [i] === ']') {
+        if (input[i] !== matches[tracker.pop()]) return false;
+      }
+    }
+    return tracker.length === 0;
+  }
+let w = 'EI %$& %(A'.split(' ');
+
+console.log(w);
 module.exports = matchWord;

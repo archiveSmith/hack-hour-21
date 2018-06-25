@@ -14,10 +14,22 @@
  *                                          [9, 6, 3]  ]
  *
  * BONUS: Do this in place
+ * 
+ * input: {nested array}
+ * output: {nested array} 
  */
 
 function rotateGrid(grid, n) {
-
+    const output = JSON.parse(JSON.stringify(grid));
+    for (let r = 0; r < n; r += 1) {
+        for (let c = 0; c < n; c +=1) {
+            output[c][Math.abs(r - (n-1))] = grid[r][c];
+        }
+    }
+    return output;
 }
+
+const sampleGrid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+console.log(rotateGrid(sampleGrid,3));
 
 module.exports = rotateGrid;

@@ -15,6 +15,13 @@
  *      900   ->    CM
  *      1000  ->    M
  * 
+ * input: {number} positive integer
+ * output: {string} uppercase
+ * approach:
+ *  edge case- number !< 0, input must be number data
+ *  1 -> I
+ *  2,3 -> I++
+ *  4 -> 
  */
 
 function romanNumeral(n) {
