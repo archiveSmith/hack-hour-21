@@ -2,7 +2,7 @@
 * Part 1:
 * You are given an array of arrays.  The subarrays are first names and phone numbers.
 *
-* Example:
+* Example:sd
 *   jazbook = [
 *     ['alex','301-844-3421'],
 *     ['jae','301-844-1211'],
