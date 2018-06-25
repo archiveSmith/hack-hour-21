@@ -39,7 +39,7 @@ function makePhoneBookObject(jazbook){
     return pb; 
   }, {});
   
-  pb.find = name => pb[name] ? pb[name] : '404'; 
+  pb.find = name => {if(pb[name]) return pb[name]}; 
   pb.remove = name => delete pb[name];
   pb.add = (name, num) => pb[name] ? 'name already in phonebook' : pb[name] = num;
 
@@ -64,7 +64,7 @@ let jazbook = [
 // let pb = makePhoneBookObject(jazbook);
 // pb.add('wilbur', '123')
 // console.log(pb)
-// console.log(pb.find('wilbur'))
+// console.log(pb.find('wilbufr'))
 // console.log(pb)
 // console.log(pb.remove('jasmine'))
 // console.log(pb)
