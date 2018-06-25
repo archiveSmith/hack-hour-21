@@ -14,13 +14,13 @@ function getAllProducts(array) {
     if(array.length === 0) output.push(0);
 
     for(let i = 0; i < array.length; i++){
-        let nwArray = array.slice(0, i).concat(array.spulice(i+1))
-        let prodAll = nwArray.reduce((a, b) => {
-        return a = a * b;
-     })
+        let nwArray = array.slice(0, i).concat(array.slice(i+1))
+        let prodAll = nwArray.reduce((a, b) => a * b)
      output.push(prodAll);
     }
     return output;
 }
+
+console.log(getAllProducts([1, 7, 3, 4]));
 
 module.exports = getAllProducts;
