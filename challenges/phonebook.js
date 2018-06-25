@@ -26,13 +26,69 @@
 
 //  return the number associated with the name in the jazbook
 function findName(jazbook, name) {
+  let person = jazbook.find((elem)=>{
+    return elem[0] === name;
+  })
+
+  if (person) {
+    return person[1];
+  } else {
+    return false;
+  }
 
 }
 
 // return an object literal representing the jazbook
 function makePhoneBookObject(jazbook){
 
+  let pBook = new Phonebook();
+  jazbook.forEach( elem => {
+    pBook.addEntry(elem[0], elem[1])
+  });
+
+  return pBook;
+
 }
+
+class Phonebook {
+  constructor () {
+    this.entries = {}; // use objects to store key:value (name:phone-number)
+  }
+
+  // assume name to be unique
+  addEntry(name, number){
+    this.entries[name] = number;
+  }
+
+  getNumber(name){
+    return this.entries[name];
+  }
+
+  removeEntry(name){
+    delete this.entries[name];
+  }
+
+};
+
+
+
+// jazbook = [
+//   ['alex','301-844-3421'],
+//   ['jae','301-844-1211'],
+//   ['david','301-844-0978'],
+//   ['travis','301-844-8505'],
+//   ['jasmine','1800-974-4539'],
+// ];
+
+// console.log(findName(jazbook, 'jae'));
+
+// let properBook = makePhoneBookObject(jazbook);
+// console.log(properBook);
+// console.log(properBook.getNumber('david'));
+// console.log(properBook.removeEntry('david'));
+// console.log(properBook.getNumber('david'));
+// properBook.addEntry('david', '867-5309');
+// console.log(properBook.getNumber('david'));
 
 const objectToExport = {
   findName,
