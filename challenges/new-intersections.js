@@ -17,8 +17,29 @@
  * 	 
  */
 
-function newIntersections(x, y){
+function newIntersections(x, y) {
+  const checkBounded = (a, b, x, y) => {
+    let up = false;
+    let down = false;
+    let left = false;
+    let right = false;
+    for (let i = 0; i < x.length; i += 1) {
+      if (x[i] - 1 === a && y[i] === b) up = true;
+      if (x[i] + 1 === a && y[i] === b) down = true;
+      if (x[i] === a && y[i] - 1 === b) left = true;
+      if (x[i] === a && y[i] + 1 === b) right = true;
+    }
+    return up && down && left && right;
+  };
 
+  let count = 0;
+  for (let i = 0; i < x.length; i += 1) {
+    if (checkBounded(x[i] - 1, y[i], x, y)) count += 1;
+    if (checkBounded(x[i] + 1, y[i], x, y)) count += 1;
+    if (checkBounded(x[i], y[i] - 1, x, y)) count += 1;
+    if (checkBounded(x[i], y[i] + 1, x, y)) count += 1;
+  }
+  return count;
 }
 
 module.exports = newIntersections;
