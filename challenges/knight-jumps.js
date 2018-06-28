@@ -11,7 +11,22 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+  const x = Number(str.split(' ')[0][1]);
+  const y = Number(str.split(' ')[1][0]);
+  if (x > 2 && x < 7 && y > 2 && y < 7) return 8;
+  let count = 0;
+  // Check all 8 moves, increment count
+  if (x + 2 <= 8 && y + 1 <= 8) count += 1;
+  if (x + 2 <= 8 && y - 1 >= 1) count += 1;
+  if (x - 2 >= 1 && y + 1 <= 8) count += 1;
+  if (x - 2 >= 1 && y - 1 >= 1) count += 1;
+  if (x + 1 <= 8 && y + 2 <= 8) count += 1;
+  if (x - 1 >= 1 && y + 2 <= 8) count += 1;
+  if (x + 1 <= 8 && y - 2 >= 1) count += 1;
+  if (x - 1 >= 1 && y - 2 >= 1) count += 1;
+  return count;
 }
+
+// console.log(knightjumps('(1 5)'));
 
 module.exports = knightjumps;
