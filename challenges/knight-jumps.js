@@ -11,7 +11,30 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
-
+  const row = [true, true, true, true, true, true, true, true];
+  const board = Array(8).fill([...row], 0, 8);
+  const knightPos = [Number(str[1]), Number(str[3])];
+  const checkMove = (xOffset, yOffset) => {
+    if (board[knightPos[0] + xOffset] && board[knightPos[0] + xOffset][knightPos[1] + yOffset]) {
+      board[knightPos[0] + xOffset][knightPos[1] + yOffset] = false;
+      return 1;
+    }
+    return 0;
+  };
+  let availableMoves = 0;
+  availableMoves += checkMove(-2, -1);
+  availableMoves += checkMove(-2, 1);
+  availableMoves += checkMove(2, -1);
+  availableMoves += checkMove(2, 1);
+  availableMoves += checkMove(-1, -2);
+  availableMoves += checkMove(-1, 2);
+  availableMoves += checkMove(1, -2);
+  availableMoves += checkMove(1, 2);
+  return availableMoves;
 }
+
+// const s = '(1 0)';
+
+// console.log(knightjumps(s));
 
 module.exports = knightjumps;
