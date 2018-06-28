@@ -10,8 +10,45 @@
 //  example input:
 // var str = "(4 5)"
 
-function knightjumps(str) {
 
+/* knights can move relative to current space:
+-2,1; 2,1;
+-2,-1; 2,-1;
+-1,2; 1,2;
+-1,-2; 1,-2
+*/
+function knightjumps(str) {
+  let moves = [
+[-2,1], [2,1],
+[-2,-1], [2,-1],
+[-1,2], [1,2],
+[-1,-2], [1,-2]
+]
+
+  let legalMoves = 0;
+
+  posArr = str.replace(/[()]/g, '').split(' ').map(elem => parseInt(elem))
+  // posArr = posArr.map( elem => parseInt(elem));
+  // console.log(posArr);
+
+  // calculate all the positions legal or off the board
+  moves.map( (elem)=>{
+    elem[0] += posArr[0];
+    elem[1] += posArr[1];
+  })
+  // console.log(moves);
+
+  // now filter for the legal moves...moves that are on the board
+  // and then count the legal moves
+  legalMoves = moves.filter((elem) => {
+    return (elem[0] > 0 && elem[1] > 0);
+  }).length
+
+  // console.log(legalMoves);
+
+  return legalMoves;
 }
+
+// console.log(knightjumps('(4 5)'));
 
 module.exports = knightjumps;
