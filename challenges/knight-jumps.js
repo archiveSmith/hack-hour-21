@@ -11,7 +11,21 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  let coordArr = str.split(' ');
+  let x = coordArr[0].slice(-1);
+  x = Number(x);
+  let y = coordArr[1].slice(0,1);
+  y = Number(y);
 
+
+  if ( (x === 1 && y === 1) ) return 3; 
+  if ( (x === 8 && y === 8) ) return 3;
+  if ( (x === 1 && y === 8) ) return 3;
+  if ( (y === 1 && x === 8) ) return 3;
+  if ( (x === 1 || y === 1) ) return 5;
+  if ( (x === 8 || y === 8) ) return 5;
+  else return 8;
 }
+
 
 module.exports = knightjumps;
