@@ -22,3 +22,6 @@ function newIntersections(x, y){
 }
 
 module.exports = newIntersections;
+
+
+// ToDo after CodeSmith
