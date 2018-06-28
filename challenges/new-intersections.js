@@ -17,8 +17,16 @@
  * 	 
  */
 
-function newIntersections(x, y){
+const check = (xPoint, yPoint) => {
+  
+}
 
+function newIntersections(x, y){
+  newPointCounter = 0;
+  for (let i = 0; i < x.length; i += 1) {
+    check(x[i], y[i])
+  }
+  return newPointCounter;
 }
 
 module.exports = newIntersections;
