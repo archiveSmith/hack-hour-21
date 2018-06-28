@@ -41,7 +41,7 @@ function knightjumps(str) {
   // now filter for the legal moves...moves that are on the board
   // and then count the legal moves
   legalMoves = moves.filter((elem) => {
-    return (elem[0] > 0 && elem[1] > 0);
+    return (elem[0] > 0 && elem[1] > 0 && elem[0] < 9 && elem[1] < 9);
   }).length
 
   // console.log(legalMoves);
@@ -50,5 +50,7 @@ function knightjumps(str) {
 }
 
 // console.log(knightjumps('(4 5)'));
+// console.log(knightjumps('(1 1)'));
+// console.log(knightjumps('(8 8)'));
 
 module.exports = knightjumps;
