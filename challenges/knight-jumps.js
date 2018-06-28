@@ -11,7 +11,26 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+  str = str.slice(1, 4).split(' ');
+  const x = Number(str[0]);
+  const y = Number(str[1]);
+  let moveCount = 0;
 
+  if (x > 8 || y > 8 || x < 1 || y < 1) {
+    return 0;
+  }
+
+  if (x + 2 <= 8 && y + 1 <= 8) moveCount += 1;
+  if (x + 2 <= 8 && y - 1 >= 1) moveCount += 1;
+  if (x + 1 <= 8 && y + 2 <= 8) moveCount += 1;
+  if (x + 1 <= 8 && y - 2 >= 1) moveCount += 1;
+
+  if (x - 2 >= 1 && y + 1 <= 8) moveCount += 1;
+  if (x - 2 >= 1 && y - 1 >= 1) moveCount += 1;
+  if (x - 1 >= 0 && y + 2 <= 8) moveCount += 1;
+  if (x - 1 >= 0 && y - 2 >= 1) moveCount += 1;
+
+  return moveCount;
 }
-
+// console.log(knightjumps('(1 4)'));
 module.exports = knightjumps;
