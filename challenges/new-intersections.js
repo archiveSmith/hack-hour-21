@@ -18,7 +18,7 @@
  */
 
 function newIntersections(x, y){
-
+  // TBC
 }
 
 module.exports = newIntersections;
