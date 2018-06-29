@@ -27,8 +27,8 @@ function knightjumps(str) {
 
   if (x - 2 >= 1 && y + 1 <= 8) moveCount += 1;
   if (x - 2 >= 1 && y - 1 >= 1) moveCount += 1;
-  if (x - 1 >= 0 && y + 2 <= 8) moveCount += 1;
-  if (x - 1 >= 0 && y - 2 >= 1) moveCount += 1;
+  if (x - 1 >= 1 && y + 2 <= 8) moveCount += 1;
+  if (x - 1 >= 1 && y - 2 >= 1) moveCount += 1;
 
   return moveCount;
 }
