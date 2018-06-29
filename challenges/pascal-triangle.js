@@ -33,7 +33,27 @@
 */
 
 function pascalTriangle(numRows) {
-
+  const triangle = [];
+  // check for edge cases
+  if (numRows < 1 || typeof numRows !== 'number') return triangle;
+  for (let i = 0; i < numRows; i += 1) {
+    // create a row for each numRow
+    triangle.push([]);
+    for (let j = 0; j < i + 1; j += 1) {
+      // if its the first or last item of the array, push 1
+      if (j === 0) triangle[i].push(1)
+      else if (j === i) triangle[i].push(1)
+      // otherwise push the added values from above
+      else {
+        // define what to push to inner array and then push it
+        let newItem = triangle[i - 1][j - 1] + triangle[i - 1][j];
+        triangle[i].push(newItem);
+      }
+    }
+  }
+  return triangle;
 }
+
+// console.log(pascalTriangle(6));
 
 module.exports = pascalTriangle;
