@@ -11,21 +11,17 @@ function Node(val) {
 }
 
 function zip(l1, l2) {
-  let l1Node = new Node(l1.next);
-  let l2Node = new Node(l2.next);
+  let l1Node = l1.next;
   let curr1 = l1;
-  let curr2 = l2;
-  while(l1Node !== null || l2Node !== null){
-    curr1.next = curr2
+  while(l1Node !== null && l2 !== null){
+    curr1.next = l2
     curr1.next.next= l1Node;
     l1Node = l1Node.next;
-    // l2Node = l2Node.next;
     curr1 = curr1.next.next;
-    curr2 = l2Node;
-    l2Node = l2Node.next;
+    l2 = l2.next
   }
  if(l1Node === null){
-   curr1.next = l2Node;
+   curr1.next = l2;
  }else{
    curr1.next = l1Node;
  }
@@ -41,7 +37,8 @@ function zip(l1, l2) {
 // l2.next.next = new Node(5);
 // l2.next.next.next = new Node(7);
 
-// console.log(zip(l1,l2));
+
+// console.log(JSON.stringify(zip(l1,l2)));
 
 
   
