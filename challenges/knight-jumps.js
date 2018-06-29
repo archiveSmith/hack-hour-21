@@ -10,6 +10,10 @@
 //  example input:
 // var str = "(4 5)"
 
+
+// do after codesmith
+
+
 function knightjumps(str) {
 
 }
