@@ -18,18 +18,26 @@
  */
 
 function newIntersections(x, y){
-    //as iterating through the array, check if the surrounding is occupied
-    //{'3': 1, '4': 1}
-    let sorted_x = {};
-    x.slice().forEach(el => sorted_x[x.indexOf(el)] = el)
-    let sorted_y = {};
-    y.slice().forEach(el => sorted_y[y.indexOf(el)] = el)
+    //iterate through the row first
+    //if the row contains upper level then start looking into the lower level
+    //if the row does not contain immediate upper level, then keep looking into the upper level
+    //apply the same thing to the 
+    let index_x = {};
+    x.slice().forEach(el => index_x[x.indexOf(el)] = el)
+    let index_y = {};
+    y.slice().forEach(el => index_y[y.indexOf(el)] = el)
     let new_x = x.sort();
     let new_y = y.sort();
-    for (let s = 1; s < sorted_x; s++){
-        if (!sorted_x[s+1]){
-            //evaluate the surrounding: on the left
-            if(sorted_x[s] < sorted_x[s+1] && s)
+    for (let y = 1; y < index_y; y++){
+        if(index_y[y-1] && index_y[y+1]{
+        for (let x = 1; x < index_x; x++){
+            if (!index_x[s+1]){
+                //evaluate the surrounding: on the left
+                if(index_x[s] < index_x[s+1] && s){
+
+                }
+            }
+        }
         }
     }
 }
