@@ -72,7 +72,7 @@ function getPINs(observed) {
 
       // add on the combination with the additional digit
       for(let poss=0; poss<ob_digit_possibilities.length; poss++){
-        working.push( temp[0] + ob_digit_possibilities[poss]);
+        working.push( temp[t] + ob_digit_possibilities[poss]);
       }
     } 
     temp=[...working];// save it for the next iteration
@@ -83,7 +83,7 @@ function getPINs(observed) {
   
   return combos;
 }
-
+// 
 // console.log(getPINs('11'));
 // console.log(getPINs('1963'));
 // console.log(getPINs('369'))
