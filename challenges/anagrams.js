@@ -24,7 +24,6 @@ function recursiveAn(arr, output = [], string = '') {
     }
   }
   return output;
-
 }
 
 function anagrams(string) {
