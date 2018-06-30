@@ -33,6 +33,7 @@
 */
 
 function pascalTriangle(numRows) {
+  if (numRows < 1) return [];
   const rows = [[1]];
   if (numRows === 1) return rows;
   rows.push([1, 1]);
