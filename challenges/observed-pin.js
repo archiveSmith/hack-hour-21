@@ -40,11 +40,52 @@ expectations = {
 */
 
 
-
-
 function getPINs(observed) {
+  // need to include the original
+  let combos = [];
+  let keypad = {
+    '0': '08',
+    '1': '124',
+    '2' : '2135',
+    '3' : '326',
+    '4' : '4157',
+    '5' : '52468',
+    '6' : '6359',
+    '7' : '748',
+    '8' : '87590',
+    '9' : '968',
+  }
 
+  // go through each digit our observed
+  // and build up our combinations 1 digit at a time
+  // and then save the temp array to process for the next iteration in the out loop
+  
+  // start it with possibilities of the first digit, including itself
+  let temp=keypad[observed[0]].split('');
+  // console.log(temp);
+  for(let ob=1; ob<observed.length; ob++){
+    let working=[];
+    let ob_digit_possibilities = keypad[observed[ob]];
+    
+    // go through our temp array of intermediate combinations
+    for(let t=0; t<temp.length; t++){
+
+      // add on the combination with the additional digit
+      for(let poss=0; poss<ob_digit_possibilities.length; poss++){
+        working.push( temp[0] + ob_digit_possibilities[poss]);
+      }
+    } 
+    temp=[...working];// save it for the next iteration
+  } 
+  
+  combos = temp;
+  // console.log(combos);
+  
+  return combos;
 }
 
+// console.log(getPINs('11'));
+// console.log(getPINs('1963'));
+// console.log(getPINs('369'))
 
 module.exports = getPINs
