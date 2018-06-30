@@ -33,7 +33,7 @@
 */
 
 function pascalTriangle(numRows) {
-
+  // TBC
 }
 
 module.exports = pascalTriangle;

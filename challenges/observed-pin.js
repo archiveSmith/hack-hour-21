@@ -39,12 +39,35 @@ expectations = {
 
 */
 
-
-
-
 function getPINs(observed) {
-
+  if (typeof observed === 'number') observed = observed.toString();
+  const neighbors = {
+    0: [0, 8],
+    1: [1, 2, 4],
+    2: [2, 1, 3, 5],
+    3: [3, 2, 6],
+    4: [4, 1, 5, 7],
+    5: [5, 2, 4, 6, 8],
+    6: [6, 3, 5, 9],
+    7: [7, 4, 8],
+    8: [8, 0, 5, 7, 9],
+    9: [9, 6, 8],
+  };
+  // loop through the digits array
+  return observed.split('').reduce((starters, e) => {
+    // save the current length of starters (the accumulator) so we don't iterate through pushed items later
+    const { length } = starters;
+    // loop through neighbors for the current digit
+    neighbors[e].forEach((neighbor) => {
+      // loop through the "old" starters
+      for (let i = 0; i < length; i++) {
+        // push "new" starters that have the current neighbor at the end
+        starters.push([...starters[i], neighbor]);
+      }
+    });
+    // clear out the starters array of all "old" starters
+    return starters.slice(length);
+  }, [[]]);
 }
-
 
 module.exports = getPINs
