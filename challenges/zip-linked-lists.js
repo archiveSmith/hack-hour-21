@@ -35,7 +35,7 @@ function zip(l1, l2) {
 // let l2 = new Node(1);
 // l2.next = new Node(3);
 // l2.next.next = new Node(5);
-// l2.next.next.next = new Node(7);
+// l2.next.next.next = new Node(7);s
 
 
 // console.log(JSON.stringify(zip(l1,l2)));
