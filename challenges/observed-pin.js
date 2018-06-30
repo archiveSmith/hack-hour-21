@@ -43,8 +43,31 @@ expectations = {
 
 
 function getPINs(observed) {
+  const numPad = {
+    1: [1, 2, 4],
+    2: [1, 2, 3, 5],
+    3: [2, 3, 6],
+    4: [1, 5, 4, 7],
+    5: [2, 4, 5, 6, 8],
+    6: [3, 5, 6, 9],
+    7: [4, 7, 8],
+    8: [5, 7, 8, 9, 0],
+    9: [6, 8, 9],
+    0: [8, 0],
+  };
+  possibleCombos = [];
 
+  for (let i = 0; i < observed.length; i += 1) {
+    let front = observed.slice(0, i);
+    let end = observed.slice(i + 1);
+    for (let j = 0; j < numPad[observed[i]].length; j += 1) {
+      possibleCombos.push(front + numPad[observed[i]][j] + end);
+    }
+
+  }
+  return possibleCombos;
 }
 
+console.log(getPINs('11'));
 
 module.exports = getPINs

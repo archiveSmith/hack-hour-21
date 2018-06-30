@@ -43,7 +43,6 @@ function pascalTriangle(numRows) {
       // if its the first or last item of the array, push 1
       if (j === 0) triangle[i].push(1)
       else if (j === i) triangle[i].push(1)
-      // otherwise push the added values from above
       else {
         // define what to push to inner array and then push it
         let newItem = triangle[i - 1][j - 1] + triangle[i - 1][j];
@@ -54,6 +53,6 @@ function pascalTriangle(numRows) {
   return triangle;
 }
 
-// console.log(pascalTriangle(6));
+console.log(pascalTriangle(12));
 
 module.exports = pascalTriangle;
