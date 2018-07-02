@@ -15,7 +15,26 @@
  */
 
 function countStairs(n) {
-
+  let counter = 0;
+  // recursive function which will take in an array of steps taken thus far
+  function takeSteps(stepsTaken = []) {
+    // add up the steps taken
+    const sum = stepsTaken.reduce((acc, e) => acc + e, 0);
+    // base case 1: array reduces to n, increase counter & return
+    if (sum === n) {
+      counter += 1;
+      return;
+    }
+    // base case 2: array reduces to > n, return
+    if (sum > n) return;
+    // push 1 into copy of array and call recursion
+    takeSteps([...stepsTaken, 1]);
+    // push 2 into copy of array and call recursion
+    takeSteps([...stepsTaken, 2]);
+  }
+  // initial call
+  takeSteps();
+  return counter;
 }
 
 module.exports = countStairs;
