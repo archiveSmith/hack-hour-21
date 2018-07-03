@@ -18,4 +18,6 @@ function countStairs(n) {
 
 }
 
+// must count stairs later!!!...
+
 module.exports = countStairs;
