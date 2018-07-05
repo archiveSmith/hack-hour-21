@@ -43,28 +43,41 @@ expectations = {
 
 
 function getPINs(observed) {
-  //for each number, give permutations
-  //then for each permatation answer, get the combination of each possible diagonal answer
-  let result = [];
-  function helper(observed, collection = ""){
-    // console.log('HERE IS THE IF CHECK', observed)
-    if(observed === "") return result.push(collection);
-    for(let i = 0; i < observed.length; i++){
-      let starting = observed[i];
-      let remaining = observed.replace(starting,"");
-      // console.log("here is the starting", starting)
-      helper(remaining, collection.concat(starting));
-
-    }
-    // console.log('here is each', result)
-    return 
+  //collect each array in a single array
+  //use reduce to get the accumulator that contains the combinations of strings of the first two arrays
+  //recursively solve the problem until base case: observed.length === 0
+  let numbers = {
+    '1': ['1', '2', '4'],
+    '2': ['1', '2', '5'],
+    '3': ['2', '3', '6'],
+    '4': ['1', '4', '5', '7'],
+    '5': ['2', '4', '5', '6', '8'],
+    '6': ['3', '5', '6', '9'],
+    '7': ['4', '7', '8'],
+    '8': ['5', '7', '8', '9'],
+    '9': ['6', '8', '9'],
+    '0': ['0', '8']
   }
-  // console.log("here is the result", helper(observed, collection))
-  helper(observed, "")
-  return result;
-
+  let start = [];
+  let ob = observed.split("");
+  ob.forEach(n => { start.push(numbers[n]) });
+  function perm(arr, perm = []) {
+    if (arr.length === 0) return perm;
+    else {
+      arr.reduce((accumulator, current) => {
+        for (let a = 0; a < accumulator.length; a++) {
+          for (let c = 0; c < current.length; c++) {
+            console.log('WHAT IS ACC A', accumulator[a]);
+            perm.push(accumulator[a]+ current[c]);
+          }
+        }
+        return perm;
+      })
+    }
+  }
+  perm(start);
 }
-// console.log(getPINs("369"));
+console.log(getPINs("369"));
 
 
 module.exports = getPINs
