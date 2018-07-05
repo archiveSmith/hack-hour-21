@@ -43,8 +43,32 @@ expectations = {
 
 
 function getPINs(observed) {
+  let comb =[[]]
+  let keyPad = [1, 2, 3, 4, 5, 6, 0]
+  let obString = observed.toString().split('');
+  const thres = Math.pow(10, observed.toString().split('').length)
+  let output = [];
+  let currNb = [0, 0, 0, 0];
+  for(let i = 0; i < thres; i++){
+    let currI = i.toString().split('').map(function(t){return parseInt(t)});
+    console.log(currNb)
+    if(i.toString().length < observed.toString().length) {
+      let ind = currI.length 
+      currNb.splice(-currI.length, currI.length, ...currI)
+  }
+  for(let j = 0; j < 5; j++){
+    keyPad.forEach((ele, index) => {
+      el.forEach((el, ind) => {
+        
+
+      })
+    })
+  }
+    
+})
 
 }
 
+console.log(getPINs(3345))
 
 module.exports = getPINs

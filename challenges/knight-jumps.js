@@ -11,7 +11,22 @@
 // var str = "(4 5)"
 
 function knightjumps(str) {
+    let x = parseInt(str.split('')[1]);
+    let y = parseInt(str.split('')[3]);
+    let xgap = Math.abs(Math.abs(x-4)-4);
+    let ygap = Math.abs(Math.abs(y-4)-4);
+    let xam;
+    let yam; 
+    if(xgap < 2) xam = 1 + xgap;
+    else xam = 4;
+    if(ygap < 2) yam = 1 + ygap;
+    else yam = 4;
+
+
+    return xam + yam;
 
 }
+console.log(knightjumps("(5 0)"));
+
 
 module.exports = knightjumps;
