@@ -20,7 +20,17 @@
  * BONUS2: Create a deck of cards function that generates two random hands for you.
  */
 function poker(hand1, hand2) {
-
+  hand1Cache = { highCard: 0, score: 'highcard' };
+  hand2Cache = { highCard: 0, score: 'highcard' };
+  hand1.forEach((card, index) => {
+    // if 1 pair
+    
+    // if 2 pair
+    // if 3 of a kind
+    // if straight
+    // if full house
+    // if four of a kind
+  });
 }
 
 module.exports = poker;

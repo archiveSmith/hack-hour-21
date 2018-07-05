@@ -26,6 +26,11 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  for (let i = 1; i < Array.length + 1; i += 1) {
+    if (Array.indexOf(i) < 0) return i;
+  }
 }
+
+// console.log(missingNum([2, 3, 1, 5, 4, 7, 8, 9]));
 
 module.exports = missingNum;
