@@ -26,6 +26,7 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  // TBC
 }
 
 module.exports = missingNum;
