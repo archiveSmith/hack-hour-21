@@ -40,7 +40,10 @@
 // - if any part of the date string is missing then you can consider it an invalid date
 
 function parseDates(str) {
-  
+  return new Date(2018, 1, 1, 1, 1, 0, 0);
 }
+
+// console.log(parseDates('Jan 12th 1:09 AM'));
+console.log(parseDates(''));
 
 module.exports = parseDates;
