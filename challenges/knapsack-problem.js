@@ -10,7 +10,7 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
-  let maxValue = -Infinity;
+  let maxValue = 0;
   function cloneAndRemove(items, index) {
     return items.reduce((acc, e, i) => {
       if (index !== i) acc.push({ weight: items[i].weight, value: items[i].value });
