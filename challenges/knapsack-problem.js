@@ -10,7 +10,29 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
-
-};
+  let maxValue = -Infinity;
+  function cloneAndRemove(items, index) {
+    return items.reduce((acc, e, i) => {
+      console.log(typeof acc.push);
+      if (index !== i) acc.push({ weight: items[i].weight, value: items[i].value });
+      return acc;
+    }, []);
+  }
+  function permute(items, weightAvailable, currentValue) {
+    for (let i = 0; i < items.length; i++) {
+      let newCurrentValue = currentValue;
+      let newWeightAvailable = weightAvailable;
+      const item = items[i];
+      if (newWeightAvailable - item.weight >= 0) {
+        newCurrentValue += item.value;
+        newWeightAvailable -= item.weight;
+        if (newCurrentValue > maxValue) maxValue = newCurrentValue;
+        permute(cloneAndRemove(items, i), newWeightAvailable, newCurrentValue);
+      }
+    }
+  }
+  permute(items, weightAvailable, 0);
+  return maxValue;
+}
 
 module.exports = solveKnapsack;
