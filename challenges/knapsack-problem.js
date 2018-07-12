@@ -9,7 +9,19 @@
   solveKnapsack(items, 5); // returns 9 (from items[1] and items[2])
 */
 
+
+// This can be solved using Dynamic programming...
+// Start with weightAvailabe as 0 and then go up to the input.
+
+
 function solveKnapsack(items, weightAvailable) {
+  let table = []; // this is where, we're storing intermediate results
+
+  for (let i=0; i<items.length; i++){
+    for (let w=0; w<=weightAvailable; w++){
+      
+    }
+  }
 
 };
 
