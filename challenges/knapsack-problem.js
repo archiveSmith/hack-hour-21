@@ -14,14 +14,25 @@
 // Start with weightAvailabe as 0 and then go up to the input.
 
 
-function solveKnapsack(items, weightAvailable) {
+// function solveKnapsack(items, weightAvailable) {
+function solveKnapsack_dynamic(items, weightAvailable) {
   let table = []; // this is where, we're storing intermediate results
-
+  
   for (let i=0; i<items.length; i++){
     for (let w=0; w<=weightAvailable; w++){
       
     }
   }
+  
+};
+
+function solveKnapsack(items, weightAvailable) {
+  if (!items.length || weightAvailable === 0) return 0;
+  if (items[0].weight > weightAvailable) return solveKnapsack(items.slice(1), weightAvailable);
+  return Math.max(
+    items[0].value + solveKnapsack(items.slice(1), weightAvailable - items[0].weight),
+    solveKnapsack(items.slice(1), weightAvailable)
+  );
 
 };
 
