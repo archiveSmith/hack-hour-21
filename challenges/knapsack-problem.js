@@ -10,6 +10,7 @@
 */
 
 function solveKnapsack(items, weightAvailable) {
+  //for each option, what would be the closest to reach the weight capacity
 
 };
 
