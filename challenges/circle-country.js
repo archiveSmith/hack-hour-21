@@ -28,14 +28,14 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
     //case 2: aarray circle contains the start coordinate
     //case 3: array circle contains the end coordinate
     //distance is sqrt of the (x-diff)^2 plus the (y-diff)^2
-    for (let i = 0 ; i < array.length; i++){
-        let c1c2 = Math.sqrt(Math.pow((x[i]-start_x),2) + Math.pow((y[i]-start_y),2));
-        let c2c3 = Math.sqrt(Math.pow((x[i]-end_x),2) + Math.pow((y[i]-end_y),2));
-        if (c1c2 < r[i] && c2c3 < r[i]){
+    for (let i = 0 ; i < r.length; i++){
+        let circleStart = Math.sqrt(Math.pow((x[i]-start_x),2) + Math.pow((y[i]-start_y),2));
+        let circleEnd = Math.sqrt(Math.pow((x[i]-end_x),2) + Math.pow((y[i]-end_y),2));
+        if (circleStart < r[i] && circleEnd < r[i]){
             return 0
-        }else if(c1c2< r[i] && c2c3>r[i]){
+        }else if(circleStart< r[i] && circleEnd>r[i]){
             cross += 1;
-        }else if (c1c2 > r[i] && c2c3 < r[i]){
+        }else if (circleStart > r[i] && circleEnd < r[i]){
             cross += 1;
         }else{
             continue;
@@ -43,5 +43,14 @@ function circleCountry(x, y, r, start_x, start_y, end_x, end_y) {
 }
 return cross;
 }
+
+let x = [2,5,1]
+let y = [2,4,1]
+let r = [6,6,8]
+let start_x = 2;
+let start_y = 2;
+let end_x = 5;
+let end_y = 4;
+console.log(circleCountry(x, y, r, start_x, start_y, end_x, end_y))
 
 module.exports = circleCountry;
