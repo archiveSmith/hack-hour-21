@@ -26,6 +26,16 @@ Challange:
   ** keep in mind time complexity
 */
 function missingNum(Array) {
+  let gauss = (Array.length/2) * (Array[0] + Array[Array.length-1]);
+  let sum = Array.reduce((a, b) => {
+    a = a + b
+    return a;}, 0);
+  let missNum = gauss - sum;
+  return missNum;
+
 }
+
+let a = [1, 2, 4, 5, 6, 7];
+console.log(missingNum(a));
 
 module.exports = missingNum;

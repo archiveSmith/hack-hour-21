@@ -13,8 +13,39 @@ function BinaryTree(value) {
   this.right = null;
 }
 
-function superbalanced(tree) {
+BinaryTree.prototype.height = (count = 0) => {
+  if(this.left !== null){
+    count += 1;
+    this.left.height(count);
+  }
 
+  if(this.right !== null){
+    count += 1;
+    this.right.height(count);
+  }
+  return count
+
+
+}
+
+function isBalanced(tree) {
+  let rightHeight = 0;
+  let leftHeight = 0;
+
+  if(tree.right === null) return rightHeight;
+  else rightHeight = tree.right.height();
+
+  if (tree.left === null) return leftHeight;
+  else leftHeight = tree.left.height();
+
+  return Math.abs(leftHeight - rightHeight) < 1;
+}
+
+function superbalanced(tree){
+  if(isBalanced(tree.left) && isBalanced(tree.right)){
+    return true;
+  }
+  else return false;
 }
 
 module.exports = {BinaryTree: BinaryTree, superbalanced: superbalanced};

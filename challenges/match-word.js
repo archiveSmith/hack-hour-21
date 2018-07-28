@@ -11,7 +11,41 @@
 // matchWord('');  -> true
 
 function matchWord(str) {
+    let recordi = []
+    let a;
+    let b;
+    
+    for(let i = 0; i < str.length; i++){
+        if(/^[a-zA-Z]+$/.test(str[i])){
+            recordi.push(str[i]);
+            if(/^[a-zA-Z]+$/.test(str[i+1])===false){
+                recordi.push("/")
+                a = i;
+                i = str.length +1
+        }}
+    }
+
+    let recordj = []
+    for(let j = str.length - 1; j > 0; j--){
+        if( /^[a-zA-Z]+$/.test(str[j]) ){
+            recordj.push(str[j]);
+            if(/^[a-zA-Z]+$/.test(str[j-1])===false){
+                recordj.push("/")
+                b = j;
+                j = 0;
+            }
+    }
+}
+    console.log(recordi);
+    if(recordj.join('').toLowerCase() === recordi.join('').toLowerCase() && a <= b ){
+        return true;
+}
+    else{
+        return false;
+    }
 
 }
+
+console.log(matchWord('__ENDDNE__'))
 
 module.exports = matchWord;
