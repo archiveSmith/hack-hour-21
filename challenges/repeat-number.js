@@ -11,7 +11,17 @@
  */
 
 function repeatNumbers(array) {
-
+    let count = {};
+    for(let i = 0; i < array.length; i++) {
+        if(count[array[i]]) return array[i];
+        count[array[i]] = 1;
+        console.log(count)
+        
+    }
 }
+
+
+let arr = [3, 4, 5, 6, 6, 7, 8, 9];
+console.log(repeatNumbers(arr));
 
 module.exports = repeatNumbers;

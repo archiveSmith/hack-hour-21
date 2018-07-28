@@ -8,6 +8,7 @@
  */
 
 function gcd(a, b) {
+    
 
 }
 
