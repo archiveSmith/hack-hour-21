@@ -11,6 +11,10 @@
  * The 8 is the hundreds digit (1 carried over + 5 + 2).
  *
  */
+function LinkedList(){
+  this.tail = null;
+  this.head = null;
+}
 
 function Node(val) {
   this.value = val;
@@ -18,6 +22,13 @@ function Node(val) {
 }
 
 function addLinkedList(l1, l2) {
+  let curL1 = l1.head;
+  let curL2 = l2.head;
+  let sum = new LinkedList();
+  while(curL1.next !== null && curL2.next !== null){
+    
+    
+  }
 
 }
 
