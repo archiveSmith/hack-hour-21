@@ -26,7 +26,7 @@ function commonElements(array1, array2, array3, array4){
     for(let i = 0; i < output.length; i++){
       if(!array2.includes(output[i])) {
         output.splice(i, 1);
-        i = 0;
+        i = i-1;
       }    
     }
     return commonElements(output, arguments[2], arguments[3]);
@@ -34,10 +34,10 @@ function commonElements(array1, array2, array3, array4){
 
 }
 
-  var array1 = [1,4,6,7,99,2000,'dog','dog',99,1000,'ferret'];
-  var array2  = [15,9,9,'ferret',9,26,12,12,'dog'];
-  var array3 = [23,12,12,77,'ferret',9,88,100,'dog'];
-  var array4 = ['ferret',12,12,45,9,66,77,78,2000];
+  var array1 = [1,4,6,7,99,2000,'dog','dog',99,1000,12,12,13];
+  var array2  = [15,9,9,'ferret',9,26,12,12,'dog',13];
+  var array3 = [23,12,12,77,'ferret',9,88,100,'dog',13];
+  var array4 = ['ferret',12,12,45,9,66,77,78,2000,13];
   console.log(commonElements(array1, array2, array3, array4));
 
 module.exports = commonElements;
