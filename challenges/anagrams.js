@@ -12,22 +12,32 @@
   * console.log(result); // [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
   */
 
-function anagrams(string) {
-  let letters = string.split('');
-  let output = [];
-  let word = [];
-  for(let i = 0; i < letters.length; i++){
-    for(let j = i + 1; j < letters.length; j++){
-      
-    }
-    word.push(letters[i]);
+function anagrams(string, output = []) {
+  console.log(output);
+  if(output.length >= Math.pow(string.length, 2)) {
+    let anag = [];
+    output.forEach(el => {
+      if(!anag.includes(el)) anag.push(el);
+    });
+    return anag;
   }
-  output.push(word.join(''));
-  return output;
-
+  else {
+    console.log(output);
+    let letters = string.split('');
+    letters.push(letters[letters.length-2]);
+    letters.splice(letters.length-3, 1);
+    output.push(letters.join(''));
+    let word = [];
+    for(let i = letters.length -1; i >= 0; i--){
+      word.push(letters[i])
+    }
+    output.push(word.join(''));
+    return anagrams(word.join(''), output);
+  }
 }
 
-console.log(anagrams('abc'))
+console.log(anagrams('tyu'))
+// abc acb bca bac cba cab
 
 
 
