@@ -15,15 +15,16 @@
 function deleteDups(head) {
     let curr = head;
     let buffer =  [];
-    while(curr.next !== null){
-        if(buffer.includes(curr.next.value)){
-            let next = curr.next;
-            curr.next = curr.next.next
-            next.next = undefined;
-        }
+    while(curr){
         buffer.push(curr.value)
+        if(buffer.includes(curr.next.value)){
+            curr.next = cur.next.next
+            curr.next.next = undefined
+        }
+        
         curr = curr.next;
     }
+
 
 }
 
