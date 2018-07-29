@@ -14,19 +14,19 @@
 
 function deleteDups(head) {
     let curr = head;
-    let buffer =  [];
+    let buffer = [];
     while(curr){
         buffer.push(curr.value)
         if(buffer.includes(curr.next.value)){
-            curr.next = cur.next.next
-            curr.next.next = undefined
+            curr.next = curr.next.next;
+            curr.next.next = null;
         }
         
         curr = curr.next;
     }
 
-
 }
+
 
 
 
