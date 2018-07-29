@@ -13,7 +13,6 @@
   */
 
 function anagrams(string, output = []) {
-  console.log(output);
   if(output.length >= Math.pow(string.length, 2)) {
     let anag = [];
     output.forEach(el => {
@@ -22,7 +21,6 @@ function anagrams(string, output = []) {
     return anag;
   }
   else {
-    console.log(output);
     let letters = string.split('');
     letters.push(letters[letters.length-2]);
     letters.splice(letters.length-3, 1);
@@ -35,9 +33,6 @@ function anagrams(string, output = []) {
     return anagrams(word.join(''), output);
   }
 }
-
-console.log(anagrams('tyu'))
-// abc acb bca bac cba cab
 
 
 
