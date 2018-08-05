@@ -32,13 +32,20 @@ function swap(arr, idx1, idx2) {
 
 function anagrams(string) {
 
+    if (!string) {
+        return [''];
+    }
+
     let perms = [];
     let arr = string.split('');
     
     function permute(arr, n) {
         n = n || arr.length;
         if (n === 1) {
-            perms.push(arr.join(''));
+            let permString = arr.join('');
+            if (!perms.includes(permString)) {
+                perms.push(arr.join(''));
+            }
             return
         } else {
             for (var i = 1; i <= n; i += 1) {
@@ -56,6 +63,7 @@ function anagrams(string) {
     return perms;
 }
 
-// console.log(anagrams('abc'));
+// console.log(anagrams('aabb'));
+// console.log(anagrams(''));
 
 module.exports = anagrams;
