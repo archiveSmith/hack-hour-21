@@ -63,7 +63,7 @@ function anagrams(string) {
     return perms;
 }
 
-console.log(anagrams('aabb'));
-console.log(anagrams(''));
+// console.log(anagrams('aabb'));
+// console.log(anagrams(''));
 
 module.exports = anagrams;
